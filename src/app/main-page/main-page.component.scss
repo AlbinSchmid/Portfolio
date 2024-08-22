@@ -1,0 +1,25 @@
+@import './../../styles.scss';
+
+section {
+    padding: 48px 96px;
+    background-image: url(./../../assets/img/aot-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    @include d-position($fd: column);
+    h3 {
+        @include t-design($ff: 'Fira Code', $fs: 40px,  $fw: 400);
+    }
+    h1 {
+        @include t-design($fs: 128px,  $fw: 700);
+    }
+}
+
+app-header{
+    position: absolute;
+    top: 48px;
+    left: 96px;
+    right: 96px;
+}

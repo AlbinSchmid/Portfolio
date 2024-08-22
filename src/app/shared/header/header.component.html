@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header>
+    <nav>
+        <button (click)="changeLanguage()">
+            <div [ngClass]="{'div-DE': germanLanguage}">DE</div>
+            <span [ngClass]="{'slider-animation-EN': englishLanguage, 'slider-animation-DE': germanLanguage}"></span>
+            <div [ngClass]="{'div-EN': englishLanguage}">EN</div>
+        </button>
+        <a href="">About me</a>
+        <a href="">Skills</a>
+        <a href="">Projects</a>
+    </nav>
+    <img src="./../../../assets/img/logo.png" alt="">
+</header>

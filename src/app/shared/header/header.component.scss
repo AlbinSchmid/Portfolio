@@ -1,0 +1,107 @@
+@import './../.././../styles.scss';
+
+
+header {
+    @include d-position();
+
+    nav {
+        @include d-position($jc: auto);
+        width: 100%;
+        gap: 24px;
+    }
+
+    img {
+        width: 150px;
+    }
+}
+
+a {
+    @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
+    text-decoration: none;
+    position: relative;
+    transition: all 2s;
+
+    &:hover::after {
+        content: '';
+        position: absolute;
+        transform-origin: bottom left;
+        height: 7px;
+        width: 7px;
+        color: #3DCFB6;
+        left: 50%;
+        top: 25px;
+        border-radius: 100%;
+        background: currentcolor;
+    }
+}
+
+button {
+    @include d-position();
+    position: relative;
+    gap: 20px;
+    height: 28px;
+    font-size: 30px;
+    padding: 15px 12px;
+    border: 1px solid #3DCFB6;
+    border-radius: 25px;
+    background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    div {
+        z-index: 2;
+        color: rgba(#3DCFB6, 50%);
+        @include t-design($ff: 'Fire Code', $fs: 16px);
+
+        &:hover {
+            color: #3DCFB6;
+        }
+    }
+
+    span {
+        position: absolute;
+        background-color: #3DCFB6;
+        height: 100%;
+        border-radius: 25px;
+        width: 50%;
+        left: 0;
+    }
+}
+
+.div-DE,
+.div-EN {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+.slider-animation-EN {
+    animation: EN-animation 200ms;
+    transform: translateX(100%);
+}
+
+@keyframes EN-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.slider-animation-DE {
+    animation: DE-animation 200ms;
+    transform: translateX(0%);
+}
+
+@keyframes DE-animation {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
