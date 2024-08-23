@@ -17,21 +17,20 @@ header {
 
 a {
     @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
+    @include d-position();
     text-decoration: none;
-    position: relative;
-    transition: all 2s;
+    transition: 100ms all;
 
-    &:hover::after {
-        content: '';
-        position: absolute;
-        transform-origin: bottom left;
-        height: 7px;
-        width: 7px;
+    div {
+        top: 45px;
+    }
+
+    &:hover {
         color: #3DCFB6;
-        left: 50%;
-        top: 25px;
-        border-radius: 100%;
-        background: currentcolor;
+    }
+
+    &:hover>div {
+        background-color: #3DCFB6
     }
 }
 
@@ -45,9 +44,10 @@ button {
     border: 1px solid #3DCFB6;
     border-radius: 25px;
     background-color: transparent;
+    transition: all 0.1s;
 
     &:hover {
-        cursor: pointer;
+        border-color: white;
     }
 
     div {

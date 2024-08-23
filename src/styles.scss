@@ -5,14 +5,28 @@
     color: #D9D9D9;
 }
 
-@mixin d-position($jc: center, $ai: center, $fd: row){
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.hover-point {
+    position: absolute;
+    height: 7px;
+    width: 7px;
+    border-radius: 100%;
+    transition: 200ms all !important;
+}
+
+@mixin d-position($jc: center, $ai: center, $fd: row) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
     flex-direction: $fd;
 }
 
-@mixin t-design($ff: 'Karla', $fs: 20px, $fw: 500,) {
+@mixin t-design($ff: 'Karla', $fs: 20px, $fw: 500, ) {
     font-family: $ff, Arial, Helvetica, sans-serif;
     font-size: $fs;
     font-weight: $fw;

@@ -1,0 +1,152 @@
+@import './../../../styles.scss';
+
+section {
+    padding: 48px 96px 0 96px;
+    background-image: url(./../../../assets/img/aot-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    @include d-position($jc: space-between, $ai: flex-end);
+}
+
+.main-div {
+    @include d-position($fd: column);
+    height: 100%;
+
+    h1 {
+        @include t-design($fs: 128px, $fw: 700);
+    }
+
+    h3 {
+        @include t-design($ff: 'Fira Code', $fs: 40px, $fw: 400);
+    }
+
+    div {
+        display: flex;
+        position: relative;
+        gap: 48px;
+        margin-top: 40px;
+
+        button {
+            @include d-position();
+            background-color: transparent;
+            width: 180px;
+            height: 50px;
+            border: 1px solid;
+            padding: 12px 24px;
+            border-radius: 25px;
+            @include t-design($fs: 18px, $fw: 400);
+            overflow: hidden;
+
+            span {
+                position: inherit;
+            }
+
+            &:hover>span {
+                color: #3DCFB6;
+                animation: aot-btn-animation-beginn ease-in-out 0.5s;
+                animation: aot-btn-animation ease-in-out 3s infinite;
+            }
+
+            &:hover {
+                color: #3DCFB6;
+            }
+        }
+    }
+}
+
+.left-line {
+    @include d-position($fd: column);
+    gap: 24px;
+
+    div {
+        width: 2px;
+        height: 200px;
+        background-color: #3DCFB6;
+        @include d-position($ai: flex-end);
+    }
+
+    button {
+        background: transparent;
+        border: 1px solid #3DCFB6;
+        border-radius: 25px;
+        padding: 16px 6px;
+
+        img {
+            height: 18px;
+            width: 16px;
+            transition: all 125ms;
+        }
+
+        &:hover>img {
+            transform: translateY(8px);
+        }
+    }
+}
+
+.right-line {
+    @include d-position($fd: column);
+    gap: 24px;
+    width: 30px;
+
+    .line {
+        width: 2px;
+        height: 150px;
+        background-color: white;
+    }
+
+    .a-email {
+        @include t-design($fs: 18px);
+        text-decoration: none;
+        transform: rotate(-90deg);
+        margin-bottom: 96px;
+
+        &:hover {
+            color: #3DCFB6;
+        }
+    }
+
+    .a-git {
+        position: relative;
+        @include d-position();
+
+        div{
+            left: 35px;
+        }
+
+        img {
+            display: flex;
+            position: relative;
+        }
+
+        &:hover>div {
+            background-color: #3DCFB6
+        }
+
+    }
+
+}
+
+@keyframes aot-btn-animation {
+    0% {
+        transform: translateX(0px);
+    }
+
+    20% {
+        transform: translateX(-180px)
+    }
+
+    30% {
+        transform: translateY(100px);
+    }
+
+    60% {
+        transform: translateX(180px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
