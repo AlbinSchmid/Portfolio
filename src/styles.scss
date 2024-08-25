@@ -1,3 +1,24 @@
+@mixin d-position($jc: center, $ai: center, $fd: row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+@mixin t-design($ff: 'Karla', $fs: 20px, $fw: 500, ) {
+    font-family: $ff, Arial, Helvetica, sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin blue-div-design() {
+    width: 568px;
+    border-radius: 25px;
+    border: solid 1px #3DCFB6;
+    background-color: rgba(#3DCFB6, 0.1);
+    padding: 32px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,18 +40,52 @@ button {
     transition: 200ms all !important;
 }
 
-@mixin d-position($jc: center, $ai: center, $fd: row) {
-    display: flex;
-    justify-content: $jc;
-    align-items: $ai;
-    flex-direction: $fd;
+.animation-btn {
+    @include d-position();
+    background-color: transparent;
+    border: 1px solid;
+    padding: 12px 24px;
+    border-radius: 25px;
+    @include t-design($fs: 18px, $fw: 400);
+    overflow: hidden;
+
+    span {
+        position: inherit;
+    }
+
+    &:hover>span {
+        color: #3DCFB6;
+        animation: aot-btn-animation-beginn ease-in-out 0.5s;
+        animation: aot-btn-animation ease-in-out 3s infinite;
+    }
+
+    &:hover {
+        color: #3DCFB6;
+    }
 }
 
-@mixin t-design($ff: 'Karla', $fs: 20px, $fw: 500, ) {
-    font-family: $ff, Arial, Helvetica, sans-serif;
-    font-size: $fs;
-    font-weight: $fw;
+@keyframes aot-btn-animation {
+    0% {
+        transform: translateX(0px);
+    }
+
+    20% {
+        transform: translateX(-180px)
+    }
+
+    30% {
+        transform: translateY(100px);
+    }
+
+    60% {
+        transform: translateX(180px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
 }
+
 
 
 

@@ -29,31 +29,7 @@ section {
         gap: 48px;
         margin-top: 40px;
 
-        button {
-            @include d-position();
-            background-color: transparent;
-            width: 180px;
-            height: 50px;
-            border: 1px solid;
-            padding: 12px 24px;
-            border-radius: 25px;
-            @include t-design($fs: 18px, $fw: 400);
-            overflow: hidden;
-
-            span {
-                position: inherit;
-            }
-
-            &:hover>span {
-                color: #3DCFB6;
-                animation: aot-btn-animation-beginn ease-in-out 0.5s;
-                animation: aot-btn-animation ease-in-out 3s infinite;
-            }
-
-            &:hover {
-                color: #3DCFB6;
-            }
-        }
+        
     }
 }
 
@@ -127,26 +103,4 @@ section {
 
     }
 
-}
-
-@keyframes aot-btn-animation {
-    0% {
-        transform: translateX(0px);
-    }
-
-    20% {
-        transform: translateX(-180px)
-    }
-
-    30% {
-        transform: translateY(100px);
-    }
-
-    60% {
-        transform: translateX(180px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
 }
