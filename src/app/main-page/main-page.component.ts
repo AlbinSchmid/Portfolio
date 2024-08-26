@@ -4,6 +4,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { AotComponent } from './aot/aot.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
+import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 
 @Component({
   selector: 'app-main-page',
@@ -13,7 +14,8 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
     FooterComponent,
     AotComponent,
     AboutMeComponent,
-    SkillSetComponent
+    SkillSetComponent,
+    FeaturedProjectsComponent,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'

@@ -1,0 +1,36 @@
+<section>
+    <div class="frame">
+            <div  class="left-part">
+                <h1>{{ currentProject.id }}</h1>
+                <h2>{{ currentProject.name }}</h2>
+                <h3>What is this project about?</h3>
+                <p>{{ currentProject.description }}</p>
+                <div class="skill-div">
+                    @for (skill of currentProject.skills; track $index) {
+                        <div>
+                            <img src="./../../../../assets/icons/{{ skill.img }}.png" alt="">
+                            <p>{{ skill.name }}</p>
+                        </div>
+                    }
+                </div>
+                <div class="btn-div">
+                    <button>
+                        GitHub
+                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="">
+                    </button>
+                    <button>
+                        Live Test
+                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="right-part">
+                <img src="./../../../../assets/icons/{{ closeImg }}.png" alt="" class="cross-img" (mouseover)="changeImg()">
+                <img src="./../../../../assets/img/{{ currentProject.img }}.png" alt="" class="project-img">
+                <button>
+                    Next project
+                    <img src="./../../../../assets/icons/arrow-right-thin.png" alt="">
+                </button>
+            </div>
+    </div>
+</section>

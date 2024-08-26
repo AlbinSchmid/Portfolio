@@ -1,0 +1,105 @@
+@import './../../../../styles.scss';
+
+h1 {
+    @include t-design($ff: 'Karla', $fs: 128px, $fw: 700);
+    color: #3DCFB6;
+}
+
+h2 {
+    @include t-design($ff: 'Fira Code', $fs: 64px, $fw: 700);
+    margin-top: -20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+    color: #3DCFB6;
+    margin-bottom: 10px;
+}
+
+p {
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+    max-width: 520px
+}
+
+section {
+    @include d-position();
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000000, 0.4);
+    
+
+    .frame {
+        border: solid 1px #3DCFB6;
+        background-image: url(./../../../../assets/img/aot-background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 25px;
+        padding: 70px;
+        @include d-position();
+        gap: 80px;
+
+        .left-part {
+            @include d-position($fd: column, $ai: normal);
+            .btn-div {
+                @include d-position($jc: normal);
+                gap: 32px;
+                margin-top: 40px;
+                button {
+                    @include d-position();
+                    @include t-design($ff: 'Karla', $fs: 18px);
+                    gap: 8px;
+                    background-color: transparent;
+                    border: 1px solid white;
+                    border-radius: 25px;
+                    padding: 12px 24px;
+                    transition: 125ms ease-in-out;
+
+                    img {
+                        transition: 125ms ease-in-out;
+                    }
+
+                    &:hover {
+                        color: #3DCFB6;
+                        border-color: #3DCFB6;
+                    }
+
+                    &:hover img {
+                        transform: translate(5px, -5px);
+                    }
+                }
+            }
+        }
+
+        .right-part {
+            @include d-position($fd: column, $ai: flex-end);
+            gap: 40px;
+
+            .project-img {
+                width: 520px;
+                height: 370px;
+            }
+
+            button {
+                @include d-position();
+                @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+                gap: 8px;
+                background-color: transparent;
+                border: none;
+                color: #3DCFB6;
+            }
+        }
+    }
+}
+
+.skill-div {
+    @include d-position($jc: normal);
+    gap: 16px;
+    margin-top: 30px;
+    div {
+        @include d-position();
+        gap: 4px;
+    }
+}

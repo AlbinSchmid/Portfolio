@@ -1,0 +1,106 @@
+@import './../../../styles.scss';
+
+img {
+    transition: 125ms ease-in-out;
+}
+
+p {
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+}
+
+h3 {
+    @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
+    color: #3DCFB6;
+    margin-bottom: 8px;
+}
+
+h1 {
+    @include t-design($ff: 'Fira Code', $fs: 64px, $fw: 700);
+    color: #3DCFB6;
+    margin-bottom: 20px;
+}
+
+h2 {
+    @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+}
+
+section {
+    @include d-position($jc: center, $ai: auto, $fd: column);
+    background-color: #1C1C1C;
+    height: 100vh;
+    width: 100%;
+    padding: 48px 96px;
+    gap: 50px;
+
+    .small-info {
+        max-width: 400px;
+        text-align: justify;
+    }
+
+}
+
+.project-div {
+    @include d-position($jc: normal, $fd: column, $ai: normal);
+    
+    .project-individual {
+        @include d-position($jc: space-between);
+        overflow: unset;
+        max-height: 114px;
+        gap: 100px;
+
+        .info-div {
+            @include d-position($jc: space-between);
+            width: 100%;
+            padding: 40px 32px;
+            border-bottom: 1px solid #3DCFB6;
+            transition: 125ms ease-in-out;
+
+            div {
+                @include d-position();
+                gap: 6px;
+            }
+
+            &:hover {
+                background-color: rgba(#3DCFB6, 0.3);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.projects-img-div {
+    position: relative;
+    
+    img {
+        width: 296px;
+        height: 192px;
+    }
+    
+    .project-img {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .animation-img {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        z-index: 1;
+    }
+}
+
+.blue-placeholder {
+    width: 2px;
+    height: 15px;
+    background-color: #3DCFB6;
+}
+
+app-detail-project {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    /* Ein hoher Wert, um sicherzustellen, dass die Komponente oben liegt */
+}
