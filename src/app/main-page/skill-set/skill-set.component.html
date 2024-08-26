@@ -1,21 +1,34 @@
 <section>
-    <div class="left-part">
-        <h3>Technologies</h3>
-        <div class="text-div">
-            <h1>Skill Set</h1>
-            <p>
-                My journey has involved working on diverse projects, employing a range of frontend technologies and
-                concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and
-                stay ahead in the ever-evolving landscape of web development.
-            </p>
-            <h2>You need <mark class="blue">another skill?</mark></h2>
-            <span>Feel free to contact me. I look forward to <br>expanding on my previous knowledge.</span>
-            <button class="animation-btn">
-                <span>Let's Talk</span>
-            </button>
+    <h3>Technologies</h3>
+    <div class="content">
+        <div class="left-part">
+            <div class="text-div">
+                <h1>Skill Set</h1>
+                <p>
+                    My journey has involved working on diverse projects, employing a range of frontend technologies and
+                    concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills
+                    and
+                    stay ahead in the ever-evolving landscape of web development.
+                </p>
+                <h2>You need <mark class="blue">another skill?</mark></h2>
+                <span>Feel free to contact me. I look forward to <br>expanding on my previous knowledge.</span>
+                <button class="animation-btn">
+                    <span>Let's Talk</span>
+                </button>
+            </div>
         </div>
-    </div>
-    <div>
-        
+        <div class="right-part">
+            @for (skill of skillsIcons; track $index) {
+            <div>
+                <img  class="hover-effekt" src="./../../../assets/icons/{{ skill.img }}.png" alt="">
+                <p>{{ skill.name }}</p>
+            </div>
+            }
+            <div (mouseover)="showImg()" (mouseout)="showImg()" class="growth-img">
+                <img  class="hover-effekt" src="./../../../assets/icons/growth-mindset.png" alt="">
+                <p>Growth mindset</p>
+                <img src="./../../../assets/icons/interested-in.png" alt="" [ngStyle]="{'opacity': hoveredOnGrowthImg ? '1' : '0'}" class="hover-img">
+            </div>
+        </div>
     </div>
 </section>

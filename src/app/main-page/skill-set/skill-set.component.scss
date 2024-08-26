@@ -1,26 +1,58 @@
 @import './../../../styles.scss';
 
 section {
+    @include d-position($jc: center, $ai: auto, $fd: column);
     height: 100vh;
     width: 100%;
-    padding: 48px 96px 0 96px;
+    padding: 0 96px;
     background-color: #1C1C1C;
     background-image: url(./../../../assets/img/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    gap: 20px;
+    
+    h3 {
+        @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
+        color: #3DCFB6;
+    }
 
-    .left-part {
-        @include d-position($ai: auto, $fd: column);
-        gap: 20px;
+    .content {
+        @include d-position($jc: space-between, $ai: auto);
+        height: 480px;
+        gap: 150px;
 
-        h3 {
-            @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
-            color: #3DCFB6;
+        .left-part {
+            @include d-position($ai: auto, $fd: column);
+        }
+    
+        .right-part {
+            display: flex;
+            gap: 72px;
+            flex-wrap: wrap;
+            height: 100px;
+    
+            div {
+                text-align: center;
+                width: 105px;
+
+                &:hover > .hover-effekt {
+                    transform: scale(1.1);
+                }
+
+                .hover-effekt {
+                    transition: 125ms ease-in-out;
+                }
+    
+                p {
+                    @include t-design($ff: 'Fira Code', $fs: 18px);
+                    margin-top: 10px
+                }
+            }
         }
     }
-}
 
+}
 
 .text-div {
     @include blue-div-design();
@@ -54,5 +86,18 @@ section {
     button {
         margin-top: 30px;
         width: 130px;
+    }
+}
+
+.growth-img {
+    position: relative;
+
+    .hover-img {
+        transition: 400ms ease-in-out;
+        display: flex;
+        position: absolute;
+        top: -115px;
+        left: -4px;
+        opacity: 0;
     }
 }
