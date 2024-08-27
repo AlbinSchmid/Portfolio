@@ -1,0 +1,37 @@
+<section>
+    <h1>What my colleagues say about me</h1>
+    <div class="feedback-div">
+        <img src="./../../../assets/icons/quotes.png" alt="quotes">
+        <div class="feedback" [ngClass]="{'left-to-main': changefeedback, 'left-feedback': !changefeedback}">
+            <p>{{ feedback[leftFeedbackId].text }}</p>
+            <div class="partner">
+                <div></div>
+                <p>{{ feedback[leftFeedbackId].name }}</p>
+            </div>
+        </div>
+        <div class="feedback" [ngClass]="{'main-to-right': changefeedback, 'main-feedback': !changefeedback}">
+            <p>{{ feedback[mainFeedbackId].text }}</p>
+            <div class="partner">
+                <div></div>
+                <p>{{ feedback[mainFeedbackId].name }}</p>
+            </div>
+        </div>
+        <div class="feedback"  [ngClass]="{'right-to-left': changefeedback, 'right-feedback': !changefeedback}">
+            <p>{{ feedback[rightFeedbackId].text }}</p>
+            <div class="partner">
+                <div></div>
+                <p>{{ feedback[rightFeedbackId].name }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="buttons-div">
+        <button class="left-btn"></button>
+        <div class="points-div">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <button class="right-btn" (click)="changeMainFeedback()"></button>
+    </div>
+    <div class="edge-shadow"></div>
+</section>

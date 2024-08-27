@@ -11,11 +11,11 @@
     font-weight: $fw;
 }
 
-@mixin blue-div-design() {
+@mixin blue-div-design($op: 0.1) {
     width: 568px;
     border-radius: 25px;
     border: solid 1px #3DCFB6;
-    background-color: rgba(#3DCFB6, 0.1);
+    background-color: rgba(#3DCFB6, $op);
     padding: 32px;
 }
 

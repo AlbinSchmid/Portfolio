@@ -1,0 +1,206 @@
+@import './../../../styles.scss';
+
+h1 {
+    @include t-design($ff: 'Fira Code', $fs: 32px, $fw: 700);
+    color: #3DCFB6;
+}
+
+.edge-shadow {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    top: 12%;
+    z-index: 2;
+    background: rgb(28, 28, 28);
+    background: linear-gradient(90deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%), linear-gradient(260deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%);
+}
+
+section {
+    position: relative;
+    @include d-position($ai: center, $fd: column, $jc: normal);
+    background-color: #1C1C1C;
+    height: 100vh;
+    width: 100%;
+    gap: 80px;
+    overflow: hidden;
+
+    .buttons-div {
+        @include d-position();
+        gap: 20px;
+
+        button {
+            background: transparent;
+            border: none;
+            height: 32px;
+            width: 32px;
+            transition: 125ms ease-in-out;
+        }
+
+        .left-btn {
+            background-image: url(./../../../assets/icons/arrow-left-white.png);
+
+            &:hover {
+                background-image: url(./../../../assets/icons/arrow-left-blue.png);
+                transform: translateX(-3px);
+            }
+
+
+        }
+
+        .right-btn {
+            background-image: url(./../../../assets/icons/arrow-right-white.png);
+
+            &:hover {
+                background-image: url(./../../../assets/icons/arrow-right-blue.png);
+                transform: translateX(3px);
+            }
+        }
+
+        .points-div {
+            @include d-position();
+            gap: 20px;
+
+            div {
+                width: 8px;
+                height: 8px;
+                background-color: white;
+                border-radius: 100%
+            }
+        }
+    }
+
+
+}
+
+
+.feedback-div {
+    // @include d-position(); HIER SCHAUEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!         LETZE ÄNDERUNG         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    width: 100%;
+    height: 300px;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: -14px;
+        left: 333px;
+        z-index: 3;
+    }
+
+    .feedback {
+        @include d-position($fd: column, $jc: space-between);
+        position: absolute;
+        width: 560px;
+        height: 260px;
+
+        .partner {
+            @include d-position($jc: space-between);
+            gap: 10px;
+            width: 100%;
+
+            div {
+                flex: auto;
+                height: 2px;
+                border-radius: 2px;
+                background-color: rgba(white, 0.5);
+            }
+        }
+
+    }
+
+
+    .left-feedback {
+        @include blue-div-design($op: 0.1);
+        margin-left: -100%;
+    }
+
+    .main-feedback {
+        @include blue-div-design($op: 0.3);
+        transform: scale(1.2);
+    }
+
+    .right-feedback {
+        margin-left: 100%;
+        @include blue-div-design($op: 0.1);
+    }
+
+}
+
+p {
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
+}
+
+.animation-feedback {
+    animation: left-to-main-animation ease-in-out 500ms;
+    margin-left: 0%;
+    transform: scale(1.2);
+    @include blue-div-design($op: 0.3);
+}
+
+.left-to-main {
+    animation: left-to-main-animation ease-in-out 500ms;
+    margin-left: 0%;
+    transform: scale(1.2);
+    @include blue-div-design($op: 0.3);
+}
+
+.main-to-right {
+    animation: main-to-right-animation ease-in-out 500ms;
+    margin-left: 100%;
+    transform: scale(1);
+    @include blue-div-design($op: 0.1);
+}
+
+.right-to-left {
+    animation: right-to-left-animation ease-in-out 3000ms;
+    margin-left: -100%;
+    transform: scale(1);
+    @include blue-div-design($op: 0.1);
+}
+
+@keyframes left-to-main-animation {
+    0% {
+        margin-left: -100%;
+        transform: scale(1);
+        @include blue-div-design($op: 0.1);
+    }
+
+    100% {
+        margin-left: 0%;
+        transform: scale(1.2);
+        @include blue-div-design($op: 0.3);
+    }
+}
+
+@keyframes main-to-right-animation {
+    0% {
+        margin-left: 0%;
+        transform: scale(1.2);
+        @include blue-div-design($op: 0.3);
+    }
+
+    100% {
+        margin-left: 100%;
+        transform: scale(1);
+        @include blue-div-design($op: 0.1);
+    }
+}
+
+@keyframes right-to-left-animation {
+    0% {
+        margin-right: -100%;
+        transform: scale(1);
+        @include blue-div-design($op: 0.1);
+    }
+
+    50% {
+        margin-right: -200%;
+        transform: scale(1);
+        @include blue-div-design($op: 0.1);
+    }
+
+    100% {
+        margin-left: -100%;
+        transform: scale(1);
+        @include blue-div-design($op: 0.1);
+    }
+}

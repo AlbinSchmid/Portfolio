@@ -113,14 +113,14 @@ section {
     }
 
     &:hover>.img-div {
-        background-image: url(./../../../../assets/icons/arrow-right.png);
+        background-image: url(./../../../../assets/icons/arrow-right-blue.png);
         transform: translateX(3px);
     }
 
     .img-div {
         width: 27px;
         height: 31px;
-        background-image: url(./../../../../assets/icons/arrow-right-thin.png);
+        background-image: url(./../../../../assets/icons/arrow-right-thin-blue.png);
         transition: all 125ms;
     }
 }
