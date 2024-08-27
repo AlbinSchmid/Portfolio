@@ -9,9 +9,9 @@
     <div class="project-div">
         @for (project of projects; track $index) {
         <div class="project-individual">
+            <app-detail-project [currentId]="clickId" (closeDetail)="closeDetail($event)" [projects]="projects" [detailView]="detailView" *ngIf="detailView"></app-detail-project> 
             <div class="info-div" [ngStyle]="{'border-top': $index == 0 ? '1px solid #3DCFB6' : '0'}" (mouseover)="showArrow($index)"
             (mouseout)="hideArrow()" (click)="showDetail($index)">
-                <app-detail-project [currentProject]="project" *ngIf="$index == clickId && detailView"></app-detail-project> 
                 <div>
                     <h2>{{ project.name}}</h2>
                     <img src="./../../../assets/icons/arrow-outward.png" alt=""

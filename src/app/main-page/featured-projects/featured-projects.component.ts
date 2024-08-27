@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DetailProjectComponent } from './detail-project/detail-project.component';
-import { Projects } from '../../interfaces/projects.interface';
+import { Projectssss } from '../../interfaces/projects.interface';
 
 @Component({
   selector: 'app-featured-projects',
@@ -14,7 +14,7 @@ import { Projects } from '../../interfaces/projects.interface';
   styleUrl: './featured-projects.component.scss'
 })
 export class FeaturedProjectsComponent {
-  projects: Projects[] = [
+  projects: Projectssss[] = [
     {
       id: '01',
       name: 'Join',
@@ -54,24 +54,16 @@ export class FeaturedProjectsComponent {
       img: 'pollo-loco',
       skills: [
         {
+          name: 'JavaScript',
+          img: 'javascript-blue',
+        },
+        {
           name: 'CSS',
           img: 'css-blue',
         },
         {
           name: 'HTML',
           img: 'html-blue',
-        },
-        {
-          name: 'Firebase',
-          img: 'firebase-blue',
-        },
-        {
-          name: 'Angular',
-          img: 'angular-blue',
-        },
-        {
-          name: 'TypeScript',
-          img: 'typescript-blue',
         },
       ],
     },
@@ -84,24 +76,16 @@ export class FeaturedProjectsComponent {
       img: 'da-bubble',
       skills: [
         {
+          name: 'JavaScript',
+          img: 'javascript-blue',
+        },
+        {
           name: 'CSS',
           img: 'css-blue',
         },
         {
           name: 'HTML',
           img: 'html-blue',
-        },
-        {
-          name: 'Firebase',
-          img: 'firebase-blue',
-        },
-        {
-          name: 'Angular',
-          img: 'angular-blue',
-        },
-        {
-          name: 'TypeScript',
-          img: 'typescript-blue',
         },
       ],
     },
@@ -121,5 +105,9 @@ export class FeaturedProjectsComponent {
   showDetail(index: number) {
     this.clickId = index;
     this.detailView = true;
+  }
+
+  closeDetail(closeDetail: boolean) {
+    this.detailView = closeDetail;
   }
 }

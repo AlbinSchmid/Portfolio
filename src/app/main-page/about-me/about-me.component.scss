@@ -31,7 +31,7 @@ section {
 
 .imgHovered {
     animation: background-img-animation 200ms ease-in-out;
-    transform:translate(-6%,6%);
+    transform: translate(-6%, 6%);
 }
 
 .right-part {
@@ -51,19 +51,19 @@ section {
     gap: 14px;
 
     p {
-        @include t-design($ff: 'Karla',$fs: 18px, $fw: 400);
+        @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
     }
 
     span {
-        @include t-design($ff: 'Karla',$fs: 18px, $fw: 400);
+        @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
         text-align: justify;
     }
-    
+
     h1 {
         @include t-design($ff: 'Fira Code', $fs: 64px, $fw: 700);
         color: #3DCFB6;
     }
-    
+
     div {
         @include d-position();
         gap: 40px;
@@ -77,9 +77,10 @@ section {
 
 @keyframes background-img-animation {
     0% {
-        transform:translate(0, 0);
+        transform: translate(0, 0);
     }
+
     100% {
-        transform:translate(-6%,6%);
+        transform: translate(-6%, 6%);
     }
 }
