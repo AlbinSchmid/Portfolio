@@ -7,9 +7,9 @@ h1 {
 
 .edge-shadow {
     position: absolute;
-    height: 300px;
+    height: 320px;
     width: 100%;
-    top: 12%;
+    top: 15%;
     z-index: 2;
     background: rgb(28, 28, 28);
     background: linear-gradient(90deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%), linear-gradient(260deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%);
@@ -74,14 +74,15 @@ section {
 
 
 .feedback-div {
-    // @include d-position(); HIER SCHAUEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!         LETZE ÄNDERUNG         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    @include d-position();
     width: 100%;
-    height: 300px;
+    height: 350px;
     position: relative;
+    overflow: hidden;
 
     img {
         position: absolute;
-        top: -14px;
+        top: 10px;
         left: 333px;
         z-index: 3;
     }
@@ -110,7 +111,7 @@ section {
 
     .left-feedback {
         @include blue-div-design($op: 0.1);
-        margin-left: -100%;
+        transform: translateX(-50vw);
     }
 
     .main-feedback {
@@ -119,88 +120,79 @@ section {
     }
 
     .right-feedback {
-        margin-left: 100%;
         @include blue-div-design($op: 0.1);
+        transform: translateX(50vw);
     }
 
 }
+
 
 p {
     @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
 }
 
-.animation-feedback {
-    animation: left-to-main-animation ease-in-out 500ms;
-    margin-left: 0%;
-    transform: scale(1.2);
-    @include blue-div-design($op: 0.3);
-}
 
 .left-to-main {
-    animation: left-to-main-animation ease-in-out 500ms;
-    margin-left: 0%;
-    transform: scale(1.2);
-    @include blue-div-design($op: 0.3);
+    animation: left-to-main-animation ease-in-out 300ms forwards;
 }
 
 .main-to-right {
-    animation: main-to-right-animation ease-in-out 500ms;
-    margin-left: 100%;
-    transform: scale(1);
-    @include blue-div-design($op: 0.1);
+    animation: main-to-right-animation ease-in-out 300ms forwards;
 }
 
 .right-to-left {
-    animation: right-to-left-animation ease-in-out 3000ms;
-    margin-left: -100%;
+    animation:  right-to-left-animation ease-in-out 300ms forwards;
     transform: scale(1);
     @include blue-div-design($op: 0.1);
 }
 
+
 @keyframes left-to-main-animation {
     0% {
-        margin-left: -100%;
-        transform: scale(1);
+        transform: translateX(-50vw);
+        scale: 1;
         @include blue-div-design($op: 0.1);
     }
 
     100% {
-        margin-left: 0%;
-        transform: scale(1.2);
+        transform: translateX(0vw);
+        scale: 1.2;
         @include blue-div-design($op: 0.3);
     }
 }
 
 @keyframes main-to-right-animation {
     0% {
-        margin-left: 0%;
-        transform: scale(1.2);
+        transform: translate(0vw);
+        scale: 1.2;
         @include blue-div-design($op: 0.3);
     }
 
     100% {
-        margin-left: 100%;
-        transform: scale(1);
+        transform: translate(50vw);
+        scale: 1;
         @include blue-div-design($op: 0.1);
     }
 }
 
 @keyframes right-to-left-animation {
     0% {
-        margin-right: -100%;
-        transform: scale(1);
-        @include blue-div-design($op: 0.1);
+        transform: translateX(50vw);
+        opacity: 1;
     }
 
     50% {
-        margin-right: -200%;
-        transform: scale(1);
-        @include blue-div-design($op: 0.1);
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+
+    51% {
+        transform: translateX(-100vw);
+        opacity: 0;
     }
 
     100% {
-        margin-left: -100%;
-        transform: scale(1);
-        @include blue-div-design($op: 0.1);
+        transform: translateX(-50vw);
+        opacity: 1;
     }
 }

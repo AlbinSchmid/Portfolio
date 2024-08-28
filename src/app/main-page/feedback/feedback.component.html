@@ -2,30 +2,30 @@
     <h1>What my colleagues say about me</h1>
     <div class="feedback-div">
         <img src="./../../../assets/icons/quotes.png" alt="quotes">
-        <div class="feedback" [ngClass]="{'left-to-main': changefeedback, 'left-feedback': !changefeedback}">
-            <p>{{ feedback[leftFeedbackId].text }}</p>
+        <div class="feedback" [ngClass]="choseWhichAnimation0()">
+            <p>{{ feedback[0].text }}</p>
             <div class="partner">
                 <div></div>
-                <p>{{ feedback[leftFeedbackId].name }}</p>
+                <p>{{ feedback[0].name }}</p>
             </div>
         </div>
-        <div class="feedback" [ngClass]="{'main-to-right': changefeedback, 'main-feedback': !changefeedback}">
-            <p>{{ feedback[mainFeedbackId].text }}</p>
+        <div class="feedback" [ngClass]="choseWhichAnimation1()">
+            <p>{{ feedback[1].text }}</p>
             <div class="partner">
                 <div></div>
-                <p>{{ feedback[mainFeedbackId].name }}</p>
+                <p>{{ feedback[1].name }}</p>
             </div>
         </div>
-        <div class="feedback"  [ngClass]="{'right-to-left': changefeedback, 'right-feedback': !changefeedback}">
-            <p>{{ feedback[rightFeedbackId].text }}</p>
+        <div class="feedback"  [ngClass]="choseWhichAnimation2()">
+            <p>{{ feedback[2].text }}</p>
             <div class="partner">
                 <div></div>
-                <p>{{ feedback[rightFeedbackId].name }}</p>
+                <p>{{ feedback[2].name }}</p>
             </div>
         </div>
     </div>
     <div class="buttons-div">
-        <button class="left-btn"></button>
+        <button class="left-btn" (click)="changeMainFeedback()"></button>
         <div class="points-div">
             <div></div>
             <div></div>

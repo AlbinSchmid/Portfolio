@@ -25,15 +25,55 @@ export class FeedbackComponent {
       name: 'T. Schulz - Frontend Developer'
     },
   ];
-  leftFeedbackId = 0;
-  mainFeedbackId = 1;
-  rightFeedbackId = 2;
+  currentMain = 1;
 
   changefeedback = false;
 
-  changeMainFeedback(){
+  changeMainFeedback() {
+    this.currentMain--;
+    if (this.currentMain <= -1) {
+      this.currentMain = this.feedback.length - 1;
+    }
+    console.log(this.currentMain);
+
+    console.log(this.feedback[this.currentMain]);
+
     this.changefeedback = true;
   }
 
+  choseWhichAnimation0() {
+    if (this.currentMain == 2 && this.changefeedback) {
+      return 'main-to-right';
+    } else if (this.currentMain == 0 && this.changefeedback) {
+      return 'left-to-main';
+    } else if (this.currentMain == 1 && this.changefeedback) {
+      return 'right-to-left';
+    } else  {
+      return 'left-feedback';
+    } 
+  }
 
+  choseWhichAnimation1() {
+    if (this.currentMain == 0) {
+      return 'main-to-right';
+    } else if (this.currentMain == 1 && this.changefeedback) {
+      return 'left-to-main';
+    } else if (this.currentMain == 2 && this.changefeedback) {
+      return 'right-to-left';
+    } else  {
+      return 'main-feedback';
+    } 
+  }
+
+  choseWhichAnimation2() {
+    if (this.currentMain == 1 && this.changefeedback) {
+      return 'main-to-right';
+    } else if (this.currentMain == 2 && this.changefeedback) {
+      return 'left-to-main';
+    } else if (this.currentMain == 0 && this.changefeedback) {
+      return 'right-to-left';
+    } else  {
+      return 'right-feedback';
+    } 
+  }
 }
