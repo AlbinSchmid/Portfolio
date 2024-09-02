@@ -6,6 +6,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-main-page',
@@ -18,6 +19,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
     SkillSetComponent,
     FeaturedProjectsComponent,
     FeedbackComponent,
+    ContactComponent
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'

@@ -9,7 +9,7 @@ h1 {
     position: absolute;
     height: 320px;
     width: 100%;
-    top: 15%;
+    top: 27%;
     z-index: 2;
     background: rgb(28, 28, 28);
     background: linear-gradient(90deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%), linear-gradient(260deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%);
@@ -19,7 +19,7 @@ section {
     position: relative;
     @include d-position($ai: center, $fd: column, $jc: normal);
     background-color: #1C1C1C;
-    height: 100vh;
+    padding: 48px 0;
     width: 100%;
     gap: 80px;
     overflow: hidden;

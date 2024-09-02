@@ -1,0 +1,97 @@
+@import './../../../styles.scss';
+
+p {
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+}
+
+h3 {
+    @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
+    color: #3DCFB6;
+    margin-bottom: 8px;
+}
+
+h1 {
+    @include t-design($ff: 'Fira Code', $fs: 64px, $fw: 700);
+    color: #3DCFB6;
+    margin-bottom: 20px;
+}
+
+h2 {
+    @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+    color: #3DCFB6;
+}
+
+mark.blue {
+    color: #3DCFB6;
+    background-color: transparent;
+}
+
+section {
+    @include d-position($jc: space-between, $ai: auto, $fd: row);
+    background-color: #1C1C1C;
+    height: 100vh;
+    width: 100%;
+    padding: 48px 96px;
+    gap: 50px;
+
+    div:nth-child(1) {
+        width: 50%;
+    }
+
+    div:nth-child(2) {
+        width: 50%;
+    }
+}
+
+form {
+    @include d-position($jc: normal, $ai: normal, $fd: column);
+
+    label:nth-child(1),
+    :nth-child(2),
+    :nth-child(3) {
+        @include d-position($jc: center, $ai: normal, $fd: column);
+        @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 500);
+        color: #3DCFB6;
+        gap: 10px;
+        border-bottom: #3DCFB6 1px solid;
+        border-top: #3DCFB6 1px solid;
+        padding: 32px;
+
+        input[type=name],
+        [type=email],
+        [type=message] {
+            @include t-design($ff: 'Karla', $fs: 18px, $fw: 500);
+            background-color: transparent;
+            height: 40px;
+            border: none;
+
+            :focus {
+                outline: none;
+            }
+        }
+    }
+
+    label:nth-child(4) {
+        @include d-position($jc: flex-start, $ai: center, $fd: row);
+        @include t-design($ff: 'Karla', $fs: 15px, $fw: 500);
+        background-color: #1C1C1C;
+        padding: 32px 0;
+        gap: 10px;
+
+        a {
+            @include t-design($ff: 'Fira Code', $fs: 15px, $fw: 400);
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            gap: 0;
+        }
+
+        input {
+            display: grid;
+            grid-template-columns: 1em auto;
+            gap: 0.5em;
+        }
+    }
+
+
+}
