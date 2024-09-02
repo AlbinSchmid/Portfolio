@@ -109,41 +109,46 @@ section {
     }
 
 
-    .left-feedback {
+    .left-feedback-normal {
+        animation:  right-to-left-animation ease-in-out 300ms forwards;
         @include blue-div-design($op: 0.1);
         transform: translateX(-50vw);
     }
 
-    .main-feedback {
-        @include blue-div-design($op: 0.3);
-        transform: scale(1.2);
-    }
-
-    .right-feedback {
+    .left-feedback-reverse {
+        animation:  right-to-left-animation ease-in-out 300ms reverse;
         @include blue-div-design($op: 0.1);
         transform: translateX(50vw);
     }
 
+    .main-feedback-normal {
+        animation: left-to-main-animation ease-in-out 300ms forwards;
+        @include blue-div-design($op: 0.3);
+        transform: scale(1.2);
+    }
+
+    .main-feedback-reverse {
+        animation: left-to-main-animation ease-in-out 300ms reverse;
+        @include blue-div-design($op: 0.1);
+        transform: translateX(-50vw);
+    }
+
+    .right-feedback-normal {
+        animation: main-to-right-animation ease-in-out 300ms forwards;
+        @include blue-div-design($op: 0.1);
+        transform: translateX(50vw);
+    }
+
+    .right-feedback-reverse {
+        animation: main-to-right-animation ease-in-out 300ms reverse;
+        @include blue-div-design($op: 0.3);
+        transform: scale(1.2);
+    }
 }
 
 
 p {
     @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
-}
-
-
-.left-to-main {
-    animation: left-to-main-animation ease-in-out 300ms forwards;
-}
-
-.main-to-right {
-    animation: main-to-right-animation ease-in-out 300ms forwards;
-}
-
-.right-to-left {
-    animation:  right-to-left-animation ease-in-out 300ms forwards;
-    transform: scale(1);
-    @include blue-div-design($op: 0.1);
 }
 
 

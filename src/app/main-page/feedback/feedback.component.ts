@@ -25,55 +25,69 @@ export class FeedbackComponent {
       name: 'T. Schulz - Frontend Developer'
     },
   ];
-  currentMain = 1;
+  currentFeedback = 1;
+  reverse = false;
+  forwardNumerator = 0;
+  reverseNumerator = 0;
 
-  changefeedback = false;
-
-  changeMainFeedback() {
-    this.currentMain--;
-    if (this.currentMain <= -1) {
-      this.currentMain = this.feedback.length - 1;
+  changeMainFeedback(i: number) {
+    if (i == -1) {
+        this.reverse = false;
+        this.currentFeedback += i;
+        if (this.currentFeedback == -1) {
+          this.currentFeedback = 2;
+        }
+    } else {
+        this.currentFeedback += i;
+        this.currentFeedback = this.currentFeedback % this.feedback.length;
+        this.reverse = true;
     }
-    console.log(this.currentMain);
-
-    console.log(this.feedback[this.currentMain]);
-
-    this.changefeedback = true;
   }
 
-  choseWhichAnimation0() {
-    if (this.currentMain == 2 && this.changefeedback) {
-      return 'main-to-right';
-    } else if (this.currentMain == 0 && this.changefeedback) {
-      return 'left-to-main';
-    } else if (this.currentMain == 1 && this.changefeedback) {
-      return 'right-to-left';
-    } else  {
-      return 'left-feedback';
-    } 
+  checkMainFeedback(id: number) {
+    console.log('current Feedback is ' + this.currentFeedback);
+    console.log('id ' + id);
+    console.log(this.reverse);
+    
+    
+    
+    if (id == this.currentFeedback) {
+      if (this.reverse) {
+        return 'right-feedback-reverse'
+      } else {
+        return `main-feedback-normal`;
+      }
+    } else if (this.besideFeedback(id, 'right')) {
+      if (this.reverse) {
+        return 'left-feedback-reverse'
+      } else {
+        return `right-feedback-normal`;
+      }
+    } else if (this.besideFeedback(id, 'left')) {
+      if (this.reverse) {
+        return 'main-feedback-reverse'
+      } else {
+        return `left-feedback-normal`;
+      }
+    } else {
+      return
+    }
   }
 
-  choseWhichAnimation1() {
-    if (this.currentMain == 0) {
-      return 'main-to-right';
-    } else if (this.currentMain == 1 && this.changefeedback) {
-      return 'left-to-main';
-    } else if (this.currentMain == 2 && this.changefeedback) {
-      return 'right-to-left';
-    } else  {
-      return 'main-feedback';
-    } 
-  }
+  besideFeedback(id: number, position: string) {
+    if (position == 'left') {
+      if (this.currentFeedback - 1 == -1) {
+        return id == 2
+      } else {
+        return id == this.currentFeedback - 1;
+      }
 
-  choseWhichAnimation2() {
-    if (this.currentMain == 1 && this.changefeedback) {
-      return 'main-to-right';
-    } else if (this.currentMain == 2 && this.changefeedback) {
-      return 'left-to-main';
-    } else if (this.currentMain == 0 && this.changefeedback) {
-      return 'right-to-left';
-    } else  {
-      return 'right-feedback';
-    } 
+    } else {
+      if (this.currentFeedback + 1 == 3) {
+        return id == 0
+      } else {
+        return id == this.currentFeedback + 1;
+      }
+    }
   }
 }
