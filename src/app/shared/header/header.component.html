@@ -22,4 +22,10 @@
     <a href="/">
         <img src="./../../../assets/img/logo.png" alt="logo">
     </a>
+    <div class="phone-menu" (click)="openPhoneMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <app-phone-menu [ngStyle]="{'display': showPhoneMenu ? 'flex' : ''}" [showPhoneMenu]="showPhoneMenu" (closeMenu)="closePhoneMenu($event)"></app-phone-menu>
 </header>

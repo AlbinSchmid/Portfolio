@@ -5,26 +5,27 @@ section {
     background-color: #1C1C1C;
     height: 100vh;
     width: 100%;
-    padding: 0 96px;
+    padding: 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+    gap: clamp(1.25rem, -9.1rem + 18vw, 12.5rem);
 }
 
 .img-div {
-    padding-top: 80px;
+    @include d-position($jc: center, $ai: center);
+    position: relative;
 
     img {
-        width: 568px;
-        height: 568px;
+        width: clamp(16.25rem, 12.4rem + 19.25vw, 35.5rem);
+        height:   clamp(16.25rem, 12.4rem + 19.25vw, 35.5rem);
         border-radius: 25px;
     }
 
     .person-img {
-        position: relative;
+        
         z-index: 2;
     }
 
     .animation-img {
         position: absolute;
-        left: 96px;
         z-index: 1;
     }
 }
@@ -36,7 +37,7 @@ section {
 
 .right-part {
     @include d-position($fd: column, $ai: auto);
-    padding-top: 200px;
+    padding-top: clamp(0rem, -11.5rem + 20vw, 12.5rem);
     gap: 20px;
 
     h3 {
@@ -48,10 +49,11 @@ section {
 .text-div {
     @include blue-div-design();
     @include d-position($fd: column, $ai: auto, $jc: auto);
+    width: auto !important;
     gap: 14px;
 
     p {
-        @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+        @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
     }
 
     span {
@@ -60,15 +62,16 @@ section {
     }
 
     h1 {
-        @include t-design($ff: 'Fira Code', $fs: 64px, $fw: 700);
+        @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
         color: #3DCFB6;
     }
 
     div {
-        @include d-position();
-        gap: 40px;
+        @include d-position($ai: normal);
+        gap: clamp(0.625rem, 0.25rem + 1.875vw, 2.5rem);
 
         img {
+            min-width: 32px;
             width: 32px;
             height: 32px;
         }
@@ -82,5 +85,13 @@ section {
 
     100% {
         transform: translate(-6%, 6%);
+    }
+}
+
+@media (max-width: 920px) {
+    section {
+        @include d-position($jc: space-between, $ai: center, $fd: column);
+        gap: 40px;
+        height: auto;
     }
 }

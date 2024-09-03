@@ -1,6 +1,7 @@
 app-header {
     position: absolute;
     top: 48px;
-    left: 96px;
-    right: 96px;
+    left: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+    right: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
 }
+

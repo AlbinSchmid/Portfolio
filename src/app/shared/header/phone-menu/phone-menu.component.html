@@ -1,0 +1,16 @@
+<section (click)="closePhoneMenu()">
+    <div class="frame">
+        <nav>
+            <a href="#about-me">About me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+
+            <button (click)="changeLanguage()">
+                <div [ngClass]="{'div-DE': germanLanguage}">DE</div>
+                <span
+                    [ngClass]="{'slider-animation-EN': englishLanguage, 'slider-animation-DE': germanLanguage}"></span>
+                <div [ngClass]="{'div-EN': englishLanguage}">EN</div>
+            </button>
+        </nav>
+    </div>
+</section>

@@ -50,7 +50,7 @@ a {
     @include d-position();
     background-color: transparent;
     border: 1px solid;
-    padding: 12px 24px;
+    padding: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem) clamp(0.625rem, 0.45rem + 0.875vw, 1.5rem);;
     border-radius: 25px;
     @include t-design($fs: 18px, $fw: 400);
     overflow: hidden;

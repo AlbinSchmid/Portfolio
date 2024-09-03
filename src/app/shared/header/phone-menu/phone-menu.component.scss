@@ -1,38 +1,52 @@
-@import './../../../styles.scss';
+@import './../../../../styles.scss';
 
+section {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000000, 0.4);
+}
 
-header {
-    @include d-position();
+.frame {
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 40px 60px;
+    background-image: url(./../../../../assets/img/aot-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    border: 1px solid #3DCFB6;
 
     nav {
-        @include d-position($jc: auto);
-        width: 100%;
-        gap: 24px;
-    }
+        height: 100%;
+        gap: 35px;
+        @include d-position($fd: column);
 
-    img {
-        width: 150px;
-    }
-}
-
-a {
-    @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
-    @include d-position();
-    text-decoration: none;
-    transition: 100ms all;
-
-    div {
-        top: 45px;
-    }
-
-    &:hover {
-        color: #3DCFB6;
-    }
-
-    &:hover>div {
-        background-color: #3DCFB6
+        a {
+            @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
+            @include d-position();
+            text-decoration: none;
+            transition: 100ms all;
+        
+            div {
+                top: 45px;
+            }
+        
+            &:hover {
+                color: #3DCFB6;
+            }
+        }
     }
 }
+
+
+
+
+
 
 button {
     @include d-position();
@@ -103,47 +117,5 @@ button {
 
     100% {
         transform: translateX(0%);
-    }
-}
-
-.phone-menu {
-    @include d-position($jc: space-between, $fd: column, $ai: space-between);
-    width: 40px;
-    height: 30px;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    div {
-        width: 100%;
-        height: 3px;
-        background-color: #3DCFB6;
-    }
-}
-
-app-phone-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
-}
-
-@media (max-width: 700px) {
-    nav {
-        display: none !important;
-    }
-
-    header {
-        @include d-position($jc: space-between);
-    }
-}
-
-@media (min-width: 700px) {
-    .phone-menu {
-        display: none;
     }
 }

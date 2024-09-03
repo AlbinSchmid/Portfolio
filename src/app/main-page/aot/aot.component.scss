@@ -1,14 +1,14 @@
 @import './../../../styles.scss';
 
 section {
-    padding: 48px 96px 0 96px;
+    @include d-position($jc: space-between, $ai: flex-end);
+    padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem) 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     background-image: url(./../../../assets/img/aot-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
     width: 100%;
-    @include d-position($jc: space-between, $ai: flex-end);
 }
 
 .main-div {
@@ -16,17 +16,17 @@ section {
     height: 100%;
 
     h1 {
-        @include t-design($fs: 128px, $fw: 700);
+        @include t-design($fs: clamp(3.875rem, 3.05rem + 4.125vw, 8rem), $fw: 700);
     }
 
     h3 {
-        @include t-design($ff: 'Fira Code', $fs: 40px, $fw: 400);
+        @include t-design($ff: 'Fira Code', $fs: clamp(1.5rem, 1.3rem + 1vw, 2.5rem), $fw: 400);
     }
 
     div {
         display: flex;
         position: relative;
-        gap: 48px;
+        gap: clamp(0.625rem, 0.15rem + 2.375vw, 3rem);
         margin-top: 40px;
     }
 }
@@ -77,6 +77,10 @@ section {
         &:hover {
             color: #3DCFB6;
         }
+
+        img {
+            display: none;
+        }
     }
 
     .a-git {
@@ -108,5 +112,46 @@ section {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .a-email {
+        position: relative;
+        @include d-position();
+        margin-bottom: 0 !important;
+        p {
+            display: none;
+        }
+
+        img {
+            display: block !important;
+        }
+
+        div{
+            top: 32px;
+        }
+
+        &:hover>div {
+            background-color: #3DCFB6
+        }
+    }
+
+    .left-line {
+        position: absolute;
+        left: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+        bottom: 0;
+    }
+
+    .right-line {
+        position: absolute;
+        right: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+        bottom: 0;
+    }
+
+    section {
+        @include d-position($jc: center);
+        margin-top: -50px;
+        text-align: center;
     }
 }

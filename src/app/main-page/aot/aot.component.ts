@@ -9,11 +9,22 @@ import { Component } from '@angular/core';
 })
 export class AotComponent {
   gitImgSrc = 'blue';
-  changeImgSrc(mouseLocation: string){
-    if (mouseLocation == 'atImg') {
-      this.gitImgSrc = 'white';
-    } else if(mouseLocation == 'outImg'){
-      this.gitImgSrc = 'blue';
+  emailImgSrc = 'blue';
+
+  changeImgSrc(whichIcon: string){
+    if (whichIcon == 'git') {
+      if (this.gitImgSrc == 'blue') {
+        this.gitImgSrc = 'white';
+      } else {
+        this.gitImgSrc = 'blue';
+      }
+    } else {
+      if (this.emailImgSrc == 'blue') {
+        this.emailImgSrc = 'white';
+      } else {
+        this.emailImgSrc = 'blue';
+      }
     }
   }
+
 }
