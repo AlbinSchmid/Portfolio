@@ -28,8 +28,6 @@ section {
         position: relative;
         gap: 48px;
         margin-top: 40px;
-
-        
     }
 }
 
@@ -44,7 +42,7 @@ section {
         @include d-position($ai: flex-end);
     }
 
-    button {
+    a {
         background: transparent;
         border: 1px solid #3DCFB6;
         border-radius: 25px;
@@ -54,10 +52,7 @@ section {
             height: 18px;
             width: 16px;
             transition: all 125ms;
-        }
-
-        &:hover>img {
-            transform: translateY(8px);
+            animation: bounce 700ms ease-in-out infinite;
         }
     }
 }
@@ -102,5 +97,16 @@ section {
         }
 
     }
+}
 
+@keyframes bounce {
+    0%{
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

@@ -49,7 +49,7 @@ section {
                 gap: 32px;
                 margin-top: 40px;
 
-                button {
+                a {
                     @include d-position();
                     @include t-design($ff: 'Karla', $fs: 18px);
                     gap: 8px;

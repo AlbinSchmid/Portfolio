@@ -45,12 +45,6 @@ export class FeedbackComponent {
   }
 
   checkMainFeedback(id: number) {
-    console.log('current Feedback is ' + this.currentFeedback);
-    console.log('id ' + id);
-    console.log(this.reverse);
-    
-    
-    
     if (id == this.currentFeedback) {
       if (this.reverse) {
         return 'right-feedback-reverse'

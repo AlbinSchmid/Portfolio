@@ -26,6 +26,16 @@ mark.blue {
     background-color: transparent;
 }
 
+.error-span {
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+    color: rgba(#EC7B7B, 0.8);
+}
+
+.error-span-checkbox {
+    @include t-design($ff: 'Karla', $fs: 14px, $fw: 400);
+    color: rgba(#EC7B7B, 0.8);
+}
+
 section {
     @include d-position($jc: space-between, $ai: auto, $fd: row);
     background-color: #1C1C1C;
@@ -49,10 +59,40 @@ form {
         @include d-position($jc: center, $ai: normal, $fd: column);
         @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 500);
         color: #3DCFB6;
-        gap: 10px;
-        border-bottom: #3DCFB6 1px solid;
         border-top: #3DCFB6 1px solid;
+        border-bottom: #3DCFB6 1px solid;
         padding: 32px;
+
+        &:nth-child(1) {
+            &:hover {
+                border-top: #3DCFB6 2px solid;
+                border-bottom: #3DCFB6 2px solid;
+                margin-bottom: -1px;
+                margin-top: -1px;
+            }
+        }
+
+        &:nth-child(2) {
+            margin-top: -1px;
+
+            &:hover {
+                border-top: #3DCFB6 2px solid;
+                border-bottom: #3DCFB6 2px solid;
+                margin-top: -2px;
+                margin-bottom: -1px;
+            }
+        }
+
+        &:nth-child(3) {
+            margin-top: -1px;
+
+            &:hover {
+                border-top: #3DCFB6 2px solid;
+                border-bottom: #3DCFB6 2px solid;
+                margin-top: -2px;
+                margin-bottom: -1px;
+            }
+        }
 
         input[type=name],
         [type=email],
@@ -62,7 +102,7 @@ form {
             height: 40px;
             border: none;
 
-            :focus {
+            &:focus {
                 outline: none;
             }
         }
@@ -71,7 +111,7 @@ form {
     .privacy-policy {
         @include d-position($jc: normal, $ai: center, $fd: row);
         gap: 30px;
-        padding: 32px 0;
+        padding: 32px 0 10px 0;
 
         label {
             display: block;
@@ -81,7 +121,7 @@ form {
 
             input {
                 position: absolute;
-                opacity: 0;
+                opacity: 1;
                 cursor: pointer;
                 height: 0px;
                 width: 0px;
@@ -122,6 +162,13 @@ form {
                 @include t-design($ff: 'Fira Code', $fs: 15px, $fw: 400);
                 color: #3DCFB6;
                 text-decoration: none;
+                transition: 125ms ease-in-out;
+
+                &:hover {
+                    color: white;
+                    text-decoration: underline;
+                    text-decoration-color: #3DCFB6;
+                }
             }
         }
     }
@@ -129,12 +176,10 @@ form {
     .submit-btn {
         @include d-position($jc: center, $ai: center, $fd: column);
         width: 100%;
+        margin-top: 20px;
 
         button {
             width: 150px;
         }
     }
-
-
-
 }

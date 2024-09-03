@@ -14,19 +14,19 @@
                     }
                 </div>
                 <div class="btn-div">
-                    <button>
+                    <a href="{{ projects[currentId].gitHub }}" target="_blank">
                         GitHub
-                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="">
-                    </button>
-                    <button>
+                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
+                    </a>
+                    <a href="{{ projects[currentId].liveTest }}" target="_blank">
                         Live Test
-                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="">
-                    </button>
+                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
+                    </a>
                 </div>
             </div>
             <div class="right-part">
                 <button class="close-btn" (click)="closeDetailView()"></button>
-                <img src="./../../../../assets/img/{{ projects[currentId].img }}.png" alt="" class="project-img">
+                <img src="./../../../../assets/img/{{ projects[currentId].img }}.png" alt="website logo" class="project-img">
                 <button class="next-project-btn" (click)="nextProject()">
                     Next project
                     <div class="img-div"></div>

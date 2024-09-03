@@ -1,5 +1,4 @@
 import { Component, EventEmitter, inject, Input, Output, output } from '@angular/core';
-import { Projectssss } from '../../../interfaces/projects.interface';
 import { CommonModule } from '@angular/common';
 import { transition } from '@angular/animations';
 
@@ -49,15 +48,16 @@ export class DetailProjectComponent {
   @Input() detailView = true;
   @Output() closeDetail = new EventEmitter<boolean>();
 
+  
   closeDetailView() {
     this.detailView = false;
     this.closeDetail.emit(this.detailView)
   }
+
 
   nextProject(){
     this.currentId++;
     this.currentId = this.currentId % this.projects.length;
     
   }
-
 }

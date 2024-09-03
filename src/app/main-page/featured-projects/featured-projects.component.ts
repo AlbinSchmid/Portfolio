@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DetailProjectComponent } from './detail-project/detail-project.component';
-import { Projectssss } from '../../interfaces/projects.interface';
 
 @Component({
   selector: 'app-featured-projects',
@@ -14,7 +13,7 @@ import { Projectssss } from '../../interfaces/projects.interface';
   styleUrl: './featured-projects.component.scss'
 })
 export class FeaturedProjectsComponent {
-  projects: Projectssss[] = [
+  projects = [
     {
       id: '01',
       name: 'Join',
@@ -49,7 +48,7 @@ export class FeaturedProjectsComponent {
       id: '02',
       name: 'El Pollo Loco',
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      gitHub: '',
+      gitHub: 'https://github.com/AlbinSchmid/El-Pollo-Loco',
       liveTest: '',
       img: 'pollo-loco',
       skills: [

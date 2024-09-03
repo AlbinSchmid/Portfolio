@@ -5,6 +5,10 @@ h1 {
     color: #3DCFB6;
 }
 
+p {
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
+}
+
 .edge-shadow {
     position: absolute;
     height: 320px;
@@ -83,7 +87,7 @@ section {
     img {
         position: absolute;
         top: 10px;
-        left: 333px;
+        left: 29%;
         z-index: 3;
     }
 
@@ -144,11 +148,6 @@ section {
         @include blue-div-design($op: 0.3);
         transform: scale(1.2);
     }
-}
-
-
-p {
-    @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
 }
 
 

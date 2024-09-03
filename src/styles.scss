@@ -24,13 +24,19 @@
     margin: 0;
     padding: 0;
     color: #D9D9D9;
+    scroll-behavior: smooth;
 }
 
-button {
+button, a {
     &:hover {
         cursor: pointer;
     }
 }
+
+a {
+    text-decoration: none;
+}
+
 
 .hover-point {
     position: absolute;
