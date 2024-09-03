@@ -46,9 +46,7 @@ section {
 form {
     @include d-position($jc: normal, $ai: normal, $fd: column);
 
-    label:nth-child(1),
-    :nth-child(2),
-    :nth-child(3) {
+    .contact-label {
         @include d-position($jc: center, $ai: normal, $fd: column);
         @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 500);
         color: #3DCFB6;
@@ -71,27 +69,73 @@ form {
         }
     }
 
-    label:nth-child(4) {
-        @include d-position($jc: flex-start, $ai: center, $fd: row);
-        @include t-design($ff: 'Karla', $fs: 15px, $fw: 500);
-        background-color: #1C1C1C;
+    .privacy-policy {
+        @include d-position($jc: normal, $ai: center, $fd: row);
+        gap: 30px;
         padding: 32px 0;
-        gap: 10px;
 
-        a {
-            @include t-design($ff: 'Fira Code', $fs: 15px, $fw: 400);
-            text-decoration: none;
-            border: none;
-            padding: 0;
-            gap: 0;
+        label {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            margin-top: -17px;
+
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0px;
+                width: 0px;
+
+                &:checked~span:after {
+                    display: block;
+                }
+            }
+
+            span {
+                @include d-position($jc: center, $ai: center, $fd: column);
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 18px;
+                width: 18px;
+                border: 2px solid #3DCFB6;
+                border-radius: 2px;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    bottom: 2px;
+                    width: 4px;
+                    height: 10px;
+                    border: solid #3DCFB6;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
+            }
         }
 
-        input {
-            display: grid;
-            grid-template-columns: 1em auto;
-            gap: 0.5em;
+        p {
+            @include t-design($ff: 'Karla', $fs: 15px, $fw: 400);
+
+            a {
+                @include t-design($ff: 'Fira Code', $fs: 15px, $fw: 400);
+                color: #3DCFB6;
+                text-decoration: none;
+            }
         }
     }
+
+    .submit-btn {
+        @include d-position($jc: center, $ai: center, $fd: column);
+        width: 100%;
+
+        button {
+            width: 150px;
+        }
+    }
+
 
 
 }
