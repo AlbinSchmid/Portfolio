@@ -1,0 +1,52 @@
+@import './../../../styles.scss';
+
+section {
+    @include d-position($ai: center, $fd: row, $jc: space-between);
+    background-color: #1C1C1C;
+    padding: 48px 96px;
+    width: 100%;
+
+    h5 {
+        @include t-design($fs: 18px, $ff: 'Fira Code');
+        color: #3DCFB6;
+    }
+
+    div {
+        @include d-position($ai: normal, $fd: column, $jc: center);
+        &:nth-child(1) {
+            img {
+                width: 150px;
+                margin-bottom: 25px;
+            }
+
+            p {
+                @include t-design($fs: 16px, $ff: 'Karla');
+                line-height: 30px;
+            }
+        }
+
+        &:nth-child(3) {
+            gap: 6px;
+            a {
+                @include d-position($ai: normal, $fd: column, $jc: center);
+                @include t-design($fs: 16px, $ff: 'Karla');
+                position: relative;
+                text-decoration: none;
+                transition: all 200ms;
+
+                &:hover {
+                    color: #3DCFB6;
+                }
+
+                div {
+                    left: -15px;
+                }
+
+                &:hover>div {
+                    background-color: #3DCFB6
+                }
+            }
+            
+        }
+    }
+}
