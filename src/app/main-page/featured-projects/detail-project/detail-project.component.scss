@@ -1,12 +1,12 @@
 @import './../../../../styles.scss';
 
 h1 {
-    @include t-design($ff: 'Karla', $fs: 128px, $fw: 700);
+    @include t-design($ff: 'Karla', $fs: clamp(4.5rem, 3.8rem + 3.5vw, 8rem), $fw: 700);
     color: #3DCFB6;
 }
 
 h2 {
-    @include t-design($ff: 'Fira Code', $fs: 64px, $fw: 700);
+    @include t-design($ff: 'Fira Code', $fs: clamp(4rem, 4.1rem + -0.5vw, 3.5rem), $fw: 700);
     margin-top: -20px;
     margin-bottom: 10px;
 }
@@ -18,7 +18,7 @@ h3 {
 }
 
 p {
-    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+    @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
     max-width: 520px
 }
 
@@ -28,6 +28,7 @@ section {
     height: 100%;
     width: 100%;
     background-color: rgba(#000000, 0.4);
+    padding: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
 
 
     .frame {
@@ -37,9 +38,9 @@ section {
         background-size: cover;
         background-position: center;
         border-radius: 25px;
-        padding: 70px;
+        padding: clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem);
         @include d-position();
-        gap: 80px;
+        gap: clamp(1.5rem, -3.8421rem + 7.3684vw, 5rem);
 
         .left-part {
             @include d-position($fd: column, $ai: normal);
@@ -77,7 +78,7 @@ section {
 
         .right-part {
             @include d-position($fd: column, $ai: flex-end);
-            gap: 40px;
+            gap: clamp(0.5rem, 0.1rem + 2vw, 2.5rem);
 
             .project-img {
                 width: 520px;
@@ -145,4 +146,50 @@ section {
     &:hover {
         background-image: url(./../../../../assets/icons/cross-blue-big.png);
     }
+}
+
+@media (max-width: 1160px) {
+    .frame {
+        position: relative;
+        @include d-position($fd: column-reverse !important);
+        padding: 15px clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem) !important;
+    }
+
+    .next-project-btn {
+        position: absolute;
+        bottom: 26px;
+    }
+
+    .project-img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .skill-div {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 560px) {
+    .frame {
+        padding: 15px clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem) 80px !important;
+    }
+
+    .next-project-btn {
+        position: absolute;
+        bottom: 26px;
+    }
+
+    .btn-div {
+        gap: 10px !important;
+
+        a {
+            padding: 10px 18px !important;
+        }
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
 }

@@ -3,7 +3,7 @@
 section {
     @include d-position($ai: center, $fd: row, $jc: space-between);
     background-color: #1C1C1C;
-    padding: 48px 96px;
+    padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     width: 100%;
 
     h5 {
@@ -48,5 +48,18 @@ section {
             }
             
         }
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        position: relative;
+    }
+    
+    h5 {
+        @include d-position();
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - clamp(0.5rem, -0.6rem + 5.5vw, 6rem) * 2);
     }
 }

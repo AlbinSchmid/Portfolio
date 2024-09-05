@@ -84,18 +84,11 @@ section {
     position: relative;
     overflow: hidden;
 
-    img {
-        position: absolute;
-        top: 10px;
-        left: 29%;
-        z-index: 3;
-    }
-
     .feedback {
         @include d-position($fd: column, $jc: space-between);
         position: absolute;
-        width: 560px;
         height: 260px;
+        width: 568px !important;
 
         .partner {
             @include d-position($jc: space-between);
@@ -114,7 +107,7 @@ section {
 
 
     .left-feedback-normal {
-        animation:  right-to-left-animation ease-in-out 300ms forwards;
+        animation:  right-to-left-animation ease-in-out 3000ms;
         @include blue-div-design($op: 0.1);
         transform: translateX(-50vw);
     }
@@ -147,6 +140,20 @@ section {
         animation: main-to-right-animation ease-in-out 300ms reverse;
         @include blue-div-design($op: 0.3);
         transform: scale(1.2);
+    }
+}
+
+.help-container {
+    position: absolute;
+    top: 180px;
+    width: 682px;
+    height: 10px;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: -50px;
+        z-index: 3;
     }
 }
 
@@ -199,4 +206,10 @@ section {
         transform: translateX(-50vw);
         opacity: 1;
     }
+}
+
+@media (max-width: 1280px) {
+    // .left-feedback-normal {
+    //     transform: translateX(-60vw) !important;
+    // }
 }

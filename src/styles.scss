@@ -11,12 +11,13 @@
     font-weight: $fw;
 }
 
-@mixin blue-div-design($op: 0.1) {
-    width: 568px;
+@mixin blue-div-design($op: 0.1, $mw: 568px) {
+    width: auto;
+    max-width: $mw;
     border-radius: 25px;
     border: solid 1px #3DCFB6;
     background-color: rgba(#3DCFB6, $op);
-    padding: 32px;
+    padding: clamp(0.625rem, 0.35rem + 1.375vw, 2rem);;
 }
 
 * {
@@ -36,7 +37,6 @@ button, a {
 a {
     text-decoration: none;
 }
-
 
 .hover-point {
     position: absolute;

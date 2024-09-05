@@ -14,7 +14,7 @@
             (mouseout)="hideArrow()" (click)="showDetail($index)">
                 <div>
                     <h2>{{ project.name}}</h2>
-                    <img src="./../../../assets/icons/arrow-outward.png" alt=""
+                    <img src="./../../../assets/icons/arrow-outward.png" alt="arrow-outward"
                         [ngStyle]="{'opacity': $index == hoverId ? '1' : '0'}">
                 </div>
                 <div>
@@ -25,8 +25,8 @@
                 </div>
             </div>
             <div class="projects-img-div">
-                <img src="./../../../assets/img/{{ project.img }}.png" class="project-img" alt="" [ngStyle]="{'opacity': $index == hoverId ? '1' : '0', 'margin-top': $index == 0 ? '60px' : '0', 'margin-bottom': $index == projects.length - 1 ? '60px' : '0'}">
-                <img src="./../../../assets/img/animation-img.png" class="animation-img" alt="" [ngStyle]="{'opacity': $index == hoverId ? '1' : '0', 'margin-top': $index == 0 ? '60px' : '0', 'margin-bottom': $index == projects.length - 1 ? '60px' : '0'}">
+                <img src="./../../../assets/img/{{ project.img }}.png" class="project-img" alt="website logo" [ngStyle]="{'opacity': $index == hoverId ? '1' : '0', 'margin-top': $index == 0 ? '60px' : '0', 'margin-bottom': $index == projects.length - 1 ? '60px' : '0'}">
+                <img src="./../../../assets/img/animation-img.png" class="animation-img" alt="background" [ngStyle]="{'opacity': $index == hoverId ? '1' : '0', 'margin-top': $index == 0 ? '60px' : '0', 'margin-bottom': $index == projects.length - 1 ? '60px' : '0'}">
             </div>
         </div>
         }

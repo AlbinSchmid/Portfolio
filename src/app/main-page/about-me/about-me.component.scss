@@ -1,6 +1,7 @@
 @import './../../../styles.scss';
 
 section {
+    position: relative;
     @include d-position($jc: space-between, $ai: auto);
     background-color: #1C1C1C;
     height: 100vh;
@@ -15,12 +16,12 @@ section {
 
     img {
         width: clamp(16.25rem, 12.4rem + 19.25vw, 35.5rem);
-        height:   clamp(16.25rem, 12.4rem + 19.25vw, 35.5rem);
+        height: clamp(16.25rem, 12.4rem + 19.25vw, 35.5rem);
         border-radius: 25px;
     }
 
     .person-img {
-        
+
         z-index: 2;
     }
 
@@ -49,7 +50,6 @@ section {
 .text-div {
     @include blue-div-design();
     @include d-position($fd: column, $ai: auto, $jc: auto);
-    width: auto !important;
     gap: 14px;
 
     p {
@@ -89,6 +89,10 @@ section {
 }
 
 @media (max-width: 920px) {
+    .text-div {
+        @include blue-div-design($mw: 100%);
+    }
+
     section {
         @include d-position($jc: space-between, $ai: center, $fd: column);
         gap: 40px;
