@@ -3,6 +3,7 @@
 h1 {
     @include t-design($ff: 'Fira Code', $fs: 32px, $fw: 700);
     color: #3DCFB6;
+    padding: 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
 }
 
 p {
@@ -11,12 +12,16 @@ p {
 
 .edge-shadow {
     position: absolute;
-    height: 320px;
+    height: 440px;
     width: 100%;
-    top: 27%;
+    top: 18%;
     z-index: 2;
     background: rgb(28, 28, 28);
     background: linear-gradient(90deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%), linear-gradient(260deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%);
+}
+
+.blue-div {
+    background-color: #3DCFB6;
 }
 
 section {
@@ -76,7 +81,6 @@ section {
 
 }
 
-
 .feedback-div {
     @include d-position();
     width: 100%;
@@ -88,7 +92,7 @@ section {
         @include d-position($fd: column, $jc: space-between);
         position: absolute;
         height: 260px;
-        width: 568px !important;
+        width: auto;
 
         .partner {
             @include d-position($jc: space-between);
@@ -105,17 +109,9 @@ section {
 
     }
 
-
     .left-feedback-normal {
-        animation:  right-to-left-animation ease-in-out 300ms;
+        animation:  right-to-left-animation ease-in-out 300ms forwards;
         @include blue-div-design($op: 0.1);
-        transform: translateX(-50vw);
-    }
-
-    .left-feedback-reverse {
-        animation:  right-to-left-animation-reverse ease-in-out 300ms reverse;
-        @include blue-div-design($op: 0.1);
-        transform: translateX(50vw);
     }
 
     .main-feedback-normal {
@@ -123,17 +119,22 @@ section {
         @include blue-div-design($op: 0.3);
         transform: scale(1.2);
     }
-
-    .main-feedback-reverse {
-        animation: left-to-main-animation-reverse ease-in-out 300ms reverse;
-        @include blue-div-design($op: 0.1);
-        transform: translateX(-50vw);
-    }
-
+     
     .right-feedback-normal {
         animation: main-to-right-animation ease-in-out 300ms forwards;
         @include blue-div-design($op: 0.1);
-        transform: translateX(50vw);
+    }
+    
+    .main-feedback-reverse {
+        animation: left-to-main-animation-reverse ease-in-out 300ms reverse;
+        @include blue-div-design($op: 0.1);
+        transform: translateX(calc(-23vw - 82%));
+    }
+
+    .left-feedback-reverse {
+        animation:  right-to-left-animation-reverse ease-in-out 300ms reverse;
+        @include blue-div-design($op: 0.1);
+        transform: translateX(calc(+23vw + 82%));
     }
 
     .right-feedback-reverse {
@@ -143,12 +144,9 @@ section {
     }
 }
 
-
-
-
 @keyframes left-to-main-animation {
     0% {
-        transform: translateX(-50vw);
+        transform: translateX(calc(-23vw - 82%));
         scale: 1;
         @include blue-div-design($op: 0.1);
     }
@@ -168,7 +166,7 @@ section {
     }
 
     100% {
-        transform: translate(50vw);
+        transform: translate(calc(+23vw + 82%));
         scale: 1;
         @include blue-div-design($op: 0.1);
     }
@@ -176,7 +174,7 @@ section {
 
 @keyframes right-to-left-animation {
     0% {
-        transform: translateX(50vw);
+        transform: translateX(calc(+23vw + 82%));
         opacity: 1;
     }
 
@@ -191,16 +189,14 @@ section {
     }
 
     100% {
-        transform: translateX(-50vw);
+        transform: translateX(calc(-23vw - 82%));
         opacity: 1;
     }
 }
 
-
-
 @keyframes left-to-main-animation-reverse {
     0% {
-        transform: translateX(-50vw);
+        transform: translateX(calc(-23vw - 82%));
         scale: 1;
         @include blue-div-design($op: 0.1);
     }
@@ -220,7 +216,7 @@ section {
     }
 
     100% {
-        transform: translate(50vw);
+        transform: translate(calc(+23vw + 82%));
         scale: 1;
         @include blue-div-design($op: 0.1);
     }
@@ -228,7 +224,7 @@ section {
 
 @keyframes right-to-left-animation-reverse {
     0% {
-        transform: translateX(50vw);
+        transform: translateX(calc(+23vw + 82%));
         opacity: 1;
     }
 
@@ -243,15 +239,9 @@ section {
     }
 
     100% {
-        transform: translateX(-50vw);
+        transform: translateX(calc(-23vw - 82%));
         opacity: 1;
     }
-}
-
-@media (max-width: 1280px) {
-    // .left-feedback-normal {
-    //     transform: translateX(-60vw) !important;
-    // }
 }
 
 .help-container {
@@ -262,8 +252,64 @@ section {
 
     img {
         position: absolute;
-        top: 0;
+        top: -20px;
         left: -50px;
         z-index: 3;
     }
+}
+
+@media (max-width: 1030px) {
+    .edge-shadow {
+        display: none;
+    }
+
+    .feedback, .help-container {
+        width: 70% !important;
+        height: 300px !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .feedback-div {
+        height: 550px !important;
+    }
+
+    .help-container {
+        width: 80%;
+        
+        img {
+            top: 20%;
+        }
+    }
+}
+
+@media (max-width: 666px) {
+    
+    .help-container {
+        img {
+            top: 30%;
+        }
+    }
+
+}
+
+@media (max-width: 520px) {
+    .feedback {
+        height: 400px !important;
+    }
+
+    .help-container {
+        img {
+            top: 12%;
+            left: -30px;
+        }
+    }
+
+}
+
+@media (max-width: 385px) {
+    .feedback {
+        height: 450px !important;
+    }
+
 }

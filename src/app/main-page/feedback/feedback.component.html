@@ -29,9 +29,9 @@
     <div class="buttons-div">
         <button class="left-btn" (click)="changeMainFeedback(1)"></button>
         <div class="points-div">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div [ngStyle]="{'background-color': currentFeedback == 2 ? '#3DCFB6' : ''}"></div>
+            <div [ngStyle]="{'background-color': currentFeedback == 1 ? '#3DCFB6' : ''}"></div>
+            <div [ngStyle]="{'background-color': currentFeedback == 0 ? '#3DCFB6' : ''}"></div>
         </div>
         <button class="right-btn" (click)="changeMainFeedback(-1)"></button>
     </div>

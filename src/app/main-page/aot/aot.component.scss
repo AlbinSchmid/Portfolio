@@ -149,6 +149,10 @@ section {
         bottom: 0;
     }
 
+    .hover-point {
+        display: none;
+    }
+
     section {
         @include d-position($jc: center);
         margin-top: -50px;
