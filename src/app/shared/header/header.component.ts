@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { PhoneMenuComponent } from './phone-menu/phone-menu.component';
+import { LanguageService } from '../service/language.service';
 
 
 @Component({
@@ -18,6 +19,10 @@ export class HeaderComponent {
   englishLanguage: boolean = false;
   showPhoneMenu = false;
 
+  constructor(public languageService: LanguageService) {
+
+  }
+
 
   changeLanguage(){
     if (this.germanLanguage) {
@@ -27,6 +32,8 @@ export class HeaderComponent {
       this.englishLanguage = false;
       this.germanLanguage = true;
     }
+    this.languageService.germanLanguage = this.germanLanguage;
+    this.languageService.englishLanguage = this.englishLanguage;
   }
 
   openPhoneMenu() {

@@ -32,56 +32,38 @@ export class FeedbackComponent {
 
   changeMainFeedback(i: number) {
     if (i == -1) {
-        this.reverse = false;
-        this.currentFeedback += i;
-        if (this.currentFeedback == -1) {
-          this.currentFeedback = 2;
-        }
+      this.reverse = false;
+      this.reverseNumerator = 0;
+      this.forwardNumerator++;
+
+      this.currentFeedback += i;
+      if (this.currentFeedback == -1) {
+        this.currentFeedback = 2;
+      }
     } else {
-        this.currentFeedback += i;
-        this.currentFeedback = this.currentFeedback % this.feedback.length;
-        this.reverse = true;
+      this.reverse = true;
+      this.forwardNumerator = 0;
+
+      this.reverseNumerator++;
+      this.currentFeedback += i;
+      this.currentFeedback = this.currentFeedback % this.feedback.length;
     }
   }
 
-  checkMainFeedback(id: number) {
-    if (id == this.currentFeedback) {
-      if (this.reverse) {
-        return 'right-feedback-reverse'
-      } else {
-        return `main-feedback-normal`;
-      }
-    } else if (this.besideFeedback(id, 'right')) {
-      if (this.reverse) {
-        return 'left-feedback-reverse'
-      } else {
-        return `right-feedback-normal`;
-      }
-    } else if (this.besideFeedback(id, 'left')) {
-      if (this.reverse) {
-        return 'main-feedback-reverse'
-      } else {
-        return `left-feedback-normal`;
-      }
-    } else {
-      return
-    }
-  }
 
-  besideFeedback(id: number, position: string) {
-    if (position == 'left') {
-      if (this.currentFeedback - 1 == -1) {
-        return id == 2
-      } else {
-        return id == this.currentFeedback - 1;
-      }
+  checkMainFeedback(id: number): any {
+    const isCurrent = id === this.currentFeedback;
+    const isPrevious = id === (this.currentFeedback - 1 + this.feedback.length) % this.feedback.length;
+    const isNext = id === (this.currentFeedback + 1) % this.feedback.length;
 
+    if (isCurrent) {
+        return this.reverse ? 'right-feedback-reverse' : 'main-feedback-normal';
+    } else if (isNext) {
+      return this.reverse ? 'left-feedback-reverse' : 'right-feedback-normal';
+    } else if (isPrevious) {
+      return this.reverse ? 'main-feedback-reverse' : 'left-feedback-normal';
     } else {
-      if (this.currentFeedback + 1 == 3) {
-        return id == 0
-      } else {
-        return id == this.currentFeedback + 1;
-      }
+      return '';
     }
   }
 }

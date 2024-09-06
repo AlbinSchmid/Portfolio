@@ -48,7 +48,7 @@ export class DetailProjectComponent {
   @Input() detailView = true;
   @Output() closeDetail = new EventEmitter<boolean>();
 
-  
+
   closeDetailView() {
     this.detailView = false;
     this.closeDetail.emit(this.detailView)
@@ -58,6 +58,5 @@ export class DetailProjectComponent {
   nextProject(){
     this.currentId++;
     this.currentId = this.currentId % this.projects.length;
-    
   }
 }

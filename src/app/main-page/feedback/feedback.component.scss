@@ -107,13 +107,13 @@ section {
 
 
     .left-feedback-normal {
-        animation:  right-to-left-animation ease-in-out 3000ms;
+        animation:  right-to-left-animation ease-in-out 300ms;
         @include blue-div-design($op: 0.1);
         transform: translateX(-50vw);
     }
 
     .left-feedback-reverse {
-        animation:  right-to-left-animation ease-in-out 300ms reverse;
+        animation:  right-to-left-animation-reverse ease-in-out 300ms reverse;
         @include blue-div-design($op: 0.1);
         transform: translateX(50vw);
     }
@@ -125,7 +125,7 @@ section {
     }
 
     .main-feedback-reverse {
-        animation: left-to-main-animation ease-in-out 300ms reverse;
+        animation: left-to-main-animation-reverse ease-in-out 300ms reverse;
         @include blue-div-design($op: 0.1);
         transform: translateX(-50vw);
     }
@@ -137,25 +137,13 @@ section {
     }
 
     .right-feedback-reverse {
-        animation: main-to-right-animation ease-in-out 300ms reverse;
+        animation: main-to-right-animation-reverse ease-in-out 300ms reverse;
         @include blue-div-design($op: 0.3);
         transform: scale(1.2);
     }
 }
 
-.help-container {
-    position: absolute;
-    top: 180px;
-    width: 682px;
-    height: 10px;
 
-    img {
-        position: absolute;
-        top: 0;
-        left: -50px;
-        z-index: 3;
-    }
-}
 
 
 @keyframes left-to-main-animation {
@@ -208,8 +196,74 @@ section {
     }
 }
 
+
+
+@keyframes left-to-main-animation-reverse {
+    0% {
+        transform: translateX(-50vw);
+        scale: 1;
+        @include blue-div-design($op: 0.1);
+    }
+
+    100% {
+        transform: translateX(0vw);
+        scale: 1.2;
+        @include blue-div-design($op: 0.3);
+    }
+}
+
+@keyframes main-to-right-animation-reverse {
+    0% {
+        transform: translate(0vw);
+        scale: 1.2;
+        @include blue-div-design($op: 0.3);
+    }
+
+    100% {
+        transform: translate(50vw);
+        scale: 1;
+        @include blue-div-design($op: 0.1);
+    }
+}
+
+@keyframes right-to-left-animation-reverse {
+    0% {
+        transform: translateX(50vw);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+
+    51% {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50vw);
+        opacity: 1;
+    }
+}
+
 @media (max-width: 1280px) {
     // .left-feedback-normal {
     //     transform: translateX(-60vw) !important;
     // }
+}
+
+.help-container {
+    position: absolute;
+    top: 180px;
+    width: 682px;
+    height: 10px;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: -50px;
+        z-index: 3;
+    }
 }
