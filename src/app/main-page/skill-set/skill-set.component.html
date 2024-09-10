@@ -1,29 +1,33 @@
-<section>
-    <div class="content">
-        <div class="left-part">
-            <h3>{{ languageService.controllLang(languageService.skill.smallHeadline) }}</h3>
-            <div class="text-div">
-                <h1>{{ languageService.controllLang(languageService.skill.bigHeadline) }}</h1>
-                <p>{{ languageService.controllLang(languageService.skill.content) }}</p>
-                <h2>{{ languageService.controllLang(languageService.skill.content2) }}<mark class="blue">{{ languageService.controllLang(languageService.skill.mark) }}</mark></h2>
-                <span>{{ languageService.controllLang(languageService.skill.content3) }}</span>
-                <a class="animation-btn" href="#contact">
-                    <span>{{ languageService.controllLang(languageService.skill.btn) }}</span>
-                </a>
+<div class="background">
+    <section>
+        <div class="content">
+            <div class="left-part">
+                <h3>{{ languageService.controllLang(languageService.skill.smallHeadline) }}</h3>
+                <div class="text-div">
+                    <h1>{{ languageService.controllLang(languageService.skill.bigHeadline) }}</h1>
+                    <p>{{ languageService.controllLang(languageService.skill.content) }}</p>
+                    <h2>{{ languageService.controllLang(languageService.skill.content2) }}<mark class="blue">{{
+                            languageService.controllLang(languageService.skill.mark) }}</mark></h2>
+                    <span>{{ languageService.controllLang(languageService.skill.content3) }}</span>
+                    <a class="animation-btn" href="#contact">
+                        <span>{{ languageService.controllLang(languageService.skill.btn) }}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="right-part">
+                @for (skill of skillsIcons; track $index) {
+                <div>
+                    <img class="hover-effekt" src="./../../../assets/icons/{{ skill.img }}.png" alt="">
+                    <p>{{ skill.name }}</p>
+                </div>
+                }
+                <div (mouseover)="showImg()" (mouseout)="showImg()" class="growth-img">
+                    <img class="hover-effekt" src="./../../../assets/icons/growth-mindset.png" alt="growth-mindset">
+                    <p>Growth mindset</p>
+                    <img src="./../../../assets/icons/interested-in.png" alt="react, vue js"
+                        [ngStyle]="{'opacity': hoveredOnGrowthImg ? '1' : '0'}" class="hover-img">
+                </div>
             </div>
         </div>
-        <div class="right-part">
-            @for (skill of skillsIcons; track $index) {
-            <div>
-                <img  class="hover-effekt" src="./../../../assets/icons/{{ skill.img }}.png" alt="">
-                <p>{{ skill.name }}</p>
-            </div>
-            }
-            <div (mouseover)="showImg()" (mouseout)="showImg()" class="growth-img">
-                <img  class="hover-effekt" src="./../../../assets/icons/growth-mindset.png" alt="growth-mindset">
-                <p>Growth mindset</p>
-                <img src="./../../../assets/icons/interested-in.png" alt="react, vue js" [ngStyle]="{'opacity': hoveredOnGrowthImg ? '1' : '0'}" class="hover-img">
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</div>

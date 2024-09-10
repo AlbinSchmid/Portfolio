@@ -1,10 +1,18 @@
 @import './../../../styles.scss';
 
+.background {
+    width: 100%;
+    background-color: #1C1C1C;
+    @include d-position();
+}
+
+
 section {
     @include d-position($ai: center, $fd: row, $jc: space-between);
     background-color: #1C1C1C;
     padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     width: 100%;
+    max-width: 1920px;
 
     h5 {
         @include t-design($fs: 18px, $ff: 'Fira Code');

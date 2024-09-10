@@ -1,32 +1,36 @@
-<section>
-    <div class="left-line">
-        <a href="#about-me">
-            <img src="./../../assets/icons/arrow-down.png" alt="arrow-down">
-        </a>
-        <div></div>
-    </div>
-    <div class="main-div">
-        <h3>{{ languageService.controllLang(languageService.aot.headline) }}</h3>
-        <h1>Albin Schmid</h1>
-        <div>
-            <a class="animation-btn" href="#projects">
-                <span>{{ languageService.controllLang(languageService.aot.btnLeft) }}</span>
+<div class="background">
+    <section>
+        <div class="left-line">
+            <a href="#about-me">
+                <img src="./../../assets/icons/arrow-down.png" alt="arrow-down">
             </a>
-            <a class="animation-btn" href="#contact">
-                <span>{{ languageService.controllLang(languageService.aot.btnRight) }}</span>
-            </a>
+            <div></div>
         </div>
-    </div>
-    <div class="right-line">
-        <a class="a-email" href="mailto: schmidalbin15@gmail.com">
-            <p>schmidalbin15&#64;gmail.com</p>
-            <img src="./../../../assets/icons/mail-{{ emailImgSrc }}.png" (mouseover)="changeImgSrc('email')" (mouseout)="changeImgSrc('email')" alt="email-logo">
-            <div class="hover-point"></div>
-        </a>
-        <a class="a-git" href="https://github.com/AlbinSchmid" target="_blank">
-            <img (mouseover)="changeImgSrc('git')" (mouseout)="changeImgSrc('git')" src="./../../assets/icons/git-{{ gitImgSrc }}.png" alt="git-logo">
-            <div class="hover-point"></div>
-        </a>
-        <div class="line"></div>
-    </div>
-</section>
+        <div class="main-div">
+            <h3>{{ languageService.controllLang(languageService.aot.headline) }}</h3>
+            <h1>Albin Schmid</h1>
+            <div>
+                <a class="animation-btn" href="#projects">
+                    <span>{{ languageService.controllLang(languageService.aot.btnLeft) }}</span>
+                </a>
+                <a class="animation-btn" href="#contact">
+                    <span>{{ languageService.controllLang(languageService.aot.btnRight) }}</span>
+                </a>
+            </div>
+        </div>
+        <div class="right-line">
+            <a class="a-email" href="mailto: schmidalbin15@gmail.com">
+                <p>schmidalbin15&#64;gmail.com</p>
+                <img src="./../../../assets/icons/mail-{{ emailImgSrc }}.png" (mouseover)="changeImgSrc('email')"
+                    (mouseout)="changeImgSrc('email')" alt="email-logo">
+                <div class="hover-point"></div>
+            </a>
+            <a class="a-git" href="https://github.com/AlbinSchmid" target="_blank">
+                <img (mouseover)="changeImgSrc('git')" (mouseout)="changeImgSrc('git')"
+                    src="./../../assets/icons/git-{{ gitImgSrc }}.png" alt="git-logo">
+                <div class="hover-point"></div>
+            </a>
+            <div class="line"></div>
+        </div>
+    </section>
+</div>

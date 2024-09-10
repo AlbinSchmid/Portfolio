@@ -1,70 +1,87 @@
-<section>
-    <div>
-        <h3>{{ languageService.controllLang(languageService.contact.smallHeadline) }}</h3>
-        <h1>{{ languageService.controllLang(languageService.contact.bigHeadline) }}</h1>
-        <h2>{{ languageService.controllLang(languageService.contact.content) }}</h2>
-        <p>{{ languageService.controllLang(languageService.contact.content2) }}
-            <br>
-            <br>
-            {{ languageService.controllLang(languageService.contact.content3) }} <mark class="blue">{{ languageService.controllLang(languageService.contact.btn) }}</mark>
-        </p>
-    </div>
-    <div>
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-            <label class="contact-label">
-                {{ languageService.controllLang(languageService.contact.form.name) }}
-                <input #name="ngModel" type="name" placeholder="{{ languageService.controllLang(languageService.contact.form.input.name) }}" name="name" required
-                    [(ngModel)]="contactData.name">
-                @if (!name.valid && name.touched) {
-                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.name) }}</span>
-                }
-                @if (emptyName && !name.touched) {
-                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.name) }}</span>
-                }
-            </label>
-
-            <label class="contact-label">
-                {{ languageService.controllLang(languageService.contact.form.email) }}
-                <input #email="ngModel" type="email" placeholder="{{ languageService.controllLang(languageService.contact.form.input.email) }}" name="email" required
-                    [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-                @if (!email.valid && email.touched) {
-                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.email) }}</span>
-                }
-                @if (emptyEmail && !email.touched) {
-                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.email) }}</span>
-                }
-            </label>
-
-            <label class="contact-label">
-                {{ languageService.controllLang(languageService.contact.form.message) }}
-                <input #message="ngModel" type="message" minlength="5" placeholder="{{ languageService.controllLang(languageService.contact.form.input.message) }}"
-                    name="message" required [(ngModel)]="contactData.message">
-                @if (!message.valid && message.touched) {
-                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.message) }}</span>
-                }
-                @if (emptyMessage && !message.touched) {
-                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.message) }}</span>
-                }
-            </label>
-
-            <div class="privacy-policy">
-                <label>
-                    <input type="checkbox" name="checkbox" required [(ngModel)]="contactData.checkbox">
-                    <span></span>
+<div class="background">
+    <section>
+        <div>
+            <h3>{{ languageService.controllLang(languageService.contact.smallHeadline) }}</h3>
+            <h1>{{ languageService.controllLang(languageService.contact.bigHeadline) }}</h1>
+            <h2>{{ languageService.controllLang(languageService.contact.content) }}</h2>
+            <p>{{ languageService.controllLang(languageService.contact.content2) }}
+                <br>
+                <br>
+                {{ languageService.controllLang(languageService.contact.content3) }} <mark class="blue">{{
+                    languageService.controllLang(languageService.contact.btn) }}</mark>
+            </p>
+        </div>
+        <div>
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+                <label class="contact-label">
+                    {{ languageService.controllLang(languageService.contact.form.name) }}
+                    <input #name="ngModel" type="name"
+                        placeholder="{{ languageService.controllLang(languageService.contact.form.input.name) }}"
+                        name="name" required [(ngModel)]="contactData.name">
+                    @if (!name.valid && name.touched) {
+                    <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.name)
+                        }}</span>
+                    }
+                    @if (emptyName && !name.touched) {
+                    <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.name)
+                        }}</span>
+                    }
                 </label>
-                <p>
-                    {{ languageService.controllLang(languageService.contact.form.checkbox.content) }}<a href="privacy-policy">{{ languageService.controllLang(languageService.contact.form.checkbox.link) }}</a> {{ languageService.controllLang(languageService.contact.form.checkbox.content2) }}
-                </p>
-            </div>
-            @if (emptyCheckbox) {
-            <span class="error-span-checkbox">{{ languageService.controllLang(languageService.contact.form.errors.checkbox) }}</span>
-            }
 
-            <div class="submit-btn">
-                <button type="submit" class="animation-btn">
-                    <span>Say Hello ;)</span>
-                </button>
-            </div>
-        </form>
-    </div>
-</section>
+                <label class="contact-label">
+                    {{ languageService.controllLang(languageService.contact.form.email) }}
+                    <input #email="ngModel" type="email"
+                        placeholder="{{ languageService.controllLang(languageService.contact.form.input.email) }}"
+                        name="email" required [(ngModel)]="contactData.email"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+                    @if (!email.valid && email.touched) {
+                    <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.email)
+                        }}</span>
+                    }
+                    @if (emptyEmail && !email.touched) {
+                    <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.email)
+                        }}</span>
+                    }
+                </label>
+
+                <label class="contact-label">
+                    {{ languageService.controllLang(languageService.contact.form.message) }}
+                    <input #message="ngModel" type="message" minlength="5"
+                        placeholder="{{ languageService.controllLang(languageService.contact.form.input.message) }}"
+                        name="message" required [(ngModel)]="contactData.message">
+                    @if (!message.valid && message.touched) {
+                    <span class="error-span">{{
+                        languageService.controllLang(languageService.contact.form.errors.message) }}</span>
+                    }
+                    @if (emptyMessage && !message.touched) {
+                    <span class="error-span">{{
+                        languageService.controllLang(languageService.contact.form.errors.message) }}</span>
+                    }
+                </label>
+
+                <div class="privacy-policy">
+                    <label>
+                        <input type="checkbox" name="checkbox" required [(ngModel)]="contactData.checkbox">
+                        <span></span>
+                    </label>
+                    <p>
+                        {{ languageService.controllLang(languageService.contact.form.checkbox.content) }}<a
+                            href="privacy-policy">{{
+                            languageService.controllLang(languageService.contact.form.checkbox.link) }}</a> {{
+                        languageService.controllLang(languageService.contact.form.checkbox.content2) }}
+                    </p>
+                </div>
+                @if (emptyCheckbox) {
+                <span class="error-span-checkbox">{{
+                    languageService.controllLang(languageService.contact.form.errors.checkbox) }}</span>
+                }
+
+                <div class="submit-btn">
+                    <button type="submit" class="animation-btn">
+                        <span>Say Hello ;)</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

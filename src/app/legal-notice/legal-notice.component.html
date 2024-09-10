@@ -1,53 +1,56 @@
-<section>
-    <header>
+<div class="background">
+    <section>
+        <header>
+            <div>
+                <img src="./../../../assets/icons/arrow-left-blue.png" alt="arrow" (click)="goBack()">
+                <h1>{{ languageService.controllLang(languageService.legalNotice.headline) }}</h1>
+            </div>
+            <a href="">
+                <img src="./../../../assets/img/logo.png" alt="">
+            </a>
+        </header>
         <div>
-            <img src="./../../../assets/icons/arrow-left-blue.png" alt="arrow" (click)="goBack()">
-            <h1>{{ languageService.controllLang(languageService.legalNotice.headline) }}</h1>
+            <h5>{{ languageService.controllLang(languageService.legalNotice.smallHeadline) }}</h5>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.operator) }}</h5>
+                <p>Albin Schmid</p>
+            </span>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.adress) }}</h5>
+                <p>Oberried 60, 6444 Längenfeld</p>
+            </span>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.contact) }}</h5>
+                <p>
+                    Telefon: <a href="tel: +43 699 113456 85">+43 699 113456 85</a><br>
+                    Email: <a href="mailto: schmidalbin15@gmail.com">schmidalbin15&#64;gmail.com</a>
+                </p>
+            </span>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.applicableLaw) }}</h5>
+                <a href="https://www.ris.bka.gv.at/" target="_blank">www.ris.bka.gv.at</a>
+            </span>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.disputeResolution.headline) }}</h5>
+                <p>
+                    {{ languageService.controllLang(languageService.legalNotice.disputeResolution.text) }} <a
+                        href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>
+                </p>
+            </span>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.copyright.headline) }}</h5>
+                <p>{{ languageService.controllLang(languageService.legalNotice.copyright.text) }}</p>
+            </span>
+            <span>
+                <h5>{{ languageService.controllLang(languageService.legalNotice.disclaimer.headline) }}</h5>
+                <p>{{ languageService.controllLang(languageService.legalNotice.disclaimer.text) }}</p>
+            </span>
+            <p>
+                {{ languageService.controllLang(languageService.legalNotice.source) }} <a
+                    href="https://www.fairesrecht.at/kostenlos-impressum-erstellen-generator.php"
+                    target="_blank">Impressum Generator Austria</a>
+            </p>
         </div>
-        <a href="">
-            <img src="./../../../assets/img/logo.png" alt="">
-        </a>
-    </header>
-    <div>
-        <h5>{{ languageService.controllLang(languageService.legalNotice.smallHeadline) }}</h5>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.operator) }}</h5>
-            <p>Albin Schmid</p>
-        </span>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.adress) }}</h5>
-            <p>Oberried 60, 6444 Längenfeld</p>
-        </span>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.contact) }}</h5>
-            <p>
-                Telefon: <a href="tel: +43 699 113456 85">+43 699 113456 85</a><br>
-                Email: <a href="mailto: schmidalbin15@gmail.com">schmidalbin15&#64;gmail.com</a>
-            </p>
-        </span>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.applicableLaw) }}</h5>
-            <a href="https://www.ris.bka.gv.at/" target="_blank">www.ris.bka.gv.at</a>
-        </span>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.disputeResolution.headline) }}</h5>
-            <p>
-                {{ languageService.controllLang(languageService.legalNotice.disputeResolution.text) }} <a href="https://ec.europa.eu/consumers/odr"
-                    target="_blank">https://ec.europa.eu/consumers/odr</a>
-            </p>
-        </span>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.copyright.headline) }}</h5>
-            <p>{{ languageService.controllLang(languageService.legalNotice.copyright.text) }}</p>
-        </span>
-        <span>
-            <h5>{{ languageService.controllLang(languageService.legalNotice.disclaimer.headline) }}</h5>
-            <p>{{ languageService.controllLang(languageService.legalNotice.disclaimer.text) }}</p>
-        </span>
-        <p>
-            {{ languageService.controllLang(languageService.legalNotice.source) }} <a href="https://www.fairesrecht.at/kostenlos-impressum-erstellen-generator.php"
-                target="_blank">Impressum Generator Austria</a>
-        </p>
-    </div>
-</section>
+    </section>
+</div>
 <app-footer></app-footer>

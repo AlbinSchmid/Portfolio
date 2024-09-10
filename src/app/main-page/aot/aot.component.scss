@@ -1,14 +1,21 @@
 @import './../../../styles.scss';
 
-section {
-    @include d-position($jc: space-between, $ai: flex-end);
-    padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem) 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+.background {
+    height: 100vh;
+    width: 100%;
     background-image: url(./../../../assets/img/aot-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    @include d-position();
+}
+
+section {
+    @include d-position($jc: space-between, $ai: flex-end);
+    padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem) 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     height: 100vh;
     width: 100%;
+    max-width: 1920px !important;
 
     .left-line {
         @include d-position($fd: column);

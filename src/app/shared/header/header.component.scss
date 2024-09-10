@@ -9,8 +9,15 @@ app-phone-menu {
     height: 100%;
 }
 
+.background {
+    width: 100%;
+    @include d-position();
+}
+
 header {
     @include d-position();
+    max-width: 1920px;
+    width: 100%;
 
     nav {
         @include d-position($jc: auto);
