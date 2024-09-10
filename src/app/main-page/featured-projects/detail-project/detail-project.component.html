@@ -4,7 +4,7 @@
                 <h1>{{ projects[currentId].id }}</h1>
                 <h2>{{ projects[currentId].name }}</h2>
                 <h3>What is this project about?</h3>
-                <p>{{ projects[currentId].description }}</p>
+                <p>{{ languageService.controllLang(languageService.projects.detailProject.description[currentId]) }}</p>
                 <div class="skill-div">
                     @for (skill of projects[currentId].skills; track $index) {
                         <div>
@@ -28,7 +28,7 @@
                 <button class="close-btn" (click)="closeDetailView()"></button>
                 <img src="./../../../../assets/img/{{ projects[currentId].img }}.png" alt="website logo" class="project-img">
                 <button class="next-project-btn" (click)="nextProject()">
-                    Next project
+                    {{ languageService.controllLang(languageService.projects.detailProject.btn) }}
                     <div class="img-div"></div>
                 </button>
             </div>

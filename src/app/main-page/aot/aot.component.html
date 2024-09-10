@@ -6,14 +6,14 @@
         <div></div>
     </div>
     <div class="main-div">
-        <h3>{{ language.headline.de }}</h3>
+        <h3>{{ languageService.controllLang(languageService.aot.headline) }}</h3>
         <h1>Albin Schmid</h1>
         <div>
             <a class="animation-btn" href="#projects">
-                <span>{{ language.buttonLeft.en}}</span>
+                <span>{{ languageService.controllLang(languageService.aot.btnLeft) }}</span>
             </a>
             <a class="animation-btn" href="#contact">
-                <span>{{ language.buttonRight.en}}</span>
+                <span>{{ languageService.controllLang(languageService.aot.btnRight) }}</span>
             </a>
         </div>
     </div>
@@ -23,7 +23,6 @@
             <img src="./../../../assets/icons/mail-{{ emailImgSrc }}.png" (mouseover)="changeImgSrc('email')" (mouseout)="changeImgSrc('email')" alt="email-logo">
             <div class="hover-point"></div>
         </a>
-
         <a class="a-git" href="https://github.com/AlbinSchmid" target="_blank">
             <img (mouseover)="changeImgSrc('git')" (mouseout)="changeImgSrc('git')" src="./../../assets/icons/git-{{ gitImgSrc }}.png" alt="git-logo">
             <div class="hover-point"></div>

@@ -4,27 +4,15 @@
         <img src="./../../../assets/icons/quotes.png" alt="quotes">
     </div>
     <div class="feedback-div">
-        <div class="feedback" [ngClass]="checkMainFeedback(0)">
-            <p>{{ feedback[0].text }}</p>
-            <div class="partner">
-                <div></div>
-                <p>{{ feedback[0].name }}</p>
+        @for (feedback of languageService.feedback.feedbacks; track $index) {
+            <div class="feedback" [ngClass]="checkMainFeedback($index)">
+                <p>{{ languageService.controllLang(languageService.feedback.feedbacks[$index]) }}</p>
+                <div class="partner">
+                    <div></div>
+                    <p>{{ languageService.feedback.feedbacks[$index].name }}</p>
+                </div>
             </div>
-        </div>
-        <div class="feedback" [ngClass]="checkMainFeedback(1)">
-            <p>{{ feedback[1].text }}</p>
-            <div class="partner">
-                <div></div>
-                <p>{{ feedback[1].name }}</p>
-            </div>
-        </div>
-        <div class="feedback" [ngClass]="checkMainFeedback(2)">
-            <p>{{ feedback[2].text }}</p>
-            <div class="partner">
-                <div></div>
-                <p>{{ feedback[2].name }}</p>
-            </div>
-        </div>
+        }
     </div>
     <div class="buttons-div">
         <button class="left-btn" (click)="changeMainFeedback(1)"></button>

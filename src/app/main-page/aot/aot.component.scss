@@ -9,97 +9,97 @@ section {
     background-position: center;
     height: 100vh;
     width: 100%;
-}
 
-.main-div {
-    @include d-position($fd: column);
-    height: 100%;
-
-    h1 {
-        @include t-design($fs: clamp(3.875rem, 3.05rem + 4.125vw, 8rem), $fw: 700);
-    }
-
-    h3 {
-        @include t-design($ff: 'Fira Code', $fs: clamp(1.5rem, 1.3rem + 1vw, 2.5rem), $fw: 400);
-    }
-
-    div {
-        display: flex;
-        position: relative;
-        gap: clamp(0.625rem, 0.15rem + 2.375vw, 3rem);
-        margin-top: 40px;
-    }
-}
-
-.left-line {
-    @include d-position($fd: column);
-    gap: 24px;
-
-    div {
-        width: 2px;
-        height: 200px;
-        background-color: #3DCFB6;
-        @include d-position($ai: flex-end);
-    }
-
-    a {
-        background: transparent;
-        border: 1px solid #3DCFB6;
-        border-radius: 25px;
-        padding: 16px 6px;
-
-        img {
-            height: 18px;
-            width: 16px;
-            transition: all 125ms;
-            animation: bounce 700ms ease-in-out infinite;
+    .left-line {
+        @include d-position($fd: column);
+        gap: 24px;
+    
+        div {
+            width: 2px;
+            height: 200px;
+            background-color: #3DCFB6;
+            @include d-position($ai: flex-end);
         }
-    }
-}
-
-.right-line {
-    @include d-position($fd: column);
-    gap: 24px;
-    width: 30px;
-
-    .line {
-        width: 2px;
-        height: 150px;
-        background-color: white;
-    }
-
-    .a-email {
-        @include t-design($fs: 18px);
-        text-decoration: none;
-        transform: rotate(-90deg);
-        margin-bottom: 96px;
-
-        &:hover {
-            color: #3DCFB6;
-        }
-
-        img {
-            display: none;
+    
+        a {
+            background: transparent;
+            border: 1px solid #3DCFB6;
+            border-radius: 25px;
+            padding: 16px 6px;
+    
+            img {
+                height: 18px;
+                width: 16px;
+                transition: all 125ms;
+                animation: bounce 700ms ease-in-out infinite;
+            }
         }
     }
 
-    .a-git {
-        position: relative;
-        @include d-position();
-
-        div{
-            left: 35px;
+    .main-div {
+        @include d-position($fd: column);
+        height: 100%;
+    
+        h1 {
+            @include t-design($fs: clamp(3.875rem, 3.05rem + 4.125vw, 8rem), $fw: 700);
         }
-
-        img {
+    
+        h3 {
+            @include t-design($ff: 'Fira Code', $fs: clamp(1.5rem, 1.3rem + 1vw, 2.5rem), $fw: 400);
+        }
+    
+        div {
             display: flex;
             position: relative;
+            gap: clamp(0.625rem, 0.15rem + 2.375vw, 3rem);
+            margin-top: 40px;
         }
+    }
 
-        &:hover>div {
-            background-color: #3DCFB6
+    .right-line {
+        @include d-position($fd: column);
+        gap: 24px;
+        width: 30px;
+    
+        .line {
+            width: 2px;
+            height: 150px;
+            background-color: white;
         }
-
+    
+        .a-email {
+            @include t-design($fs: 18px);
+            text-decoration: none;
+            transform: rotate(-90deg);
+            margin-bottom: 96px;
+    
+            &:hover {
+                color: #3DCFB6;
+            }
+    
+            img {
+                display: none;
+            }
+        }
+    
+        .a-git {
+            position: relative;
+            @include d-position();
+    
+            div{
+                left: 35px;
+            }
+    
+            img {
+                display: flex;
+                position: relative;
+            }
+    
+            &:hover>div {
+                background-color: #3DCFB6
+            }
+    
+        }
     }
 }
 

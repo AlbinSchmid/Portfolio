@@ -6,10 +6,10 @@
             <a href="#projects">Projects</a>
 
             <button (click)="changeLanguage()">
-                <div [ngClass]="{'div-DE': germanLanguage}">DE</div>
+                <div [ngClass]="{'div-DE': languageService.germanLanguage}">DE</div>
                 <span
-                    [ngClass]="{'slider-animation-EN': englishLanguage, 'slider-animation-DE': germanLanguage}"></span>
-                <div [ngClass]="{'div-EN': englishLanguage}">EN</div>
+                    [ngClass]="{'slider-animation-EN': languageService.englishLanguage, 'slider-animation-DE': languageService.germanLanguage}"></span>
+                <div [ngClass]="{'div-EN': languageService.englishLanguage}">EN</div>
             </button>
         </nav>
     </div>

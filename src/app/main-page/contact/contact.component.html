@@ -1,51 +1,49 @@
 <section>
     <div>
-        <h3>Contact me</h3>
-        <h1>Let's work together</h1>
-        <h2>Got a proplem to solve</h2>
-        <p>
-            Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to
-            your projects with my work.
+        <h3>{{ languageService.controllLang(languageService.contact.smallHeadline) }}</h3>
+        <h1>{{ languageService.controllLang(languageService.contact.bigHeadline) }}</h1>
+        <h2>{{ languageService.controllLang(languageService.contact.content) }}</h2>
+        <p>{{ languageService.controllLang(languageService.contact.content2) }}
             <br>
             <br>
-            Need a Frontend developer? <mark class="blue">Let’s talk!</mark>
+            {{ languageService.controllLang(languageService.contact.content3) }} <mark class="blue">{{ languageService.controllLang(languageService.contact.btn) }}</mark>
         </p>
     </div>
     <div>
         <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <label class="contact-label">
-                What's your name?
-                <input #name="ngModel" type="name" placeholder="Your name goes here" name="name" required
+                {{ languageService.controllLang(languageService.contact.form.name) }}
+                <input #name="ngModel" type="name" placeholder="{{ languageService.controllLang(languageService.contact.form.input.name) }}" name="name" required
                     [(ngModel)]="contactData.name">
                 @if (!name.valid && name.touched) {
-                <span class="error-span">Oops! it seems your name is missing </span>
+                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.name) }}</span>
                 }
                 @if (emptyName && !name.touched) {
-                <span class="error-span">Oops! it seems your name is missing</span>
+                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.name) }}</span>
                 }
             </label>
 
             <label class="contact-label">
-                What's your email?
-                <input #email="ngModel" type="email" placeholder="youremail@gmail.com" name="email" required
+                {{ languageService.controllLang(languageService.contact.form.email) }}
+                <input #email="ngModel" type="email" placeholder="{{ languageService.controllLang(languageService.contact.form.input.email) }}" name="email" required
                     [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                 @if (!email.valid && email.touched) {
-                <span class="error-span">Hoppla! your email is required</span>
+                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.email) }}</span>
                 }
                 @if (emptyEmail && !email.touched) {
-                <span class="error-span">Hoppla! your email is required</span>
+                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.email) }}</span>
                 }
             </label>
 
             <label class="contact-label">
-                How can I help you?
-                <input #message="ngModel" type="message" minlength="5" placeholder="Hello Albin, I am interested in..."
+                {{ languageService.controllLang(languageService.contact.form.message) }}
+                <input #message="ngModel" type="message" minlength="5" placeholder="{{ languageService.controllLang(languageService.contact.form.input.message) }}"
                     name="message" required [(ngModel)]="contactData.message">
                 @if (!message.valid && message.touched) {
-                <span class="error-span">What do you need to develop?</span>
+                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.message) }}</span>
                 }
                 @if (emptyMessage && !message.touched) {
-                <span class="error-span">What do you need to develop?</span>
+                <span class="error-span">{{ languageService.controllLang(languageService.contact.form.errors.message) }}</span>
                 }
             </label>
 
@@ -55,11 +53,11 @@
                     <span></span>
                 </label>
                 <p>
-                    I've read the <a href="privacy-policy">privacy policy</a> and agree to the processing of my data as outlined.
+                    {{ languageService.controllLang(languageService.contact.form.checkbox.content) }}<a href="privacy-policy">{{ languageService.controllLang(languageService.contact.form.checkbox.link) }}</a> {{ languageService.controllLang(languageService.contact.form.checkbox.content2) }}
                 </p>
             </div>
             @if (emptyCheckbox) {
-            <span class="error-span-checkbox">What do you need to develop?</span>
+            <span class="error-span-checkbox">{{ languageService.controllLang(languageService.contact.form.errors.checkbox) }}</span>
             }
 
             <div class="submit-btn">

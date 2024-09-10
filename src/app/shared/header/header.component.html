@@ -1,23 +1,22 @@
 <header>
     <nav>
         <button (click)="changeLanguage()">
-            <div [ngClass]="{'div-DE': germanLanguage}">DE</div>
-            <span [ngClass]="{'slider-animation-EN': englishLanguage, 'slider-animation-DE': germanLanguage}"></span>
-            <div [ngClass]="{'div-EN': englishLanguage}">EN</div>
+            <div [ngClass]="{'div-DE': languageService.germanLanguage}">DE</div>
+            <span [ngClass]="{'slider-animation-EN': languageService.englishLanguage, 'slider-animation-DE': languageService.germanLanguage}"></span>
+            <div [ngClass]="{'div-EN': languageService.englishLanguage}">EN</div>
         </button>
         <a href="#about-me">
-            About me
+            {{ languageService.controllLang(languageService.header.linkLeft) }}
             <div class="hover-point"></div>
         </a>
         <a href="#skills">
-            Skills
+            {{ languageService.controllLang(languageService.header.linkMid) }}
             <div class="hover-point"></div>
         </a>
         <a href="#projects">
-            Projects
+            {{ languageService.controllLang(languageService.header.linkRight) }}
             <div class="hover-point"></div>
         </a>
-
     </nav>
     <a href="/">
         <img src="./../../../assets/img/logo.png" alt="logo">

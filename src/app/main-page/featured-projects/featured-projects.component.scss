@@ -1,27 +1,12 @@
 @import './../../../styles.scss';
 
-img {
-    transition: 125ms ease-in-out;
-}
-
-p {
-    @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
-}
-
-h3 {
-    @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
-    color: #3DCFB6;
-    margin-bottom: 8px;
-}
-
-h1 {
-    @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
-    color: #3DCFB6;
-    margin-bottom: 20px;
-}
-
-h2 {
-    @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+app-detail-project {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
 }
 
 section {
@@ -30,6 +15,30 @@ section {
     width: 100%;
     padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     gap: 50px;
+
+    img {
+        transition: 125ms ease-in-out;
+    }
+
+    p {
+        @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
+    }
+    
+    h3 {
+        @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
+        color: #3DCFB6;
+        margin-bottom: 8px;
+    }
+    
+    h1 {
+        @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
+        color: #3DCFB6;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+    }
 
     .small-info {
         max-width: 400px;
@@ -65,42 +74,33 @@ section {
             }
         }
     }
-}
 
-.projects-img-div {
-    position: relative;
-
-    img {
-        width: 296px;
-        height: 192px;
+    .blue-placeholder {
+        width: 2px;
+        height: 15px;
+        background-color: #3DCFB6;
     }
 
-    .project-img {
+    .projects-img-div {
         position: relative;
-        z-index: 2;
+    
+        img {
+            width: 296px;
+            height: 192px;
+        }
+    
+        .project-img {
+            position: relative;
+            z-index: 2;
+        }
+    
+        .animation-img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            z-index: 1;
+        }
     }
-
-    .animation-img {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        z-index: 1;
-    }
-}
-
-.blue-placeholder {
-    width: 2px;
-    height: 15px;
-    background-color: #3DCFB6;
-}
-
-app-detail-project {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
 }
 
 @media (max-width: 900px) {
@@ -121,7 +121,4 @@ app-detail-project {
             flex-wrap: wrap;
         }
     }
-
-
-
 }

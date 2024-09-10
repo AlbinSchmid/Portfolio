@@ -1,9 +1,5 @@
 @import './../../../styles.scss';
 
-img {
-    width: 64px;
-}
-
 section {
     @include d-position($fd: column, $jc: normal);
     height: auto;
@@ -15,6 +11,10 @@ section {
     background-size: cover;
     background-position: center;
     gap: 20px;
+
+    img {
+        width: 64px;
+    }
 
     h3 {
         @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
@@ -56,6 +56,20 @@ section {
                     margin-top: 10px
                 }
             }
+
+            .growth-img {
+                position: relative;
+            
+                .hover-img {
+                    width: 200px;
+                    transition: 400ms ease-in-out;
+                    display: flex;
+                    position: absolute;
+                    top: -115px;
+                    left: -4px;
+                    opacity: 0;
+                }
+            }
         }
     }
 
@@ -69,6 +83,7 @@ section {
     h1 {
         @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
         color: #3DCFB6;
+        word-break: break-word;
     }
 
     p {
@@ -92,20 +107,7 @@ section {
 
     a {
         margin-top: 30px;
-        width: 130px;
-    }
-}
-
-.growth-img {
-    position: relative;
-
-    .hover-img {
-        transition: 400ms ease-in-out;
-        display: flex;
-        position: absolute;
-        top: -115px;
-        left: -4px;
-        opacity: 0;
+        width: 170px;
     }
 }
 

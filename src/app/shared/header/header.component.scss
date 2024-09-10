@@ -1,5 +1,13 @@
 @import './../../../styles.scss';
 
+app-phone-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 header {
     @include d-position();
@@ -13,24 +21,24 @@ header {
     img {
         width: 150px;
     }
-}
 
-a {
-    @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
-    @include d-position();
-    text-decoration: none;
-    transition: 100ms all;
+    a {
+        @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
+        @include d-position();
+        text-decoration: none;
+        transition: 100ms all;
 
-    div {
-        top: 45px;
-    }
+        div {
+            top: 45px;
+        }
 
-    &:hover {
-        color: #3DCFB6;
-    }
+        &:hover {
+            color: #3DCFB6;
+        }
 
-    &:hover>div {
-        background-color: #3DCFB6
+        &:hover>div {
+            background-color: #3DCFB6
+        }
     }
 }
 
@@ -68,22 +76,38 @@ button {
         width: 50%;
         left: 0;
     }
+
+    .div-DE,
+    .div-EN {
+        color: white !important;
+        font-weight: 700 !important;
+    }
+
+    .slider-animation-EN {
+        animation: EN-animation 200ms;
+        transform: translateX(100%);
+    }
+
+    .slider-animation-DE {
+        animation: DE-animation 200ms;
+        transform: translateX(0%);
+    }
 }
 
-.div-DE,
-.div-EN {
-    color: white !important;
-    font-weight: 700 !important;
-}
+.phone-menu {
+    @include d-position($jc: space-between, $fd: column, $ai: space-between);
+    width: 40px;
+    height: 30px;
 
-.slider-animation-EN {
-    animation: EN-animation 200ms;
-    transform: translateX(100%);
-}
+    &:hover {
+        cursor: pointer;
+    }
 
-.slider-animation-DE {
-    animation: DE-animation 200ms;
-    transform: translateX(0%);
+    div {
+        width: 100%;
+        height: 3px;
+        background-color: #3DCFB6;
+    }
 }
 
 @keyframes EN-animation {
@@ -106,33 +130,7 @@ button {
     }
 }
 
-.phone-menu {
-    @include d-position($jc: space-between, $fd: column, $ai: space-between);
-    width: 40px;
-    height: 30px;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    div {
-        width: 100%;
-        height: 3px;
-        background-color: #3DCFB6;
-    }
-}
-
-app-phone-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 4;
-}
-
-@media (max-width: 700px) {
+@media (max-width: 750px) {
     nav {
         display: none !important;
     }
@@ -142,7 +140,7 @@ app-phone-menu {
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 750px) {
     .phone-menu {
         display: none;
     }

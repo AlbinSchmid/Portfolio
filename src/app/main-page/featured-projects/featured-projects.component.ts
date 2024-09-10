@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DetailProjectComponent } from './detail-project/detail-project.component';
+import { LanguageService } from '../../shared/service/language.service';
 
 @Component({
   selector: 'app-featured-projects',
@@ -17,7 +18,6 @@ export class FeaturedProjectsComponent {
     {
       id: '01',
       name: 'Join',
-      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
       gitHub: '',
       liveTest: '',
       img: 'join',
@@ -47,7 +47,6 @@ export class FeaturedProjectsComponent {
     {
       id: '02',
       name: 'El Pollo Loco',
-      description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
       gitHub: 'https://github.com/AlbinSchmid/El-Pollo-Loco',
       liveTest: '',
       img: 'pollo-loco',
@@ -69,7 +68,6 @@ export class FeaturedProjectsComponent {
     {
       id: '03',
       name: 'DABubble',
-      description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
       gitHub: '',
       liveTest: '',
       img: 'da-bubble',
@@ -92,6 +90,8 @@ export class FeaturedProjectsComponent {
   hoverId = -1;
   clickId = -1;
   detailView = false;
+
+  constructor(public languageService: LanguageService) {}
 
   showArrow(index: number) {
     this.hoverId = index;

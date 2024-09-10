@@ -1,29 +1,5 @@
 @import './../../../styles.scss';
 
-h1 {
-    @include t-design($ff: 'Fira Code', $fs: 32px, $fw: 700);
-    color: #3DCFB6;
-    padding: 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
-}
-
-p {
-    @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
-}
-
-.edge-shadow {
-    position: absolute;
-    height: 440px;
-    width: 100%;
-    top: 18%;
-    z-index: 2;
-    background: rgb(28, 28, 28);
-    background: linear-gradient(90deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%), linear-gradient(260deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%);
-}
-
-.blue-div {
-    background-color: #3DCFB6;
-}
-
 section {
     position: relative;
     @include d-position($ai: center, $fd: column, $jc: normal);
@@ -32,6 +8,30 @@ section {
     width: 100%;
     gap: 80px;
     overflow: hidden;
+
+    h1 {
+        @include t-design($ff: 'Fira Code', $fs: 32px, $fw: 700);
+        color: #3DCFB6;
+        padding: 0 clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+    }
+    
+    p {
+        @include t-design($ff: 'Karla', $fs: 18px, $fw: 300);
+    }
+    
+    .edge-shadow {
+        position: absolute;
+        height: 440px;
+        width: 100%;
+        top: 18%;
+        z-index: 2;
+        background: rgb(28, 28, 28);
+        background: linear-gradient(90deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%), linear-gradient(260deg, rgba(28, 28, 28, 1) 0%, rgba(0, 0, 0, 0) 18%);
+    }
+    
+    .blue-div {
+        background-color: #3DCFB6;
+    }
 
     .buttons-div {
         @include d-position();
@@ -76,9 +76,21 @@ section {
                 border-radius: 100%
             }
         }
+    }   
+}
+
+.help-container {
+    position: absolute;
+    top: 180px;
+    width: 682px;
+    height: 10px;
+
+    img {
+        position: absolute;
+        top: -20px;
+        left: -50px;
+        z-index: 3;
     }
-
-
 }
 
 .feedback-div {
@@ -244,20 +256,6 @@ section {
     }
 }
 
-.help-container {
-    position: absolute;
-    top: 180px;
-    width: 682px;
-    height: 10px;
-
-    img {
-        position: absolute;
-        top: -20px;
-        left: -50px;
-        z-index: 3;
-    }
-}
-
 @media (max-width: 1030px) {
     .edge-shadow {
         display: none;
@@ -308,8 +306,12 @@ section {
 }
 
 @media (max-width: 385px) {
+    .feedback-div {
+        height: 600px !important;
+    }
+
     .feedback {
-        height: 450px !important;
+        height: 480px !important;
     }
 
 }

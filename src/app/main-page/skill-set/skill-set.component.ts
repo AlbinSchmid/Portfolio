@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LanguageService } from '../../shared/service/language.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -54,6 +55,8 @@ export class SkillSetComponent {
     },
   ];
   hoveredOnGrowthImg = false;
+
+  constructor(public languageService: LanguageService) {}
 
   showImg(){
     if (this.hoveredOnGrowthImg) {

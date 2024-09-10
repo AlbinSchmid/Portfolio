@@ -1,34 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../shared/service/language.service';
 
 @Component({
   selector: 'app-aot',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './aot.component.html',
   styleUrl: './aot.component.scss'
 })
+
+
+
 export class AotComponent {
-  language = {
-    headline: {
-      en: 'Frontend Developer',
-      de: 'Frontend Entwickler',
-    },
-    buttonLeft: {
-      en: 'Check my work',
-      de: 'Meine Arbeit',
-    },
-    buttonRight: {
-      en: 'Contact me',
-      de: 'Schreibe mir',
-    }
-  };
   gitImgSrc = 'blue';
   emailImgSrc = 'blue';
 
-  constructor(private languageService: LanguageService) {
-
-  }
+  constructor(public languageService: LanguageService) {}
 
   changeImgSrc(whichIcon: string){
     if (whichIcon == 'git') {
@@ -45,5 +33,6 @@ export class AotComponent {
       }
     }
   }
-
 }
+
+

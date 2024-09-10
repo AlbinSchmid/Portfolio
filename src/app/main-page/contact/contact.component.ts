@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { LanguageService } from '../../shared/service/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,9 +11,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-
   http = inject(HttpClient);
-
   contactData = {
     name: '',
     email: '',
@@ -23,8 +22,10 @@ export class ContactComponent {
   emptyEmail = false;
   emptyMessage = false;
   emptyCheckbox = false;
-
+  
   mailTest = true;
+
+  constructor(public languageService: LanguageService) {}
 
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',

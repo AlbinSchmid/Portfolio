@@ -15,30 +15,29 @@ import { LanguageService } from '../service/language.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  germanLanguage: boolean = true;
-  englishLanguage: boolean = false;
   showPhoneMenu = false;
 
   constructor(public languageService: LanguageService) {
-
+    languageService.checkChosedLang();
   }
 
 
-  changeLanguage(){
-    if (this.germanLanguage) {
-      this.englishLanguage = true;
-      this.germanLanguage = false;
-    } else if (this.englishLanguage) {
-      this.englishLanguage = false;
-      this.germanLanguage = true;
+  changeLanguage() {
+    if (this.languageService.germanLanguage) {
+      this.languageService.englishLanguage = true;
+      this.languageService.germanLanguage = false;
+    } else if (this.languageService.englishLanguage) {
+      this.languageService.englishLanguage = false;
+      this.languageService.germanLanguage = true;
     }
-    this.languageService.germanLanguage = this.germanLanguage;
-    this.languageService.englishLanguage = this.englishLanguage;
+    localStorage.setItem('english', JSON.stringify(this.languageService.englishLanguage));
   }
+
 
   openPhoneMenu() {
     this.showPhoneMenu = true;
   }
+
 
   closePhoneMenu(closePhoneMenu: boolean) {
     this.showPhoneMenu = closePhoneMenu;

@@ -6,47 +6,43 @@ section {
     height: 100%;
     width: 100%;
     background-color: rgba(#000000, 0.4);
-}
 
-.frame {
-    display: flex;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    padding: 40px 60px;
-    background-image: url(./../../../../assets/img/aot-background.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 25px;
-    border: 1px solid #3DCFB6;
+    .frame {
+        display: flex;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        padding: 40px 60px;
+        background-image: url(./../../../../assets/img/aot-background.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 25px;
+        border: 1px solid #3DCFB6;
 
-    nav {
-        height: 100%;
-        gap: 35px;
-        @include d-position($fd: column);
+        nav {
+            height: 100%;
+            gap: 35px;
+            @include d-position($fd: column);
 
-        a {
-            @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
-            @include d-position();
-            text-decoration: none;
-            transition: 100ms all;
-        
-            div {
-                top: 45px;
-            }
-        
-            &:hover {
-                color: #3DCFB6;
+            a {
+                @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
+                @include d-position();
+                text-decoration: none;
+                transition: 100ms all;
+
+                div {
+                    top: 45px;
+                }
+
+                &:hover {
+                    color: #3DCFB6;
+                }
             }
         }
     }
+
 }
-
-
-
-
-
 
 button {
     @include d-position();
@@ -82,22 +78,22 @@ button {
         width: 50%;
         left: 0;
     }
-}
 
-.div-DE,
-.div-EN {
-    color: white !important;
-    font-weight: 700 !important;
-}
+    .div-DE,
+    .div-EN {
+        color: white !important;
+        font-weight: 700 !important;
+    }
 
-.slider-animation-EN {
-    animation: EN-animation 200ms;
-    transform: translateX(100%);
-}
+    .slider-animation-EN {
+        animation: EN-animation 200ms;
+        transform: translateX(100%);
+    }
 
-.slider-animation-DE {
-    animation: DE-animation 200ms;
-    transform: translateX(0%);
+    .slider-animation-DE {
+        animation: DE-animation 200ms;
+        transform: translateX(0%);
+    }
 }
 
 @keyframes EN-animation {

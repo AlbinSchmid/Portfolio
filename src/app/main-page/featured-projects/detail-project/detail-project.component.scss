@@ -1,27 +1,5 @@
 @import './../../../../styles.scss';
 
-h1 {
-    @include t-design($ff: 'Karla', $fs: clamp(4.5rem, 3.8rem + 3.5vw, 8rem), $fw: 700);
-    color: #3DCFB6;
-}
-
-h2 {
-    @include t-design($ff: 'Fira Code', $fs: clamp(4rem, 4.1rem + -0.5vw, 3.5rem), $fw: 700);
-    margin-top: -20px;
-    margin-bottom: 10px;
-}
-
-h3 {
-    @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
-    color: #3DCFB6;
-    margin-bottom: 10px;
-}
-
-p {
-    @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
-    max-width: 520px
-}
-
 section {
     @include d-position();
     position: absolute;
@@ -30,6 +8,27 @@ section {
     background-color: rgba(#000000, 0.4);
     padding: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
 
+    h1 {
+        @include t-design($ff: 'Karla', $fs: clamp(4.5rem, 3.8rem + 3.5vw, 8rem), $fw: 700);
+        color: #3DCFB6;
+    }
+    
+    h2 {
+        @include t-design($ff: 'Fira Code', $fs: clamp(4rem, 4.1rem + -0.5vw, 3.5rem), $fw: 700);
+        margin-top: -20px;
+        margin-bottom: 10px;
+    }
+    
+    h3 {
+        @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+        color: #3DCFB6;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
+        max-width: 520px
+    }
 
     .frame {
         border: solid 1px #3DCFB6;

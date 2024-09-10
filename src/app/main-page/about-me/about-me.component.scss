@@ -21,7 +21,6 @@ section {
     }
 
     .person-img {
-
         z-index: 2;
     }
 
@@ -45,35 +44,35 @@ section {
         @include t-design($ff: 'Karla', $fs: 24px, $fw: 500);
         color: #3DCFB6;
     }
-}
 
-.text-div {
-    @include blue-div-design();
-    @include d-position($fd: column, $ai: auto, $jc: auto);
-    gap: 14px;
-
-    p {
-        @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
-    }
-
-    span {
-        @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
-        text-align: justify;
-    }
-
-    h1 {
-        @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
-        color: #3DCFB6;
-    }
-
-    div {
-        @include d-position($ai: normal);
-        gap: clamp(0.625rem, 0.25rem + 1.875vw, 2.5rem);
-
-        img {
-            min-width: 32px;
-            width: 32px;
-            height: 32px;
+    .text-div {
+        @include blue-div-design();
+        @include d-position($fd: column, $ai: auto, $jc: auto);
+        gap: 14px;
+    
+        p {
+            @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
+        }
+    
+        span {
+            @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+            text-align: justify;
+        }
+    
+        h1 {
+            @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
+            color: #3DCFB6;
+        }
+    
+        div {
+            @include d-position($ai: normal);
+            gap: clamp(0.625rem, 0.25rem + 1.875vw, 2.5rem);
+    
+            img {
+                min-width: 32px;
+                width: 32px;
+                height: 32px;
+            }
         }
     }
 }

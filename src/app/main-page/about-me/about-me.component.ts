@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LanguageService } from '../../shared/service/language.service';
 
 @Component({
   selector: 'app-about-me',
@@ -12,6 +13,8 @@ import { Component } from '@angular/core';
 })
 export class AboutMeComponent {
   imgIsHoveredAlready = false;
+
+  constructor(public languageService: LanguageService) {}
 
   imgIsHovered(){
     this.imgIsHoveredAlready = true;

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, inject, Input, Output, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { transition } from '@angular/animations';
+import { LanguageService } from '../../../shared/service/language.service';
 
 @Component({
   selector: 'app-detail-project',
@@ -16,7 +17,6 @@ export class DetailProjectComponent {
     {
       id: '',
       name: '',
-      description: '',
       gitHub: '',
       liveTest: '',
       img: '',
@@ -48,12 +48,12 @@ export class DetailProjectComponent {
   @Input() detailView = true;
   @Output() closeDetail = new EventEmitter<boolean>();
 
+  constructor(public languageService: LanguageService) {}
 
   closeDetailView() {
     this.detailView = false;
     this.closeDetail.emit(this.detailView)
   }
-
 
   nextProject(){
     this.currentId++;
