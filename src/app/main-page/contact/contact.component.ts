@@ -23,10 +23,14 @@ export class ContactComponent {
   emptyMessage = false;
   emptyCheckbox = false;
   
-  mailTest = true;
+  mailTest = false;
 
   constructor(public languageService: LanguageService) {}
 
+
+  /**
+   * send mail
+   */
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -38,6 +42,11 @@ export class ContactComponent {
     },
   };
 
+
+  /**
+   * checked if every input is filled
+   * @param ngForm - the form 
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
@@ -83,15 +92,4 @@ export class ContactComponent {
       
     }
   }
-
-
-
-
-
-  // onSubmit(ngForm: NgForm) {
-  //   if (ngForm.valid && ngForm.submitted) {
-  //     console.log(this.contactData);
-
-  //   }
-  // }
 }

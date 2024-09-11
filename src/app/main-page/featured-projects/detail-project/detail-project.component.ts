@@ -48,13 +48,22 @@ export class DetailProjectComponent {
   @Input() detailView = true;
   @Output() closeDetail = new EventEmitter<boolean>();
 
+  
   constructor(public languageService: LanguageService) {}
 
+
+  /**
+   * change the variable and send it to the parent
+   */
   closeDetailView() {
     this.detailView = false;
     this.closeDetail.emit(this.detailView)
   }
 
+
+  /**
+   * next project should show
+   */
   nextProject(){
     this.currentId++;
     this.currentId = this.currentId % this.projects.length;

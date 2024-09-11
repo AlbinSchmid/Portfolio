@@ -321,4 +321,19 @@ section {
         height: 480px !important;
     }
 
+    .help-container {
+        img {
+            top: 4%;
+            left: -30px;
+        }
+    }
+}
+
+@media (max-width: 368px) {
+    .help-container {
+        img {
+            top: 17%;
+            left: -30px;
+        }
+    }
 }

@@ -1,36 +1,47 @@
 <section>
     <div class="frame">
-            <div  class="left-part">
+        <div class="left-part">
+            <div class="headlines-div">
                 <h1>{{ projects[currentId].id }}</h1>
                 <h2>{{ projects[currentId].name }}</h2>
-                <h3>What is this project about?</h3>
-                <p>{{ languageService.controllLang(languageService.projects.detailProject.description[currentId]) }}</p>
-                <div class="skill-div">
-                    @for (skill of projects[currentId].skills; track $index) {
-                        <div>
-                            <img src="./../../../../assets/icons/{{ skill.img }}.png" alt="">
-                            <p>{{ skill.name }}</p>
-                        </div>
-                    }
-                </div>
-                <div class="btn-div">
-                    <a href="{{ projects[currentId].gitHub }}" target="_blank">
-                        GitHub
-                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
-                    </a>
-                    <a href="{{ projects[currentId].liveTest }}" target="_blank">
-                        Live Test
-                        <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
-                    </a>
-                </div>
             </div>
-            <div class="right-part">
-                <button class="close-btn" (click)="closeDetailView()"></button>
-                <img src="./../../../../assets/img/{{ projects[currentId].img }}.png" alt="website logo" class="project-img">
+            <h3>What is this project about?</h3>
+            <p>{{ languageService.controllLang(languageService.projects.detailProject.description[currentId]) }}</p>
+            <div class="skill-div">
+                @for (skill of projects[currentId].skills; track $index) {
+                <div>
+                    <img src="./../../../../assets/icons/{{ skill.img }}.png" alt="">
+                    <p>{{ skill.name }}</p>
+                </div>
+                }
+            </div>
+            <div class="btn-div">
+                <a href="{{ projects[currentId].gitHub }}" target="_blank">
+                    GitHub
+                    <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
+                </a>
+                <a href="{{ projects[currentId].liveTest }}" target="_blank">
+                    Live Test
+                    <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
+                </a>
+            </div>
+            <div class="show-btn">
                 <button class="next-project-btn" (click)="nextProject()">
                     {{ languageService.controllLang(languageService.projects.detailProject.btn) }}
                     <div class="img-div"></div>
                 </button>
             </div>
+        </div>
+        <div class="right-part">
+            <div class="close-btn-div">
+                <button class="close-btn" (click)="closeDetailView()"></button>
+            </div>
+            <img src="./../../../../assets/img/{{ projects[currentId].img }}.png" alt="website logo"
+                class="project-img">
+            <button class="next-project-btn hide-btn" (click)="nextProject()">
+                {{ languageService.controllLang(languageService.projects.detailProject.btn) }}
+                <div class="img-div"></div>
+            </button>
+        </div>
     </div>
 </section>

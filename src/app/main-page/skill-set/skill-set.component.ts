@@ -56,8 +56,13 @@ export class SkillSetComponent {
   ];
   hoveredOnGrowthImg = false;
 
+  
   constructor(public languageService: LanguageService) {}
 
+
+  /**
+   * show the hidden img
+   */
   showImg(){
     if (this.hoveredOnGrowthImg) {
       this.hoveredOnGrowthImg = false;

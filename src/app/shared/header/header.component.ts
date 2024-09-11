@@ -22,6 +22,9 @@ export class HeaderComponent {
   }
 
 
+  /**
+   * when language button get clicked we change the language
+   */
   changeLanguage() {
     if (this.languageService.germanLanguage) {
       this.languageService.englishLanguage = true;
@@ -34,11 +37,18 @@ export class HeaderComponent {
   }
 
 
+  /**
+   * when menu button for phone is clicked we show the menu
+   */
   openPhoneMenu() {
     this.showPhoneMenu = true;
   }
 
 
+  /**
+   * 
+   * @param closePhoneMenu get this from the child and then we close the menu
+   */
   closePhoneMenu(closePhoneMenu: boolean) {
     this.showPhoneMenu = closePhoneMenu;
   }

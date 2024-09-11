@@ -16,6 +16,9 @@ export class AboutMeComponent {
 
   constructor(public languageService: LanguageService) {}
 
+  /**
+   * when image get hovered set it true
+   */
   imgIsHovered(){
     this.imgIsHoveredAlready = true;
   }

@@ -17,13 +17,22 @@ export class PhoneMenuComponent {
   germanLanguage: boolean = true;
   englishLanguage: boolean = false;
 
+
   constructor(public languageService: LanguageService) {}
 
+
+  /**
+   * we send this to the parent, then we can close it
+   */
   closePhoneMenu(){
     this.showPhoneMenu = false;
     this.closeMenu.emit(this.showPhoneMenu)
   }
 
+
+  /**
+   * when language button on phone get clicked we change the language
+   */
   changeLanguage(){
     if (this.languageService.germanLanguage) {
       this.languageService.englishLanguage = true;

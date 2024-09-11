@@ -20,20 +20,20 @@ section {
     .left-line {
         @include d-position($fd: column);
         gap: 24px;
-    
+
         div {
             width: 2px;
             height: 200px;
             background-color: #3DCFB6;
             @include d-position($ai: flex-end);
         }
-    
+
         a {
             background: transparent;
             border: 1px solid #3DCFB6;
             border-radius: 25px;
             padding: 16px 6px;
-    
+
             img {
                 height: 18px;
                 width: 16px;
@@ -46,15 +46,15 @@ section {
     .main-div {
         @include d-position($fd: column);
         height: 100%;
-    
+
         h1 {
             @include t-design($fs: clamp(3.875rem, 3.05rem + 4.125vw, 8rem), $fw: 700);
         }
-    
+
         h3 {
             @include t-design($ff: 'Fira Code', $fs: clamp(1.5rem, 1.3rem + 1vw, 2.5rem), $fw: 400);
         }
-    
+
         div {
             display: flex;
             position: relative;
@@ -67,56 +67,58 @@ section {
         @include d-position($fd: column);
         gap: 24px;
         width: 30px;
-    
+
         .line {
             width: 2px;
             height: 150px;
             background-color: white;
         }
-    
+
         .a-email {
             @include t-design($fs: 18px);
             text-decoration: none;
             transform: rotate(-90deg);
             margin-bottom: 96px;
-    
+
             &:hover {
                 color: #3DCFB6;
             }
-    
+
             img {
                 display: none;
             }
         }
-    
+
         .a-git {
             position: relative;
             @include d-position();
-    
-            div{
+
+            div {
                 left: 35px;
             }
-    
+
             img {
                 display: flex;
                 position: relative;
             }
-    
+
             &:hover>div {
                 background-color: #3DCFB6
             }
-    
+
         }
     }
 }
 
 @keyframes bounce {
-    0%{
+    0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(8px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -127,6 +129,7 @@ section {
         position: relative;
         @include d-position();
         margin-bottom: 0 !important;
+
         p {
             display: none;
         }
@@ -135,7 +138,7 @@ section {
             display: block !important;
         }
 
-        div{
+        div {
             top: 32px;
         }
 
@@ -165,4 +168,36 @@ section {
         margin-top: -50px;
         text-align: center;
     }
+}
+
+section {
+    cursor: none;
+}
+
+section:hover #custom-cursor {
+    opacity: 1;
+}
+
+#custom-cursor {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 500ms;
+}
+
+#custom-cursor::after {
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    border: 1px solid white;
+    width: 16px;
+    height: 16px;
 }

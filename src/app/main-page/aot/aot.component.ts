@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../shared/service/language.service';
 
@@ -10,15 +10,18 @@ import { LanguageService } from '../../shared/service/language.service';
   styleUrl: './aot.component.scss'
 })
 
-
-
 export class AotComponent {
   gitImgSrc = 'blue';
   emailImgSrc = 'blue';
 
   constructor(public languageService: LanguageService) {}
 
-  changeImgSrc(whichIcon: string){
+
+  /**
+   * When image is hovered change the current img source
+   * @param whichIcon - which icon should change
+   */
+  changeImgSrc(whichIcon: string) {
     if (whichIcon == 'git') {
       if (this.gitImgSrc == 'blue') {
         this.gitImgSrc = 'white';
@@ -33,6 +36,8 @@ export class AotComponent {
       }
     }
   }
+
+  
 }
 
 

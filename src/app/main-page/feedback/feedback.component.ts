@@ -17,8 +17,14 @@ export class FeedbackComponent {
   forwardNumerator = 0;
   reverseNumerator = 0;
 
+  
   constructor(public languageService: LanguageService) {}
 
+
+  /**
+   * change the showed feedback
+   * @param i - to increase or decrease
+   */
   changeMainFeedback(i: number) {
     if (i == -1) {
       this.reverse = false;
@@ -40,7 +46,12 @@ export class FeedbackComponent {
   }
 
 
-  checkMainFeedback(id: number): any {
+  /**
+   * checked which feedback get which css class
+   * @param id - which feedback
+   * @returns css class who get added
+   */
+  checkMainFeedback(id: number): string {
     const isCurrent = id === this.currentFeedback;
     const isPrevious = id === (this.currentFeedback - 1 + 3) % 3;
     const isNext = id === (this.currentFeedback + 1) % 3;

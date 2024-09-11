@@ -305,6 +305,12 @@ export class LanguageService {
   germanLanguage: boolean = true;
   englishLanguage: boolean = false;
 
+
+  /**
+   * 
+   * @param text - get the path of the array which we should change the language
+   * @returns return the path of the array with de correct langauge
+   */
   controllLang(text: any) {
     if (this.germanLanguage) {
       return text.de
@@ -313,6 +319,10 @@ export class LanguageService {
     }
   }
 
+
+  /**
+   * checked the already used language its saved in local storage
+   */
   checkChosedLang() {
     const english = localStorage.getItem('english');
     if (english) {

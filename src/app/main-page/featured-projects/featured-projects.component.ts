@@ -91,21 +91,41 @@ export class FeaturedProjectsComponent {
   clickId = -1;
   detailView = false;
 
+  
   constructor(public languageService: LanguageService) {}
 
+
+  /**
+   * show arrow
+   * @param index - which arrow should show
+   */
   showArrow(index: number) {
     this.hoverId = index;
   }
 
+
+  /**
+   * hide arrow
+   */
   hideArrow() {
     this.hoverId = -1;
   }
 
+
+  /**
+   * open the detail view of the project
+   * @param index - on which project should open the detail.
+   */
   showDetail(index: number) {
     this.clickId = index;
     this.detailView = true;
   }
 
+
+  /**
+   * close the detail view
+   * @param closeDetail - get this from child 
+   */
   closeDetail(closeDetail: boolean) {
     this.detailView = closeDetail;
   }

@@ -11,6 +11,9 @@ import { FooterComponent } from '../shared/footer/footer.component';
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent {
+  /**
+   * go back to last page
+   */
   goBack() {
     history.back();
   }

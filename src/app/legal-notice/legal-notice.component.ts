@@ -16,6 +16,9 @@ export class LegalNoticeComponent {
     languageService.checkChosedLang();
   }
 
+  /**
+   * go back to last page
+   */
   goBack() {
     history.back();
   }

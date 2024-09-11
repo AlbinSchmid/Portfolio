@@ -1,5 +1,22 @@
 @import './../../../../styles.scss';
 
+.close-btn-div {
+    @include d-position($jc: flex-end);
+    width: 100%;
+
+    .close-btn {
+        width: 30px;
+        height: 30px;
+        background-image: url(./../../../../assets/icons/cross-white.png);
+        background-position: center;
+        transition: 300ms ease-in-out;
+
+        &:hover {
+            background-image: url(./../../../../assets/icons/cross-blue-big.png);
+        }
+    }
+}
+
 section {
     @include d-position();
     position: absolute;
@@ -9,22 +26,22 @@ section {
     padding: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
 
     h1 {
-        @include t-design($ff: 'Karla', $fs: clamp(4.5rem, 3.8rem + 3.5vw, 8rem), $fw: 700);
+        @include t-design($ff: 'Karla', $fs: clamp(2rem, 0.8rem + 6vw, 8rem), $fw: 700);
         color: #3DCFB6;
     }
-    
+
     h2 {
-        @include t-design($ff: 'Fira Code', $fs: clamp(4rem, 4.1rem + -0.5vw, 3.5rem), $fw: 700);
+        @include t-design($ff: 'Fira Code', $fs: clamp(1.625rem, 1.15rem + 2.375vw, 4rem), $fw: 700);
         margin-top: -20px;
         margin-bottom: 10px;
     }
-    
+
     h3 {
-        @include t-design($ff: 'Fira Code', $fs: 24px, $fw: 700);
+        @include t-design($ff: 'Fira Code', $fs: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem), $fw: 700);
         color: #3DCFB6;
         margin-bottom: 10px;
     }
-    
+
     p {
         @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
         max-width: 520px
@@ -47,7 +64,7 @@ section {
             .btn-div {
                 @include d-position($jc: normal);
                 gap: 32px;
-                margin-top: 40px;
+                margin-top: clamp(0.5rem, 0.1rem + 2vw, 2.5rem);
 
                 a {
                     @include d-position();
@@ -76,8 +93,9 @@ section {
         }
 
         .right-part {
-            @include d-position($fd: column, $ai: flex-end);
+            @include d-position($fd: column, $ai: flex-end, $jc: space-between);
             gap: clamp(0.5rem, 0.1rem + 2vw, 2.5rem);
+            height: 100%;
 
             .project-img {
                 width: 520px;
@@ -85,12 +103,8 @@ section {
             }
 
             button {
-                @include d-position();
-                @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
-
                 background-color: transparent;
                 border: none;
-
             }
 
             .cross-img {
@@ -105,6 +119,10 @@ section {
 }
 
 .next-project-btn {
+    @include d-position();
+    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+    background-color: transparent;
+    border: none;
     gap: 8px;
     color: #3DCFB6;
 
@@ -129,6 +147,7 @@ section {
     @include d-position($jc: normal);
     gap: 16px;
     margin-top: 30px;
+    flex-wrap: wrap;
 
     div {
         @include d-position();
@@ -136,59 +155,92 @@ section {
     }
 }
 
-.close-btn {
-    width: 40px;
-    height: 40px;
-    background-image: url(./../../../../assets/icons/cross-white.png);
-    transition: 300ms ease-in-out;
+.show-btn {
+    display: none;
+}
 
-    &:hover {
-        background-image: url(./../../../../assets/icons/cross-blue-big.png);
+@media (max-width: 1330px) {
+    .frame {
+        width: 100% !important;
     }
 }
 
-@media (max-width: 1160px) {
+@media (max-width: 1100px) {
     .frame {
-        position: relative;
-        @include d-position($fd: column-reverse !important);
-        padding: 15px clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem) !important;
+        height: 500px;
+        @include d-position($jc: space-between !important);
     }
 
-    .next-project-btn {
-        position: absolute;
-        bottom: 26px;
+    .project-img {
+        width: 390px !important;
+        height: 245px !important;
+    }
+
+    .left-part {
+        width: auto;
+    }
+
+    h2 {
+        margin-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .frame {
+        height: 400px;
+    }
+
+    .headlines-div {
+        @include d-position($jc: normal, $ai: center);
+        gap: clamp(0.5rem, -0.0238rem + 2.619vw, 1.875rem);
+
+        h2 {
+            margin: 0 !important;
+        }
+    }
+
+    .project-img {
+        width: 250px !important;
+        height: 155px !important;
+    }
+}
+
+@media (max-width: 785px) {
+    .frame {
+        height: 100%;
+        max-height: 650px !important;
+        @include d-position($fd: column-reverse !important);
     }
 
     .project-img {
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
+    }
+
+    .hide-btn {
+        display: none !important;
+    }
+
+    .show-btn {
+        @include d-position($jc: flex-end);
+        width: 100%;
+    }
+
+    .left-part {
+        width: 100%;
+    }
+
+    .right-part {
+        @include d-position($jc: normal !important, $ai: center !important);
+        width: 100%;
+        height: 40% !important;
     }
 
     .skill-div {
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 560px) {
-    .frame {
-        padding: 15px clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem) 80px !important;
-    }
-
-    .next-project-btn {
-        position: absolute;
-        bottom: 26px;
+        margin-top: 10px;
     }
 
     .btn-div {
         gap: 10px !important;
-
-        a {
-            padding: 10px 18px !important;
-        }
     }
-
-    h2 {
-        font-size: 40px;
-    }
-
 }
