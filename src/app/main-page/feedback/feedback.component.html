@@ -2,7 +2,7 @@
     <section>
         <h1>What my colleagues say about me</h1>
         <div class="help-container">
-            <img src="./../../../assets/icons/quotes.png" alt="quotes">
+            <img src="./assets/icons/quotes.png" alt="quotes">
         </div>
         <div class="feedback-div">
             @for (feedback of languageService.feedback.feedbacks; track $index) {
@@ -16,13 +16,13 @@
             }
         </div>
         <div class="buttons-div">
-            <button class="left-btn" (click)="changeMainFeedback(1)"></button>
+            <button class="left-btn" (click)="changeMainFeedback(-1)"></button>
             <div class="points-div">
                 <div [ngStyle]="{'background-color': currentFeedback == 2 ? '#3DCFB6' : ''}"></div>
                 <div [ngStyle]="{'background-color': currentFeedback == 1 ? '#3DCFB6' : ''}"></div>
                 <div [ngStyle]="{'background-color': currentFeedback == 0 ? '#3DCFB6' : ''}"></div>
             </div>
-            <button class="right-btn" (click)="changeMainFeedback(-1)"></button>
+            <button class="right-btn" (click)="changeMainFeedback(1)"></button>
         </div>
         <div class="edge-shadow"></div>
     </section>

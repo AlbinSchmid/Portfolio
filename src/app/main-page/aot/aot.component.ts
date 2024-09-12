@@ -14,8 +14,9 @@ export class AotComponent {
   gitImgSrc = 'blue';
   emailImgSrc = 'blue';
 
-  constructor(public languageService: LanguageService) {}
-
+  constructor(public languageService: LanguageService) {
+    
+  }
 
   /**
    * When image is hovered change the current img source
@@ -37,7 +38,6 @@ export class AotComponent {
     }
   }
 
-  
 }
 
 

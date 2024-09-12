@@ -2,11 +2,9 @@
 
 .background {
     width: 100%;
-    background-color: #1C1C1C;
-    background-image: url(./../../../assets/img/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: 100% 100%;
+    background-position: 0px 0px;
+    background-image: radial-gradient(24% 45% at 0% 50%, #08463B -11%, #1C1C1C 100%);
     @include d-position();
 }
 
@@ -30,6 +28,7 @@ section {
     .content {
         @include d-position($jc: space-between, $ai: auto);
         gap: 20px;
+        overflow: hidden;
 
         .left-part {
             @include d-position($ai: auto, $fd: column);
@@ -41,7 +40,7 @@ section {
         .right-part {
             margin-top: 50px;
             display: flex;
-            gap: clamp(1.875rem, -0.3rem + 4vw, 4.5rem);;
+            gap: clamp(0.5rem, -0.3rem + 4vw, 4.5rem);
             flex-wrap: wrap;
             width: 50%;
 
@@ -65,7 +64,7 @@ section {
 
             .growth-img {
                 position: relative;
-            
+
                 .hover-img {
                     width: 200px;
                     transition: 400ms ease-in-out;

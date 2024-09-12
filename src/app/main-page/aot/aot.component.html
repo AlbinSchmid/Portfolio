@@ -2,7 +2,7 @@
     <section>
         <div class="left-line">
             <a href="#about-me">
-                <img src="./../../assets/icons/arrow-down.png" alt="arrow-down">
+                <img src="./assets/icons/arrow-down.png" alt="arrow-down">
             </a>
             <div></div>
         </div>
@@ -21,18 +21,46 @@
         <div class="right-line">
             <a class="a-email" href="mailto: schmidalbin15@gmail.com">
                 <p>schmidalbin15&#64;gmail.com</p>
-                <img src="./../../../assets/icons/mail-{{ emailImgSrc }}.png" (mouseover)="changeImgSrc('email')"
+                <img src="./assets/icons/mail-{{ emailImgSrc }}.png" (mouseover)="changeImgSrc('email')"
                     (mouseout)="changeImgSrc('email')" alt="email-logo">
                 <div class="hover-point"></div>
             </a>
             <a class="a-git" href="https://github.com/AlbinSchmid" target="_blank">
                 <img (mouseover)="changeImgSrc('git')" (mouseout)="changeImgSrc('git')"
-                    src="./../../assets/icons/git-{{ gitImgSrc }}.png" alt="git-logo">
+                    src="./assets/icons/git-{{ gitImgSrc }}.png" alt="git-logo">
                 <div class="hover-point"></div>
             </a>
             <div class="line"></div>
         </div>
-        <div id="custom-cursor">
+        <div class="slide-animation-div">
+            <div class="placeholder">
+                <div class="mover-1">
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content1) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content2) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content3) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content4) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content1) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content2) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content3) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content4) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content1) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content2) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content3) }}</h4>
+                    <div class="blue-point"></div>
+                    <h4>{{ languageService.controllLang(languageService.aot.animation.content4) }}</h4>
+                    <div class="blue-point"></div>
+                </div>
+            </div>
         </div>
     </section>
 </div>

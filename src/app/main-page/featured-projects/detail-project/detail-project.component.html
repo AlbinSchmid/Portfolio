@@ -1,4 +1,5 @@
 <section>
+    <div class="background" (click)="closeDetailView()"></div>
     <div class="frame">
         <div class="left-part">
             <div class="headlines-div">
@@ -10,7 +11,7 @@
             <div class="skill-div">
                 @for (skill of projects[currentId].skills; track $index) {
                 <div>
-                    <img src="./../../../../assets/icons/{{ skill.img }}.png" alt="">
+                    <img src="./assets/icons/{{ skill.img }}.png" alt="">
                     <p>{{ skill.name }}</p>
                 </div>
                 }
@@ -18,11 +19,11 @@
             <div class="btn-div">
                 <a href="{{ projects[currentId].gitHub }}" target="_blank">
                     GitHub
-                    <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
+                    <img src="./assets/icons/arrow-outward-blue.png" alt="arrow-outward">
                 </a>
                 <a href="{{ projects[currentId].liveTest }}" target="_blank">
                     Live Test
-                    <img src="./../../../../assets/icons/arrow-outward-blue.png" alt="arrow-outward">
+                    <img src="./assets/icons/arrow-outward-blue.png" alt="arrow-outward">
                 </a>
             </div>
             <div class="show-btn">
@@ -36,8 +37,7 @@
             <div class="close-btn-div">
                 <button class="close-btn" (click)="closeDetailView()"></button>
             </div>
-            <img src="./../../../../assets/img/{{ projects[currentId].img }}.png" alt="website logo"
-                class="project-img">
+            <img src="./assets/img/{{ projects[currentId].img }}.png" alt="website logo" class="project-img">
             <button class="next-project-btn hide-btn" (click)="nextProject()">
                 {{ languageService.controllLang(languageService.projects.detailProject.btn) }}
                 <div class="img-div"></div>

@@ -18,8 +18,8 @@ export class FeaturedProjectsComponent {
     {
       id: '01',
       name: 'Join',
-      gitHub: '',
-      liveTest: '',
+      gitHub: 'https://github.com/AlbinSchmid/Join',
+      liveTest: 'https://albin-schmid.developerakademie.net/join/log-in.html',
       img: 'join',
       skills: [
         {
@@ -48,7 +48,7 @@ export class FeaturedProjectsComponent {
       id: '02',
       name: 'El Pollo Loco',
       gitHub: 'https://github.com/AlbinSchmid/El-Pollo-Loco',
-      liveTest: '',
+      liveTest: 'https://albin-schmid.developerakademie.net/pollo-loco/index.html',
       img: 'pollo-loco',
       skills: [
         {

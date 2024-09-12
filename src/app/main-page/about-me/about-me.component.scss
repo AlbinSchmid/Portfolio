@@ -94,7 +94,11 @@ section {
 
 @media (max-width: 920px) {
     .text-div {
-        @include blue-div-design($mw: 100%);
+        @include blue-div-design($mw: 100% !important);
+    }
+
+    .right-part {
+        width: 100%;
     }
 
     section {

@@ -76,12 +76,18 @@
                     languageService.controllLang(languageService.contact.form.errors.checkbox) }}</span>
                 }
 
-                <div class="submit-btn">
-                    <button type="submit" class="animation-btn">
-                        <span>Say Hello ;)</span>
+                <div class="submit-btn" [ngStyle]="{'display': message.valid && email.valid && name.valid ? 'flex' : 'none'}">
+                    <button type="submit" class="animation-btn" value="submit">
+                        <span>{{languageService.controllLang(languageService.contact.form.btn) }} ;)</span>
                     </button>
                 </div>
             </form>
+        </div>
+        <div [ngClass]="{'send-message': sendMailWorked}" [ngStyle]="{'display': sendMailWorked ? 'block' : 'none'}">
+            <div>
+                <h4>{{languageService.controllLang(languageService.contact.sendMail.headline) }}</h4>
+                <p>{{languageService.controllLang(languageService.contact.sendMail.content) }}</p>
+            </div>
         </div>
     </section>
 </div>

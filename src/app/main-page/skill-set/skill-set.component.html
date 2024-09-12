@@ -17,14 +17,14 @@
             <div class="right-part">
                 @for (skill of skillsIcons; track $index) {
                 <div>
-                    <img class="hover-effekt" src="./../../../assets/icons/{{ skill.img }}.png" alt="">
+                    <img class="hover-effekt" src="./assets/icons/{{ skill.img }}.png" alt="">
                     <p>{{ skill.name }}</p>
                 </div>
                 }
                 <div (mouseover)="showImg()" (mouseout)="showImg()" class="growth-img">
-                    <img class="hover-effekt" src="./../../../assets/icons/growth-mindset.png" alt="growth-mindset">
+                    <img class="hover-effekt" src="./assets/icons/growth-mindset.png" alt="growth-mindset">
                     <p>Growth mindset</p>
-                    <img src="./../../../assets/icons/interested-in.png" alt="react, vue js"
+                    <img src="./assets/icons/interested-in.png" alt="react, vue js"
                         [ngStyle]="{'opacity': hoveredOnGrowthImg ? '1' : '0'}" class="hover-img">
                 </div>
             </div>

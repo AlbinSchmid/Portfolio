@@ -1,9 +1,9 @@
 <div class="background">
     <section>
         <div class="img-div">
-            <img class="person-img" (mouseover)="imgIsHovered()" src="./../../../assets/img/me.png" alt="person">
+            <img class="person-img" (mouseover)="imgIsHovered()" src="./assets/img/me.png" alt="person">
             <img class="animation-img" [ngClass]="{'imgHovered': imgIsHoveredAlready}"
-                src="./../../../assets/img/animation-img.png" alt="background">
+                src="./assets/img/animation-img.png" alt="background">
         </div>
         <div class="right-part">
             <h3>{{ languageService.controllLang(languageService.aboutMe.smallHeadline) }}</h3>
@@ -11,15 +11,15 @@
                 <h1>{{ languageService.controllLang(languageService.aboutMe.bigHeadline) }}</h1>
                 <span>{{ languageService.controllLang(languageService.aboutMe.content) }}</span>
                 <div>
-                    <img src="./../../../assets/icons/location.png" alt="location">
+                    <img src="./assets/icons/location.png" alt="location">
                     <p>{{ languageService.controllLang(languageService.aboutMe.loaction) }}</p>
                 </div>
                 <div>
-                    <img src="./../../../assets/icons/cognition.png" alt="cognition">
+                    <img src="./assets/icons/cognition.png" alt="cognition">
                     <p>{{ languageService.controllLang(languageService.aboutMe.mindset) }}</p>
                 </div>
                 <div>
-                    <img src="./../../../assets/icons/check.png" alt="check">
+                    <img src="./assets/icons/check.png" alt="check">
                     <p>{{ languageService.controllLang(languageService.aboutMe.strengthen) }}</p>
                 </div>
             </div>

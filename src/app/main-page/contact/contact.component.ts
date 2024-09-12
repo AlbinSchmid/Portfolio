@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from '../../shared/service/language.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -22,17 +23,17 @@ export class ContactComponent {
   emptyEmail = false;
   emptyMessage = false;
   emptyCheckbox = false;
-  
-  mailTest = false;
+  sendMailWorked = false;
 
-  constructor(public languageService: LanguageService) {}
+
+  constructor(public languageService: LanguageService) { }
 
 
   /**
    * send mail
    */
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'http://albin-schmid.com',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -48,11 +49,14 @@ export class ContactComponent {
    * @param ngForm - the form 
    */
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.submitted && ngForm.form.valid) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            this.sendMailWorked = true;
+            setTimeout(() => {
+              this.sendMailWorked = false;
+            }, 6000);
             ngForm.resetForm();
           },
           error: (error) => {
@@ -60,9 +64,6 @@ export class ContactComponent {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      console.log(this.contactData);
-      ngForm.resetForm();
     } else {
       if (this.contactData.name.length == 0) {
         this.emptyName = true;
@@ -87,9 +88,7 @@ export class ContactComponent {
       } else {
         this.emptyCheckbox = false;
       }
-
       console.error('Does not work');
-      
     }
   }
 }

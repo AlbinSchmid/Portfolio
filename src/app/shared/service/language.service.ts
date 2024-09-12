@@ -30,6 +30,24 @@ export class LanguageService {
     btnRight: {
       en: 'Contact me',
       de: 'Schreibe mir',
+    },
+    animation: {
+      content1: {
+        en: 'Open to work',
+        de: 'Offen für neues',
+      },
+      content2: {
+        en: 'Frontend Developer',
+        de: 'Frontend Entwickler',
+      },
+      content3: {
+        en: 'Based in Tirol',
+        de: 'Wohnhaft in Tirol',
+      },
+      content4: {
+        en: 'Available for remote Work',
+        de: 'Remote-Arbeit möglich',
+      }
     }
   };
   aboutMe = {
@@ -202,6 +220,10 @@ export class LanguageService {
           de: 'gelesen und stimme der darin beschriebenen Verarbeitung meiner Daten zu.',
         },
       },
+      btn: {
+        en: 'Say Hello',
+        de: 'Sag Hallo'
+      },
       input: {
         name: {
           en: `Your name goes here`,
@@ -234,6 +256,16 @@ export class LanguageService {
           de: 'Bitten aktzeptieren sie unsere Datenschutz Richtlinien.',
         },
       }
+    },
+    sendMail: {
+      headline: {
+        en: 'I received it.',
+        de: 'Ich habe deine Nachricht erhalten',
+      },
+      content: {
+        en: `Thanks for the message. I'll reply as soon as possible.`,
+        de: 'Vielen Dank für deine Nachricht, Ich werde sie in kürze beantworten',
+      }   
     }
   }
   footer = {
