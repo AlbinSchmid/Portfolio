@@ -33,7 +33,7 @@ export class ContactComponent {
    * send mail
    */
   post = {
-    endPoint: 'http://albin-schmid.com',
+    endPoint: 'http://albin-schmid.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -54,6 +54,7 @@ export class ContactComponent {
         .subscribe({
           next: (response) => {
             this.sendMailWorked = true;
+            this.emptyCheckbox = false;
             setTimeout(() => {
               this.sendMailWorked = false;
             }, 6000);
@@ -62,33 +63,60 @@ export class ContactComponent {
           error: (error) => {
             console.error(error);
           },
-          complete: () => console.info('send post complete'),
         });
     } else {
-      if (this.contactData.name.length == 0) {
-        this.emptyName = true;
-      } else {
-        this.emptyName = false;
-      }
+      this.showErrorName();
+      this.showErrorEmail();
+      this.showErrorMessage();
+      this.showErrorCheckbox();
+    }
+  }
 
-      if (this.contactData.email.length == 0) {
-        this.emptyEmail = true;
-      } else {
-        this.emptyEmail = false;
-      }
 
-      if (this.contactData.message.length == 0) {
-        this.emptyMessage = true;
-      } else {
-        this.emptyMessage = false;
-      }
+  /**
+   * show error under the input
+   */
+  showErrorName() {
+    if (this.contactData.name.length == 0) {
+      this.emptyName = true;
+    } else {
+      this.emptyName = false;
+    }
+  }
 
-      if (this.contactData.checkbox == false) {
-        this.emptyCheckbox = true;
-      } else {
-        this.emptyCheckbox = false;
-      }
-      console.error('Does not work');
+
+  /**
+   * show error under the input
+   */
+  showErrorEmail() {
+    if (this.contactData.email.length == 0) {
+      this.emptyEmail = true;
+    } else {
+      this.emptyEmail = false;
+    }
+  }
+
+
+  /**
+   * show error under the input
+   */
+  showErrorMessage() {
+    if (this.contactData.message.length == 0) {
+      this.emptyMessage = true;
+    } else {
+      this.emptyMessage = false;
+    }
+  }
+
+
+  /**
+   * show error under the input
+   */
+  showErrorCheckbox() {
+    if (this.contactData.checkbox == false) {
+      this.emptyCheckbox = true;
+    } else {
+      this.emptyCheckbox = false;
     }
   }
 }

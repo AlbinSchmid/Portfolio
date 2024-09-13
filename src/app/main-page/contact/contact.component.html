@@ -75,12 +75,13 @@
                 <span class="error-span-checkbox">{{
                     languageService.controllLang(languageService.contact.form.errors.checkbox) }}</span>
                 }
-
-                <div class="submit-btn" [ngStyle]="{'display': message.valid && email.valid && name.valid ? 'flex' : 'none'}">
-                    <button type="submit" class="animation-btn" value="submit">
-                        <span>{{languageService.controllLang(languageService.contact.form.btn) }} ;)</span>
-                    </button>
-                </div>
+                
+                    <div class="submit-btn">
+                        <button type="submit" class="animation-btn" value="submit">
+                            <span>{{languageService.controllLang(languageService.contact.form.btn) }} ;)</span>
+                        </button>
+                        <div class="div-over-btn" [ngStyle]="{'display': !message.valid && !email.valid && !name.valid ? 'block' : 'none'}"></div>
+                    </div>
             </form>
         </div>
         <div [ngClass]="{'send-message': sendMailWorked}" [ngStyle]="{'display': sendMailWorked ? 'block' : 'none'}">

@@ -60,11 +60,11 @@ export class LanguageService {
       de: 'Über mich',
     },
     content: {
-      en: 'Hi, I’m a german speaking Frontend Developer based in Munich. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.',
+      en: 'Hi, I’m a german speaking Frontend Developer based in Tirol. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.',
       de: 'Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in München. Motiviert von den grenzenlosen Möglichkeiten in der IT bin ich begeistert von der Gestaltung visuell ansprechender und intuitiver Websites und Anwendungen.',
     },
     loaction: {
-      en: 'Flexible in terms of working environments, I can work effectively both on-site in Munich and remotely.',
+      en: 'Flexible in terms of working environments, I can work effectively both on-site in Tirol and remotely.',
       de: 'Da ich hinsichtlich meiner Arbeitsumgebung flexibel bin, kann ich sowohl vor Ort in München als auch remote effektiv arbeiten.',
     },
     mindset: {

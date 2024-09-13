@@ -1,34 +1,32 @@
-<div class="background">
-    <header>
-        <nav>
-            <button (click)="changeLanguage()">
-                <div [ngClass]="{'div-DE': languageService.germanLanguage}">DE</div>
-                <span
-                    [ngClass]="{'slider-animation-EN': languageService.englishLanguage, 'slider-animation-DE': languageService.germanLanguage}"></span>
-                <div [ngClass]="{'div-EN': languageService.englishLanguage}">EN</div>
-            </button>
-            <a href="#about-me">
-                {{ languageService.controllLang(languageService.header.linkLeft) }}
-                <div class="hover-point"></div>
-            </a>
-            <a href="#skills">
-                {{ languageService.controllLang(languageService.header.linkMid) }}
-                <div class="hover-point"></div>
-            </a>
-            <a href="#projects">
-                {{ languageService.controllLang(languageService.header.linkRight) }}
-                <div class="hover-point"></div>
-            </a>
-        </nav>
-        <a href="/">
-            <img src="./assets/img/logo.png" alt="logo">
+<header [ngClass]="{'header-animation': headerAnimation}">
+    <nav>
+        <button (click)="changeLanguage()">
+            <div [ngClass]="{'div-DE': languageService.germanLanguage}">DE</div>
+            <span
+                [ngClass]="{'slider-animation-EN': languageService.englishLanguage, 'slider-animation-DE': languageService.germanLanguage}"></span>
+            <div [ngClass]="{'div-EN': languageService.englishLanguage}">EN</div>
+        </button>
+        <a href="#about-me">
+            {{ languageService.controllLang(languageService.header.linkLeft) }}
+            <div class="hover-point"></div>
         </a>
-        <div class="phone-menu" (click)="openPhoneMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <app-phone-menu [ngStyle]="{'display': showPhoneMenu ? 'flex' : ''}" [showPhoneMenu]="showPhoneMenu"
-            (closeMenu)="closePhoneMenu($event)"></app-phone-menu>
-    </header>
-</div>
+        <a href="#skills">
+            {{ languageService.controllLang(languageService.header.linkMid) }}
+            <div class="hover-point"></div>
+        </a>
+        <a href="#projects">
+            {{ languageService.controllLang(languageService.header.linkRight) }}
+            <div class="hover-point"></div>
+        </a>
+    </nav>
+    <a href="/">
+        <img src="./assets/img/logo.png" alt="logo">
+    </a>
+    <div class="phone-menu" (click)="openPhoneMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <app-phone-menu [ngStyle]="{'display': showPhoneMenu ? 'flex' : ''}" [showPhoneMenu]="showPhoneMenu"
+        (closeMenu)="closePhoneMenu($event)"></app-phone-menu>
+</header>

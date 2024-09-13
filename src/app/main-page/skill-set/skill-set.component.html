@@ -1,9 +1,9 @@
 <div class="background">
     <section>
-        <div class="content">
+        <!-- <div class="content"> -->
             <div class="left-part">
                 <h3>{{ languageService.controllLang(languageService.skill.smallHeadline) }}</h3>
-                <div class="text-div">
+                <div class="text-div" [ngClass]="{'text-div-animation': skillAnimation}">
                     <h1>{{ languageService.controllLang(languageService.skill.bigHeadline) }}</h1>
                     <p>{{ languageService.controllLang(languageService.skill.content) }}</p>
                     <h2>{{ languageService.controllLang(languageService.skill.content2) }}<mark class="blue">{{
@@ -28,6 +28,6 @@
                         [ngStyle]="{'opacity': hoveredOnGrowthImg ? '1' : '0'}" class="hover-img">
                 </div>
             </div>
-        </div>
+        <!-- </div> -->
     </section>
 </div>

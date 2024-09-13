@@ -7,7 +7,7 @@
         </div>
         <div class="right-part">
             <h3>{{ languageService.controllLang(languageService.aboutMe.smallHeadline) }}</h3>
-            <div class="text-div">
+            <div class="text-div" [ngClass]="{'text-div-animation': aotAnimation}">
                 <h1>{{ languageService.controllLang(languageService.aboutMe.bigHeadline) }}</h1>
                 <span>{{ languageService.controllLang(languageService.aboutMe.content) }}</span>
                 <div>

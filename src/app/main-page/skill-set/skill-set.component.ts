@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { LanguageService } from '../../shared/service/language.service';
 
 @Component({
@@ -55,6 +55,7 @@ export class SkillSetComponent {
     },
   ];
   hoveredOnGrowthImg = false;
+  skillAnimation = false;
 
   
   constructor(public languageService: LanguageService) {}
@@ -68,6 +69,18 @@ export class SkillSetComponent {
       this.hoveredOnGrowthImg = false;
     } else if (!this.hoveredOnGrowthImg) {
       this.hoveredOnGrowthImg = true;
+    }
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    const scrollPosition = window.scrollY;
+    console.log(scrollPosition);
+
+    
+
+    if (scrollPosition > 1300 && !this.skillAnimation) {
+      this.skillAnimation = true;
     }
   }
 }

@@ -1,11 +1,14 @@
 import { Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../shared/service/language.service';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-aot',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,
+    HeaderComponent
+  ],
   templateUrl: './aot.component.html',
   styleUrl: './aot.component.scss'
 })

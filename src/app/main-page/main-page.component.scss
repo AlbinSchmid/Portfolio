@@ -1,8 +1,9 @@
 app-header {
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 48px;
-    left: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
-    right: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+    top: 0;
     z-index: 3;
+    right: 0;
+    left: 0;
 }
-

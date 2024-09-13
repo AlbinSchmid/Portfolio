@@ -5,20 +5,26 @@ app-phone-menu {
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
 }
 
-.background {
-    width: 100%;
-    @include d-position();
+.header-animation {
+    position: fixed;
+    animation: header-animation 500ms ease-in-out forwards;
+    background-color: rgba( #000000, 0.4);
+    backdrop-filter: blur(6px);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #3DCFB6
 }
 
 header {
-    @include d-position();
+    @include d-position($jc: space-between);
     max-width: 1920px;
     width: 100%;
-
+    padding: 24px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     nav {
         @include d-position($jc: auto);
         width: 100%;
@@ -30,13 +36,14 @@ header {
     }
 
     a {
+        position: relative;
         @include t-design($ff: 'Fira Code', $fw: 400, $fs: 20px);
         @include d-position();
         text-decoration: none;
         transition: 100ms all;
 
         div {
-            top: 45px;
+            top: 30px;
         }
 
         &:hover {
@@ -150,5 +157,14 @@ button {
 @media (min-width: 750px) {
     .phone-menu {
         display: none;
+    }
+}
+
+@keyframes header-animation {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: translateY(-0px);
     }
 }

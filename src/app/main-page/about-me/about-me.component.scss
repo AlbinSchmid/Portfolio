@@ -13,6 +13,7 @@ section {
     padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     gap: clamp(1.25rem, -9.1rem + 18vw, 12.5rem);
     max-width: 1920px;
+    overflow: hidden;
 }
 
 .img-div {
@@ -54,6 +55,7 @@ section {
         @include blue-div-design();
         @include d-position($fd: column, $ai: auto, $jc: auto);
         gap: 14px;
+        opacity: 0;
     
         p {
             @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
@@ -79,6 +81,22 @@ section {
                 height: 32px;
             }
         }
+    }
+}
+
+
+.text-div-animation {
+    opacity: 1;
+    animation: text-div-animation 700ms ease-in-out forwards;
+}
+
+@keyframes text-div-animation {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
     }
 }
 

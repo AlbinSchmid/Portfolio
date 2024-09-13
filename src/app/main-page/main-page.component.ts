@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { AotComponent } from './aot/aot.component';
@@ -7,6 +7,7 @@ import { SkillSetComponent } from './skill-set/skill-set.component';
 import { FeaturedProjectsComponent } from './featured-projects/featured-projects.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactComponent } from './contact/contact.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main-page',
@@ -19,10 +20,12 @@ import { ContactComponent } from './contact/contact.component';
     SkillSetComponent,
     FeaturedProjectsComponent,
     FeedbackComponent,
-    ContactComponent
+    ContactComponent,
+    CommonModule
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
+
 }

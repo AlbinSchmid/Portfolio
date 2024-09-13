@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { PhoneMenuComponent } from './phone-menu/phone-menu.component';
 import { LanguageService } from '../service/language.service';
 
@@ -16,6 +16,21 @@ import { LanguageService } from '../service/language.service';
 })
 export class HeaderComponent {
   showPhoneMenu = false;
+  headerAnimation = false;
+
+
+  /**
+   * controlls when header get the animation with scrolling
+   */
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition > 90 && !this.headerAnimation) {
+      this.headerAnimation = true;
+    } else if (scrollPosition < 90 && this.headerAnimation) {
+      this.headerAnimation = false;
+    }
+  }
 
   constructor(public languageService: LanguageService) {
     languageService.checkChosedLang();
