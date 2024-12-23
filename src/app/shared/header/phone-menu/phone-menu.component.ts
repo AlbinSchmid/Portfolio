@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
 
 @Component({
@@ -12,28 +12,30 @@ import { LanguageService } from '../../service/language.service';
   styleUrl: './phone-menu.component.scss'
 })
 export class PhoneMenuComponent {
+  languageService = inject(LanguageService);
   @Input() showPhoneMenu = false;
   @Output() closeMenu = new EventEmitter<boolean>();
   germanLanguage: boolean = true;
   englishLanguage: boolean = false;
 
 
-  constructor(public languageService: LanguageService) {}
-
-
   /**
-   * we send this to the parent, then we can close it
+   * Closes the phone menu by setting the showPhoneMenu property to false
+   * and emits an event to notify the parent component.
    */
-  closePhoneMenu(){
+  closePhoneMenu() {
     this.showPhoneMenu = false;
     this.closeMenu.emit(this.showPhoneMenu)
   }
 
 
   /**
-   * when language button on phone get clicked we change the language
+   * Changes the language of the application between English and German.
+   * If the current language is German, it sets the English language to true and the German language to false.
+   * If the current language is English, it sets the English language to false and the German language to true.
+   * The chosen language is stored in local storage.
    */
-  changeLanguage(){
+  changeLanguage() {
     if (this.languageService.germanLanguage) {
       this.languageService.englishLanguage = true;
       this.languageService.germanLanguage = false;

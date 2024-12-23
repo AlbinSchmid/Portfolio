@@ -1,0 +1,20 @@
+<section data-aos="fade-up-right" data-aos-duration="600" [attr.data-aos-delay]="projectIndex * 50"
+[attr.data-aos-offset]="checkOffset()" (click)="showProjectDetail = !showProjectDetail">
+    <div class="info-div" [ngStyle]="{'border-top': projectIndex == 0 ? '1px solid #3DCFB6' : '0px'}">
+        <div>
+            <h2>{{ projectService.projects[projectIndex].name }}</h2>
+            <img class="arrow-outward" src="./assets/icons/arrow-outward.png" alt="arrow-outward">
+        </div>
+        <div>
+            @for (skill of projectService.projects[projectIndex].skills; track $index) {
+            <div class="blue-placeholder" *ngIf="$index > 0"></div>
+            <p>{{ skill.name }}</p>
+            }
+        </div>
+    </div>
+    <div class="projects-img-div">
+        <img src="./assets/img/{{ projectService.projects[projectIndex].img }}.png" class="project-img" alt="website logo">
+        <img src="./assets/img/animation-img.png" class="animation-img" alt="background">
+    </div>
+</section>
+<app-detail-project *ngIf="showProjectDetail" (closeDetail)="closeDetail($event)" [projectIndex]="projectIndex"></app-detail-project>

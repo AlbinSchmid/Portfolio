@@ -7,14 +7,13 @@ import { HeaderComponent } from '../shared/header/header.component';
   standalone: true,
   imports: [
     FooterComponent,
-    HeaderComponent
   ],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent {
   /**
-   * go back to last page
+   * Navigates to the previous page in the browsing history.
    */
   goBack() {
     history.back();

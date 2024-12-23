@@ -1,10 +1,11 @@
-@import './../../../../styles.scss';
+@import './../../../../../styles.scss';
 
 section {
     @include d-position();
     height: 100%;
     width: 100%;
     padding: clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+
     h1 {
         @include t-design($ff: 'Karla', $fs: clamp(2rem, 0.8rem + 6vw, 8rem), $fw: 700);
         color: #3DCFB6;
@@ -26,8 +27,6 @@ section {
         @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
         max-width: 520px
     }
-
-    
 }
 
 .background {
@@ -38,17 +37,46 @@ section {
     background-color: rgba(#000000, 0.4);
 }
 
+.change-project-animation {
+    animation: flip-vertical-left 250ms cubic-bezier(.455, .03, .515, .955) both !important;
+    flex-direction: row-reverse !important;
+
+    &::before {
+        transform: scaleX(-1) !important;
+    }
+}
+
+.change-project-animation>* {
+    transform: scaleX(-1);
+}
+
+.frame-animation {
+    animation: scale-up-center .4s cubic-bezier(.39, .575, .565, 1.000) both;
+}
+
 .frame {
     position: relative;
     border: solid 1px #3DCFB6;
     background-size: 100% 100%;
-    background-position: 0px 0px;
-    background-image: radial-gradient(100% 100% at 100% 0%, #08463B -11%, #1C1C1C 100%);
     border-radius: 25px;
     padding: clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem);
     @include d-position();
     gap: clamp(1.5rem, -3.8421rem + 7.3684vw, 5rem);
     z-index: 3 !important;
+
+    &::before {
+        content: "";
+        background-image: radial-gradient(100% 100% at 100% 0%, #08463B -11%, #1C1C1C 100%);
+        border-radius: 25px;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
 
     .left-part {
         @include d-position($fd: column, $ai: normal);
@@ -60,12 +88,12 @@ section {
 
             a {
                 @include d-position();
-                @include t-design($ff: 'Karla', $fs: 18px);
+                @include t-design($ff: 'Karla', $fs: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem));
                 gap: 8px;
                 background-color: transparent;
                 border: 1px solid white;
                 border-radius: 25px;
-                padding: 12px 24px;
+                padding: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem) 24px;
                 transition: 125ms ease-in-out;
 
                 img {
@@ -116,19 +144,19 @@ section {
     .close-btn {
         width: 30px;
         height: 30px;
-        background-image: url(./../../../../assets/icons/cross-white.png);
+        background-image: url(./../../../../../assets/icons/cross-white.png);
         background-position: center;
         transition: 300ms ease-in-out;
 
         &:hover {
-            background-image: url(./../../../../assets/icons/cross-blue-big.png);
+            background-image: url(./../../../../../assets/icons/cross-blue-big.png);
         }
     }
 }
 
 .next-project-btn {
     @include d-position();
-    @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
+    @include t-design($ff: 'Karla', $fs: clamp(0.875rem, 0.825rem + 0.25vw, 1.125rem), $fw: 400);
     background-color: transparent;
     border: none;
     gap: 8px;
@@ -139,14 +167,14 @@ section {
     }
 
     &:hover>.img-div {
-        background-image: url(./../../../../assets/icons/arrow-right-blue.png);
+        background-image: url(./../../../../../assets/icons/arrow-right-blue.png);
         transform: translateX(3px);
     }
 
     .img-div {
         width: 27px;
         height: 31px;
-        background-image: url(./../../../../assets/icons/arrow-right-thin-blue.png);
+        background-image: url(./../../../../../assets/icons/arrow-right-thin-blue.png);
         transition: all 125ms;
     }
 }
@@ -165,6 +193,26 @@ section {
 
 .show-btn {
     display: none;
+}
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes flip-vertical-left {
+    0% {
+        transform: rotateY(0);
+    }
+
+    100% {
+        transform: rotateY(-180deg);
+    }
 }
 
 @media (max-width: 1330px) {

@@ -55,10 +55,9 @@ section {
         @include blue-div-design();
         @include d-position($fd: column, $ai: auto, $jc: auto);
         gap: 14px;
-        opacity: 0;
     
         p {
-            @include t-design($ff: 'Karla', $fs: clamp(1rem, 0.975rem + 0.125vw, 1.125rem), $fw: 400);
+            @include t-design($ff: 'Karla', $fs: 18px, $fw: 400);
         }
     
         span {
@@ -67,7 +66,7 @@ section {
         }
     
         h1 {
-            @include t-design($ff: 'Fira Code', $fs: clamp(3.5rem, 3.4rem + 0.5vw, 4rem), $fw: 700);
+            @include t-design($ff: 'Fira Code', $fs: 62px, $fw: 700);
             color: #3DCFB6;
         }
     
@@ -84,18 +83,12 @@ section {
     }
 }
 
+@keyframes visibility {
+    0% {
+        opacity: 0;
+    }    
 
-.text-div-animation {
-    opacity: 1;
-    animation: text-div-animation 700ms ease-in-out forwards;
-}
-
-@keyframes text-div-animation {
-    from {
-        transform: translateX(100vw);
-    }
-    to {
-        transform: translateX(0px);
+    100% {
         opacity: 1;
     }
 }
@@ -107,6 +100,20 @@ section {
 
     100% {
         transform: translate(-6%, 6%);
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    h1 {
+        font-size: clamp(2.125rem, 1.325rem + 4vw, 3.875rem) !important;
+    }
+
+    h3 {
+        font-size: clamp(1.25rem, 1.1357rem + 0.5714vw, 1.5rem) !important; 
+    }
+
+    span, p {
+        font-size: clamp(0.875rem, 0.7607rem + 0.5714vw, 1.125rem) !important;
     }
 }
 

@@ -61,11 +61,11 @@ export class LanguageService {
     },
     content: {
       en: 'Hi, I’m a german speaking Frontend Developer based in Tirol. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.',
-      de: 'Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in München. Motiviert von den grenzenlosen Möglichkeiten in der IT bin ich begeistert von der Gestaltung visuell ansprechender und intuitiver Websites und Anwendungen.',
+      de: 'Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Tirol. Motiviert von den grenzenlosen Möglichkeiten in der IT bin ich begeistert von der Gestaltung visuell ansprechender und intuitiver Websites und Anwendungen.',
     },
     loaction: {
       en: 'Flexible in terms of working environments, I can work effectively both on-site in Tirol and remotely.',
-      de: 'Da ich hinsichtlich meiner Arbeitsumgebung flexibel bin, kann ich sowohl vor Ort in München als auch remote effektiv arbeiten.',
+      de: 'Da ich hinsichtlich meiner Arbeitsumgebung flexibel bin, kann ich sowohl vor Ort in Tirol als auch remote effektiv arbeiten.',
     },
     mindset: {
       en: 'I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.',
@@ -247,9 +247,17 @@ export class LanguageService {
           en: `Hoppla! your email is required`,
           de: 'Hoppla! Ihre E-Mail ist erforderlich',
         },
+        validEmail: {
+          en: 'We need a valid e-mail address!',
+          de: 'Wir benötigen eine gültige E-Mail Adresse!',
+        },
         message: {
           en: `What do you need to develop?`,
           de: 'Was müssen sie entwicklen?',
+        },
+        messageMoreLetters: {
+          en: 'Please enter more than 4 letters!',
+          de: 'Bitte geben Sie mehr als 4 Buchstaben ein!', 
         },
         checkbox: {
           en: `Please accept the privacy policy.`,

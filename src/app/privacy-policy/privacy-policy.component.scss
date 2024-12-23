@@ -81,6 +81,17 @@ section {
     }
 }
 
+@media screen and (max-width: 1020px) {
+    p, a {
+        font-size: clamp(0.875rem, 0.7607rem + 0.5714vw, 1.125rem) !important;
+    }
+
+    section {
+        padding-top:clamp(5rem, 3.8571rem + 5.7143vw, 7.5rem) !important;
+        padding-bottom: clamp(0rem, -3.4286rem + 17.1429vw, 7.5rem) !important;
+    }
+}
+
 @media (max-width: 620px) {
     header {
         a {

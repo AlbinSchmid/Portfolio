@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LanguageService } from '../service/language.service';
 
 @Component({
@@ -9,5 +9,5 @@ import { LanguageService } from '../service/language.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  constructor(public languageService: LanguageService) {}
+  languageService = inject(LanguageService)
 }

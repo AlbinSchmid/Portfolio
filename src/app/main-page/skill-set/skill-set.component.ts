@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { LanguageService } from '../../shared/service/language.service';
+import { WindowServiceService } from '../../shared/service/window.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -12,6 +13,8 @@ import { LanguageService } from '../../shared/service/language.service';
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
+  windowService = inject(WindowServiceService);
+  languageService = inject(LanguageService)
   skillsIcons = [
     {
       'name': 'HTML',
@@ -55,14 +58,11 @@ export class SkillSetComponent {
     },
   ];
   hoveredOnGrowthImg = false;
-  skillAnimation = false;
-
-  
-  constructor(public languageService: LanguageService) {}
 
 
   /**
-   * show the hidden img
+   * Toggles the hover state of the "Growth mindset" skill element's 
+   * "I'm interested in" icon and text.
    */
   showImg(){
     if (this.hoveredOnGrowthImg) {
@@ -72,15 +72,18 @@ export class SkillSetComponent {
     }
   }
 
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    const scrollPosition = window.scrollY;
-    console.log(scrollPosition);
 
-    
-
-    if (scrollPosition > 1300 && !this.skillAnimation) {
-      this.skillAnimation = true;
+  /**
+   * Calculates the offset for the project detail animation, 
+   * depending on the index of the project and the window width
+   * @param index - the index of the project
+   * @returns the offset in pixels
+   */
+  checkOffset(index: number): number {
+    if (window.innerWidth > 600) {
+     return index <= 4 ? 400 : 300
+    } else {
+      return 0
     }
   }
 }

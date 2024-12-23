@@ -1,13 +1,14 @@
 <div class="background">
     <section>
         <div class="img-div">
-            <img class="person-img" (mouseover)="imgIsHovered()" src="./assets/img/me.png" alt="person">
-            <img class="animation-img" [ngClass]="{'imgHovered': imgIsHoveredAlready}"
-                src="./assets/img/animation-img.png" alt="background">
+            <img class="person-img" (mouseover)="this.imgIsHoveredAlready = true;" src="./assets/img/me.png" alt="person" data-aos="fade-up" >
+            <img class="animation-img" [ngClass]="{'imgHovered': imgIsHoveredAlready}" [ngStyle]="{'opacity': imgIsHoveredAlready ? '1' : '0'}"
+                src="./assets/img/animation-img.png" alt="background"> 
         </div>
         <div class="right-part">
             <h3>{{ languageService.controllLang(languageService.aboutMe.smallHeadline) }}</h3>
-            <div class="text-div" [ngClass]="{'text-div-animation': aotAnimation}">
+            <div class="text-div" data-aos="fade-left" [attr.data-aos-offset]="windowService.windowWidth <= 920 ? 250 : 500"
+            data-aos-duration="800">
                 <h1>{{ languageService.controllLang(languageService.aboutMe.bigHeadline) }}</h1>
                 <span>{{ languageService.controllLang(languageService.aboutMe.content) }}</span>
                 <div>

@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from '../../shared/service/language.service';
 import { CommonModule } from '@angular/common';
+import { WindowServiceService } from '../../shared/service/window.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  windowService = inject(WindowServiceService);
+  languageService = inject(LanguageService);
   http = inject(HttpClient);
   contactData = {
     name: '',
@@ -19,21 +22,15 @@ export class ContactComponent {
     message: '',
     checkbox: false,
   }
-  emptyName = false;
-  emptyEmail = false;
-  emptyMessage = false;
   emptyCheckbox = false;
   sendMailWorked = false;
-
-
-  constructor(public languageService: LanguageService) { }
 
 
   /**
    * send mail
    */
   post = {
-    endPoint: 'http://albin-schmid.com/sendMail.php',
+    endPoint: 'https://albin-schmid.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -45,8 +42,14 @@ export class ContactComponent {
 
 
   /**
-   * checked if every input is filled
-   * @param ngForm - the form 
+   * Handles form submission for the contact form.
+   * 
+   * Validates the form and sends the form data to the server if valid.
+   * On successful submission, displays a success message and resets the form.
+   * If the submission fails, logs the error to the console.
+   * If the form is invalid, displays error messages for each field.
+   * 
+   * @param ngForm - The form object associated with the contact form.
    */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {
@@ -57,60 +60,44 @@ export class ContactComponent {
             this.emptyCheckbox = false;
             setTimeout(() => {
               this.sendMailWorked = false;
-            }, 6000);
+            }, 4000);
             ngForm.resetForm();
           },
           error: (error) => {
             console.error(error);
           },
+          complete: () => console.info('send post complete'),
         });
     } else {
-      this.showErrorName();
-      this.showErrorEmail();
-      this.showErrorMessage();
       this.showErrorCheckbox();
     }
   }
 
-
+  
   /**
-   * show error under the input
+   * Returns an error message for a specified form field based on its validity.
+   * 
+   * Determines the error message to return by checking whether the specified
+   * field ('email', 'name', or 'message') has been filled out correctly.
+   * 
+   * @param witchError - The name of the form field to check for errors.
+   * @returns A string containing the localized error message for the specified field.
    */
-  showErrorName() {
-    if (this.contactData.name.length == 0) {
-      this.emptyName = true;
+  checkError(witchError: string): string {
+    if (witchError == 'email') {
+      return this.contactData.email.length == 0 ? `${this.languageService.controllLang(this.languageService.contact.form.errors.email)}` : `${this.languageService.controllLang(this.languageService.contact.form.errors.validEmail)}`;
+    } if (witchError == 'name') {
+      return `${this.languageService.controllLang(this.languageService.contact.form.errors.name)}`
     } else {
-      this.emptyName = false;
+      return this.contactData.message.length == 0 ? `${this.languageService.controllLang(this.languageService.contact.form.errors.message)}` : `${this.languageService.controllLang(this.languageService.contact.form.errors.messageMoreLetters)}`;
     }
   }
 
 
   /**
-   * show error under the input
-   */
-  showErrorEmail() {
-    if (this.contactData.email.length == 0) {
-      this.emptyEmail = true;
-    } else {
-      this.emptyEmail = false;
-    }
-  }
-
-
-  /**
-   * show error under the input
-   */
-  showErrorMessage() {
-    if (this.contactData.message.length == 0) {
-      this.emptyMessage = true;
-    } else {
-      this.emptyMessage = false;
-    }
-  }
-
-
-  /**
-   * show error under the input
+   * Checks if the checkbox field is empty and sets the
+   * emptyCheckbox flag accordingly. This flag is used
+   * to display an error message if the field is empty.
    */
   showErrorCheckbox() {
     if (this.contactData.checkbox == false) {

@@ -10,6 +10,14 @@ app-phone-menu {
     height: 100%;
 }
 
+.frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+}
+
 .header-animation {
     position: fixed;
     animation: header-animation 500ms ease-in-out forwards;
@@ -21,8 +29,7 @@ app-phone-menu {
 }
 
 header {
-    @include d-position($jc: space-between);
-    max-width: 1920px;
+    @include d-position($jc: center);
     width: 100%;
     padding: 24px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     nav {
@@ -124,6 +131,15 @@ button {
     }
 }
 
+@keyframes header-animation {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: translateY(-0px);
+    }
+}
+
 @keyframes EN-animation {
     0% {
         transform: translateX(0);
@@ -160,11 +176,17 @@ button {
     }
 }
 
-@keyframes header-animation {
-    from {
-        transform: translateY(-150px);
+@media screen and (max-width: 1020px) {
+    header {
+        padding-top: clamp(0.625rem, 0.225rem + 2vw, 1.5rem);
+
+        img {
+            width: clamp(6.25rem, 4.8214rem + 7.1429vw, 9.375rem);
+        }
     }
-    to {
-        transform: translateY(-0px);
+
+    .phone-menu {
+        width: clamp(1.875rem, 1.5893rem + 1.4286vw, 2.5rem);
+        height: clamp(1.4375rem, 1.2375rem + 1vw, 1.875rem);
     }
 }

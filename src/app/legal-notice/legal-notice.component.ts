@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { LanguageService } from '../shared/service/language.service';
 import { HeaderComponent } from '../shared/header/header.component';
@@ -14,12 +14,20 @@ import { HeaderComponent } from '../shared/header/header.component';
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
-  constructor(public languageService: LanguageService) {
-    languageService.checkChosedLang();
-  }
+  languageService = inject(LanguageService);
+
 
   /**
-   * go back to last page
+   * Calls the LanguageService method to check the currently chosen language
+   * during the construction of the component.
+   */
+  constructor() {
+    this.languageService.checkChosedLang();
+  }
+
+
+  /**
+   * Navigates back to the previous page in the browsing history.
    */
   goBack() {
     history.back();

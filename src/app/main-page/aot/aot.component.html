@@ -1,5 +1,5 @@
 <div class="background">
-    <section>
+    <section [ngClass]="{'p-bottom100' : browserTypeOnTouchService.isSafari() && browserTypeOnTouchService.isTouch(), 'p-bottom130': browserTypeOnTouchService.isChrome() && browserTypeOnTouchService.isTouch()}">
         <div class="left-line">
             <a href="#about-me">
                 <img src="./assets/icons/arrow-down.png" alt="arrow-down">
@@ -10,7 +10,7 @@
             <h3>{{ languageService.controllLang(languageService.aot.headline) }}</h3>
             <h1>Albin Schmid</h1>
             <div>
-                <a class="animation-btn" href="#projects">
+                <a class="animation-btn" href="#projects" id="projectsLink">
                     <span>{{ languageService.controllLang(languageService.aot.btnLeft) }}</span>
                 </a>
                 <a class="animation-btn" href="#contact">
@@ -19,8 +19,8 @@
             </div>
         </div>
         <div class="right-line">
-            <a class="a-email" href="mailto: schmidalbin15@gmail.com">
-                <p>schmidalbin15&#64;gmail.com</p>
+            <a class="a-email" href="mailto: contact@albin-schmid.com">
+                <p>contact&#64;albin-schmid.com</p>
                 <img src="./assets/icons/mail-{{ emailImgSrc }}.png" (mouseover)="changeImgSrc('email')"
                     (mouseout)="changeImgSrc('email')" alt="email-logo">
                 <div class="hover-point"></div>

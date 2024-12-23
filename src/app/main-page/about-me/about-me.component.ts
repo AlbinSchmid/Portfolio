@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { LanguageService } from '../../shared/service/language.service';
+import { WindowServiceService } from '../../shared/service/window.service';
 
 @Component({
   selector: 'app-about-me',
@@ -12,28 +13,7 @@ import { LanguageService } from '../../shared/service/language.service';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
+  languageService = inject(LanguageService);
+  windowService = inject(WindowServiceService)
   imgIsHoveredAlready = false;
-  aotAnimation = false;
-
-  constructor(public languageService: LanguageService) { }
-
-  /**
-   * when image get hovered set it true
-   */
-  imgIsHovered() {
-    this.imgIsHoveredAlready = true;
-  }
-
-
-  /**
-   * controlls when text-div get the animation with scrolling
-   */
-  @HostListener('window:scroll')
-  onWindowScroll() {
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 450 && !this.aotAnimation) {
-      this.aotAnimation = true;
-    }
-  }
 }

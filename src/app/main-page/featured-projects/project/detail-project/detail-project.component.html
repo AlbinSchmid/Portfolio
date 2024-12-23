@@ -1,15 +1,15 @@
 <section>
     <div class="background" (click)="closeDetailView()"></div>
-    <div class="frame">
+    <div class="frame" [ngClass]="{'change-project-animation': changeProjectAnimation, 'frame-animation': !clickedOnDetailAlready}" >
         <div class="left-part">
             <div class="headlines-div">
-                <h1>{{ projects[currentId].id }}</h1>
-                <h2>{{ projects[currentId].name }}</h2>
+                <h1>{{ projectService.projects[projectIndex].id }}</h1>
+                <h2>{{ projectService.projects[projectIndex].name }}</h2>
             </div>
-            <h3>What is this project about?</h3>
-            <p>{{ languageService.controllLang(languageService.projects.detailProject.description[currentId]) }}</p>
+            <h3>{{ languageService.controllLang(languageService.projects.detailProject.headline) }}</h3>
+            <p>{{ languageService.controllLang(languageService.projects.detailProject.description[projectIndex]) }}</p>
             <div class="skill-div">
-                @for (skill of projects[currentId].skills; track $index) {
+                @for (skill of projectService.projects[projectIndex].skills; track $index) {
                 <div>
                     <img src="./assets/icons/{{ skill.img }}.png" alt="">
                     <p>{{ skill.name }}</p>
@@ -17,11 +17,11 @@
                 }
             </div>
             <div class="btn-div">
-                <a href="{{ projects[currentId].gitHub }}" target="_blank">
+                <a href="{{ projectService.projects[projectIndex].gitHub }}" target="_blank">
                     GitHub
                     <img src="./assets/icons/arrow-outward-blue.png" alt="arrow-outward">
                 </a>
-                <a href="{{ projects[currentId].liveTest }}" target="_blank">
+                <a href="{{ projectService.projects[projectIndex].liveTest }}" target="_blank">
                     Live Test
                     <img src="./assets/icons/arrow-outward-blue.png" alt="arrow-outward">
                 </a>
@@ -37,7 +37,7 @@
             <div class="close-btn-div">
                 <button class="close-btn" (click)="closeDetailView()"></button>
             </div>
-            <img src="./assets/img/{{ projects[currentId].img }}.png" alt="website logo" class="project-img">
+            <img src="./assets/img/{{ projectService.projects[projectIndex].img }}.png" alt="website logo" class="project-img">
             <button class="next-project-btn hide-btn" (click)="nextProject()">
                 {{ languageService.controllLang(languageService.projects.detailProject.btn) }}
                 <div class="img-div"></div>

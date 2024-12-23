@@ -3,7 +3,17 @@ app-header {
     justify-content: center;
     position: absolute;
     top: 0;
-    z-index: 3;
+    z-index: 9;
     right: 0;
     left: 0;
+}
+
+body {
+    ::-webkit-scrollbar {
+        width: 100px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 }
