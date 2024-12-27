@@ -133,7 +133,6 @@ section {
 
     .slider {
         @include d-position($jc: space-between);
-        height: 200px;
         width: 300%;
         position: absolute;
         left: -100;

@@ -9,7 +9,7 @@ export class FtProjectsService {
       id: '01',
       name: 'Join',
       gitHub: 'https://github.com/AlbinSchmid/Join',
-      liveTest: 'https://join.albin-schmid.com/',
+      liveTest: 'https://join.albin-schmid.com/log-in.html',
       img: 'join',
       skills: [
         {

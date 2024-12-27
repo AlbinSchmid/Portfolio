@@ -179,7 +179,7 @@ export class LanguageService {
     },
     content: {
       en: 'Got a proplem to solve',
-      de: 'Sie habe ein Problem zu lösen',
+      de: 'Sie haben ein Problem zu lösen',
     },
     content2: {
       en: 'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.',
