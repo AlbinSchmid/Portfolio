@@ -25,12 +25,8 @@ export class FtProjectsService {
           img: 'firebase-blue',
         },
         {
-          name: 'Angular',
-          img: 'angular-blue',
-        },
-        {
-          name: 'TypeScript',
-          img: 'typescript-blue',
+          name: 'JavaScript',
+          img: 'javascript-blue',
         },
       ],
     },
@@ -63,16 +59,24 @@ export class FtProjectsService {
       img: 'da-bubble',
       skills: [
         {
-          name: 'JavaScript',
-          img: 'javascript-blue',
-        },
-        {
           name: 'CSS',
           img: 'css-blue',
         },
         {
           name: 'HTML',
           img: 'html-blue',
+        },
+        {
+          name: 'TypeScript',
+          img: 'typescript-blue',
+        },
+        {
+          name: 'Angular',
+          img: 'angular-blue',
+        },
+        {
+          name: 'Firebase',
+          img: 'firebase-blue',
         },
       ],
     },

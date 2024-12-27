@@ -158,9 +158,9 @@ export class LanguageService {
         name: 'A. Fischer - Team Partner',
       },
       {
-        en: 'Our project benefited enormously from Albin efficient way of working',
-        de: 'Unser Projekt profitierte enorm von Albins effizienter Arbeitsweise',
-        name: 'T. Schulz - Frontend Developer',
+        en: 'Albin has proven to be an extremely reliable and dedicated project team member. His solid programming skills and his consistently positive attitude have been a great asset to our team.',
+        de: 'Albin hat sich als überaus verlässlicher und engagierter Projektmitarbeiter erwiesen. Seine fundierten Programmierkenntnisse und seine stets positive Einstellung waren eine große Bereicherung für unser Team.',
+        name: 'P. Ivan - Frontend Developer',
       },
     ],
     headline: {
