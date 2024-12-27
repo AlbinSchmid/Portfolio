@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../shared/service/language.service';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { BrowserTypeService } from '../../shared/service/browser-type.service';
+import { debounceTime, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-aot',
@@ -17,6 +18,22 @@ export class AotComponent {
   languageService = inject(LanguageService);
   gitImgSrc = 'blue';
   emailImgSrc = 'blue';
+  windowWith = window.innerWidth;
+
+
+  /**
+   * Initializes a resize listener on the window that updates the windowWith property
+   * with the current inner width of the window, debounced by 200ms.
+   */
+  initResizeListener() {
+    fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(50)
+      )
+      .subscribe(() => {
+        this.windowWith = window.innerWidth;
+      });
+  }
 
 
   /**
@@ -25,6 +42,7 @@ export class AotComponent {
    * Always sets up scrolling to the "contact" section.
    */
   ngOnInit() {
+    this.initResizeListener();
     if (window.innerWidth > 750) {
       this.scrollingToProjects();
     }
@@ -50,7 +68,7 @@ export class AotComponent {
     });
   }
 
-  
+
   /**
    * Adds a click event listener to the "#contact" anchor element.
    * Prevents the default action and smoothly scrolls to the "contact" section 
