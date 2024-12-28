@@ -61,7 +61,7 @@ section {
     border-radius: 25px;
     padding: clamp(0.75rem, 0.025rem + 3.625vw, 4.375rem);
     @include d-position();
-    gap: clamp(1.5rem, -3.8421rem + 7.3684vw, 5rem);
+    gap: clamp(1.25rem, -1.3436rem + 5.2863vw, 5rem);
     z-index: 3 !important;
 
     &::before {
@@ -181,7 +181,7 @@ section {
 
 .skill-div {
     @include d-position($jc: normal);
-    gap: 16px;
+    gap: clamp(0.5rem, 0.2714rem + 1.1429vw, 1rem);
     margin-top: 30px;
     flex-wrap: wrap;
 
@@ -212,12 +212,6 @@ section {
 
     100% {
         transform: rotateY(-180deg);
-    }
-}
-
-@media (max-width: 1330px) {
-    .frame {
-        width: 100% !important;
     }
 }
 
@@ -266,10 +260,11 @@ section {
         height: 100%;
         max-height: 650px !important;
         @include d-position($fd: column-reverse !important);
+        gap: 0;
     }
 
     .project-img {
-        width: 100% !important;
+        width: 80% !important;
         height: 100% !important;
     }
 
@@ -298,5 +293,18 @@ section {
 
     .btn-div {
         gap: 10px !important;
+    }
+}
+
+@media (max-width: 550px) {
+    .project-img {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 470px) {
+    .project-img {
+        width: 100% !important;
+        height: 80% !important;
     }
 }

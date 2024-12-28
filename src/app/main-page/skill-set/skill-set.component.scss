@@ -205,6 +205,16 @@ section {
     }
 }
 
+@media (max-width: 400px) {
+    .growth-img {
+        .hover-img {
+            width: 140px !important;
+            top: -85px !important;
+            left: 12px !important;
+        }
+    }
+}
+
 @for $i from 1 through 10 {
     .flip-in-ver-right-#{$i} {
         animation: flip-in-ver-right 1s cubic-bezier(.25, .46, .45, .94) #{($i * 0.06s)} both;
