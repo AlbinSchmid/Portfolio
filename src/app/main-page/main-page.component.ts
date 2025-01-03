@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { AotComponent } from './aot/aot.component';
@@ -8,6 +8,7 @@ import { FeaturedProjectsComponent } from './featured-projects/featured-projects
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ContactComponent } from './contact/contact.component';
 import { CommonModule } from '@angular/common';
+import { WindowService } from '../shared/service/window.service';
 
 @Component({
   selector: 'app-main-page',
@@ -27,6 +28,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
-
+windowService = inject(WindowService);
 }
 

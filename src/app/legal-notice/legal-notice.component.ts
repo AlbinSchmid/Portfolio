@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FooterComponent } from '../shared/footer/footer.component';
 import { LanguageService } from '../shared/service/language.service';
 import { HeaderComponent } from '../shared/header/header.component';
+import { WindowService } from '../shared/service/window.service';
 
 @Component({
   selector: 'app-legal-notice',
@@ -15,6 +16,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 })
 export class LegalNoticeComponent {
   languageService = inject(LanguageService);
+  windowService = inject(WindowService)
 
 
   /**

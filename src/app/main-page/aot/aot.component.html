@@ -1,7 +1,7 @@
 <div class="background">
     <section [ngClass]="{'p-bottom100' : browserTypeOnTouchService.isSafari() && browserTypeOnTouchService.isTouch(), 'p-bottom130': browserTypeOnTouchService.isChrome() && browserTypeOnTouchService.isTouch()}">
         <div class="left-line">
-            <a href="#about-me">
+            <a (click)="windowService.scrollToAboutMe($event)">
                 <img src="./assets/icons/arrow-down.png" alt="arrow-down">
             </a>
             <div></div>
@@ -10,10 +10,10 @@
             <h3>{{ languageService.controllLang(languageService.aot.headline) }}</h3>
             <h1>Albin Schmid</h1>
             <div>
-                <a class="animation-btn" href="#projects" id="projectsLink">
+                <a class="animation-btn" (click)="windowService.scrollToProjects($event, '')">
                     <span>{{ languageService.controllLang(languageService.aot.btnLeft) }}</span>
                 </a>
-                <a class="animation-btn" href="#contact">
+                <a class="animation-btn" (click)="windowService.scrollingToContact($event)">
                     <span>{{ languageService.controllLang(languageService.aot.btnRight) }}</span>
                 </a>
             </div>

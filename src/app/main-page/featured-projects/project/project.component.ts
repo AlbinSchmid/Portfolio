@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { DetailProjectComponent } from './detail-project/detail-project.component';
-import { WindowServiceService } from '../../../shared/service/window.service';
+import { WindowService } from '../../../shared/service/window.service';
 import { FtProjectsService } from '../../../shared/service/ft-projects.service';
 
 @Component({
@@ -15,7 +15,7 @@ import { FtProjectsService } from '../../../shared/service/ft-projects.service';
   styleUrl: './project.component.scss'
 })
 export class ProjectComponent {
-windowService = inject(WindowServiceService);
+windowService = inject(WindowService);
 projectService = inject(FtProjectsService);
 @Input() projectIndex: number;
 showProjectDetail = false;

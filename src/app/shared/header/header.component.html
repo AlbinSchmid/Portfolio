@@ -7,15 +7,15 @@
                     [ngClass]="{'slider-animation-EN': languageService.englishLanguage, 'slider-animation-DE': languageService.germanLanguage}"></span>
                 <div [ngClass]="{'div-EN': languageService.englishLanguage}">EN</div>
             </button>
-            <a href="#about-me">
+            <a href="#about-me" (click)="windowService.scrollToAboutMe($event, currentUrl)">
                 {{ languageService.controllLang(languageService.header.linkLeft) }}
                 <div class="hover-point"></div>
             </a>
-            <a href="#skills">
+            <a href="#skills" (click)="windowService.scrollToSkills($event, currentUrl)">
                 {{ languageService.controllLang(languageService.header.linkMid) }}
                 <div class="hover-point"></div>
             </a>
-            <a href="#projects">
+            <a href="#projects" (click)="windowService.scrollToProjects($event, currentUrl)">
                 {{ languageService.controllLang(languageService.header.linkRight) }}
                 <div class="hover-point"></div>
             </a>

@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 import { PhoneMenuComponent } from './phone-menu/phone-menu.component';
 import { LanguageService } from '../service/language.service';
-import { WindowServiceService } from '../service/window.service';
+import { WindowService } from '../service/window.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { inherit } from 'hammerjs';
 
 
 @Component({
@@ -10,17 +12,18 @@ import { WindowServiceService } from '../service/window.service';
   standalone: true,
   imports: [
     CommonModule,
-    PhoneMenuComponent
+    PhoneMenuComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  windowService = inject(WindowServiceService);
+  windowService = inject(WindowService);
   languageService = inject(LanguageService);
+  router = inject(Router);
   showPhoneMenu = false;
   headerAnimation = false;
-
+  currentUrl: string;
 
   /**
    * Lifecycle hook, after data-bound properties changed.
@@ -30,68 +33,10 @@ export class HeaderComponent {
    * The event listeners scroll to the linked sections when the links are clicked.
    */
   ngOnInit(): void {
+    this.currentUrl = this.router.url;
     this.languageService.checkChosedLang();
-    this.scrollToProjects();
-    this.scrollToSkills();
-    this.scrollToAboutMe();
   }
 
-  
-  /**
-   * Adds a click event listener to the "projectsLink" anchor element.
-   * Prevents the default action and smoothly scrolls to the "projects" section 
-   * of the page, offsetting the scroll position by 100 pixels from the top.
-   */
-  scrollToProjects() {
-    document.querySelector('a[href="#projects"]')?.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetElement = document.querySelector('#projects') as HTMLElement;
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 100,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
-
-  /**
-   * Adds a click event listener to the "#skills" anchor element.
-   * Prevents the default action and smoothly scrolls to the "skills" section 
-   * of the page, offsetting the scroll position by 50 pixels from the top.
-   */
-  scrollToSkills() {
-    document.querySelector('a[href="#skills"]')?.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetElement = document.querySelector('#skills') as HTMLElement;
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 50,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
-
-  /**
-   * Adds a click event listener to the "#about-me" anchor element.
-   * Prevents the default action and smoothly scrolls to the "about-me" section 
-   * of the page, offsetting the scroll position by 0 pixels from the top.
-   */
-  scrollToAboutMe() {
-    document.querySelector('a[href="#about-me"]')?.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetElement = document.querySelector('#about-me') as HTMLElement;
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 0,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
 
 
   /**
@@ -110,7 +55,7 @@ export class HeaderComponent {
     }
   }
 
-  
+
   /**
    * Changes the language of the application between german and english.
    * If the current language is german, it sets the english language to true and
@@ -129,7 +74,7 @@ export class HeaderComponent {
     localStorage.setItem('english', JSON.stringify(this.languageService.englishLanguage));
   }
 
- 
+
   /**
    * Closes the phone menu by setting the showPhoneMenu variable to false. If it
    * is already false, it does nothing.

@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { LanguageService } from '../../service/language.service';
+import { WindowService } from '../../service/window.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-phone-menu',
@@ -13,10 +15,23 @@ import { LanguageService } from '../../service/language.service';
 })
 export class PhoneMenuComponent {
   languageService = inject(LanguageService);
+  windowService = inject(WindowService)
+  router = inject(Router)
   @Input() showPhoneMenu = false;
   @Output() closeMenu = new EventEmitter<boolean>();
   germanLanguage: boolean = true;
   englishLanguage: boolean = false;
+  currentUrl: string;
+
+
+  /**
+   * checked current Url
+   * check in Service witch language is activated
+   */
+  ngOnInit(): void {
+    this.currentUrl = this.router.url;
+    this.languageService.checkChosedLang();
+  }
 
 
   /**

@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from '../../shared/service/language.service';
 import { CommonModule } from '@angular/common';
-import { WindowServiceService } from '../../shared/service/window.service';
+import { WindowService } from '../../shared/service/window.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +13,7 @@ import { WindowServiceService } from '../../shared/service/window.service';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  windowService = inject(WindowServiceService);
+  windowService = inject(WindowService);
   languageService = inject(LanguageService);
   http = inject(HttpClient);
   contactData = {

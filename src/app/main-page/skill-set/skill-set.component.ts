@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 import { LanguageService } from '../../shared/service/language.service';
-import { WindowServiceService } from '../../shared/service/window.service';
+import { WindowService } from '../../shared/service/window.service';
 
 @Component({
   selector: 'app-skill-set',
@@ -13,7 +13,7 @@ import { WindowServiceService } from '../../shared/service/window.service';
   styleUrl: './skill-set.component.scss'
 })
 export class SkillSetComponent {
-  windowService = inject(WindowServiceService);
+  windowService = inject(WindowService);
   languageService = inject(LanguageService)
   skillsIcons = [
     {

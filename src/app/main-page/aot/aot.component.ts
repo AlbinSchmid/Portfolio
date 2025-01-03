@@ -4,6 +4,7 @@ import { LanguageService } from '../../shared/service/language.service';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { BrowserTypeService } from '../../shared/service/browser-type.service';
 import { debounceTime, fromEvent } from 'rxjs';
+import { WindowService } from '../../shared/service/window.service';
 
 @Component({
   selector: 'app-aot',
@@ -16,6 +17,7 @@ import { debounceTime, fromEvent } from 'rxjs';
 export class AotComponent {
   browserTypeOnTouchService = inject(BrowserTypeService)
   languageService = inject(LanguageService);
+  windowService = inject(WindowService)
   gitImgSrc = 'blue';
   emailImgSrc = 'blue';
   windowWith = window.innerWidth;
@@ -43,50 +45,26 @@ export class AotComponent {
    */
   ngOnInit() {
     this.initResizeListener();
-    if (window.innerWidth > 750) {
-      this.scrollingToProjects();
-    }
-    this.scrollingToContact();
   }
 
 
   /**
-   * Adds a click event listener to the "projectsLink" anchor element.
-   * Prevents the default action and smoothly scrolls to the "projects" section 
-   * of the page, offsetting the scroll position by 100 pixels from the top.
-   */
-  scrollingToProjects() {
-    document.querySelector('a[id="projectsLink"]')?.addEventListener('click', (event) => {
+ * Adds a click event listener to the "#about-me" anchor element.
+ * Prevents the default action and smoothly scrolls to the "about-me" section 
+ * of the page, offsetting the scroll position by 0 pixels from the top.
+ */
+  scrollToAboutMe() {
+    document.querySelector('a[id="aboutMeLink"]')?.addEventListener('click', (event) => {
       event.preventDefault();
-      const targetElement = document.querySelector('#projects') as HTMLElement;
+      const targetElement = document.querySelector('#about-me') as HTMLElement;
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 100,
+          top: targetElement.offsetTop - 0,
           behavior: 'smooth'
         });
       }
     });
   }
-
-
-  /**
-   * Adds a click event listener to the "#contact" anchor element.
-   * Prevents the default action and smoothly scrolls to the "contact" section 
-   * of the page, offsetting the scroll position by 50 pixels from the top.
-   */
-  scrollingToContact() {
-    document.querySelector('a[href="#contact"]')?.addEventListener('click', (event) => {
-      event.preventDefault();
-      const targetElement = document.querySelector('#contact') as HTMLElement;
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 50,
-          behavior: 'smooth'
-        });
-      }
-    });
-  }
-
 
 
   /**

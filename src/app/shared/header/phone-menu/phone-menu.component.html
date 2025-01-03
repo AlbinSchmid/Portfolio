@@ -1,10 +1,15 @@
 <section (click)="closePhoneMenu()">
     <div class="frame">
         <nav>
-            <a href="#about-me" id="resr">About me</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-
+            <a href="#about-me" (click)="windowService.scrollToAboutMe($event, currentUrl)">
+                {{ languageService.controllLang(languageService.header.linkLeft) }}
+            </a>
+            <a href="#skills" (click)="windowService.scrollToSkills($event, currentUrl)">
+                {{ languageService.controllLang(languageService.header.linkMid) }}
+            </a>
+            <a href="#projects" (click)="windowService.scrollToProjects($event, currentUrl)">
+                {{ languageService.controllLang(languageService.header.linkRight) }}
+            </a>
             <button (click)="changeLanguage()">
                 <div [ngClass]="{'div-DE': languageService.germanLanguage}">DE</div>
                 <span
