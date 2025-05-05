@@ -22,10 +22,6 @@ export class AotComponent {
   emailImgSrc = 'blue';
   windowWith = window.innerWidth;
 
-  public throwTestError(): void {
-    throw new Error("Sentry Test Error");
-  }
-
 
   /**
    * Initializes a resize listener on the window that updates the windowWith property
