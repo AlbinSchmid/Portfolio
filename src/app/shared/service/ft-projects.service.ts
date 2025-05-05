@@ -8,8 +8,8 @@ export class FtProjectsService {
     {
       id: '01',
       name: 'Videoflix [Fullstack]',
-      gitHub: 'https://github.com/AlbinSchmid/El-Pollo-Loco',
-      liveTest: 'https://github.com/AlbinSchmid/Videoflix-Frontend',
+      gitHub: 'https://github.com/AlbinSchmid/Videoflix-Frontend',
+      liveTest: 'https://videoflix.albin-schmid.com/',
       img: 'videoflix',
       skills: [
         {
@@ -73,6 +73,23 @@ export class FtProjectsService {
         {
           name: 'Firebase',
           img: 'firebase-blue',
+        },
+      ],
+    },
+    {
+      id: '04',
+      name: 'Coderr/ [Backend]',
+      gitHub: 'https://github.com/AlbinSchmid/Coderr-Backend',
+      liveTest: 'https://coderr.albin-schmid.com/',
+      img: 'coderr',
+      skills: [
+        {
+          name: 'Angular',
+          img: 'angular-blue',
+        },
+        {
+          name: 'TypeScript',
+          img: 'typescript-blue',
         },
       ],
     },

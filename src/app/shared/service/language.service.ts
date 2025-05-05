@@ -127,16 +127,20 @@ export class LanguageService {
       },
       description: [
         {
+          en: 'Videoflix is a modern streaming platform offering intuitive user experience, secure access, and diverse video content.',
+          de: 'Videoflix ist eine moderne Streaming-Plattform mit intuitiver Bedienung, sicherem Zugang und vielfältigen Videoinhalten.',
+        },
+        {
           en: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
           de: 'Aufgabenmanager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag & Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.',
         },
         {
-          en: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-          de: 'Spring-, Lauf- und Wurfspiel mit objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.',
-        },
-        {
           en: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
           de: 'Diese App ist eine Slack-Klon-App. Sie revolutioniert die Kommunikation und Zusammenarbeit im Team mit ihrer intuitiven Benutzeroberfläche, Echtzeitnachrichten und robusten Kanalorganisation.',
+        },
+        {
+          en: 'Coderr is a freelance platform where freelancers offer services such as website creation, enabling customers to request services and leave reviews.',
+          de: 'Coderr ist eine Freelancer-Plattform, auf der Freelancer Dienstleistungen wie Webseitenerstellung anbieten. Kunden können diese Dienstleistungen in Anspruch nehmen und Bewertungen hinterlassen.',
         }
       ],
       btn: {
