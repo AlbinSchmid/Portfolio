@@ -13,10 +13,6 @@ jobs:
       with:
         node-version: 20.11.1
 
-    - name: Check if SENTRY_AUTH_TOKEN is present
-      run: echo "Token is set"
-      if: env.SENTRY_AUTH_TOKEN != ''
-
     - name: Install and build
       run: |
         npm i
