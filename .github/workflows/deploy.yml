@@ -18,6 +18,10 @@ jobs:
         npm i
         npm run build
 
+    - name: Check if SENTRY_AUTH_TOKEN is present
+      run: echo "Token is set"
+      if: env.SENTRY_AUTH_TOKEN != ''
+
     - name: 🛰️ Upload source maps to Sentry
       run: |
         npx sentry-cli sourcemaps inject --org smartweb-kw --project portfolio-angular ./dist
