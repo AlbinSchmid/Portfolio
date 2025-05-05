@@ -18,7 +18,7 @@ app-detail-project {
 section {
     @include d-position($jc: center, $ai: auto, $fd: column);
     width: 100%;
-    padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
+    padding: 48px clamp(0.5rem, -0.6rem + 5.5vw, 6rem) 60px clamp(0.5rem, -0.6rem + 5.5vw, 6rem);
     gap: 50px;
     max-width: 1920px;
 
