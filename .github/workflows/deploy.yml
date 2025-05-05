@@ -27,3 +27,6 @@ jobs:
         local-dir: dist/portfolio/browser/
         server-dir: /albin-schmid.com/
         protocol: ftp
+        passive: true
+        concurrent-uploads: 2
+        log-level: verbose
