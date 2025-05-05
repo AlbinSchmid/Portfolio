@@ -18,6 +18,21 @@ jobs:
         npm i
         npm run build
 
+    - name: 🛰️ Upload source maps to Sentry
+      run: |
+        npx sentry-cli sourcemaps inject --org smartweb-kw --project portfolio-angular ./dist
+        npx sentry-cli sourcemaps upload -- \
+          --org smartweb-kw \
+          --project portfolio-angular \
+          --include ./dist/portfolio/browser \
+          --url-prefix '~/' \
+          --rewrite \
+          --validate
+      env:
+        SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        SENTRY_ORG: smartweb-kw
+        SENTRY_PROJECT: portfolio-angular
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.1
       with:
