@@ -20,6 +20,14 @@ export class FtProjectsService {
           name: 'TypeScript',
           img: 'typescript-blue',
         },
+        {
+          name: 'Django',
+          img: 'django-blue',
+        },
+        {
+          name: 'Python',
+          img: 'python-blue',
+        },
       ],
     },
     {
