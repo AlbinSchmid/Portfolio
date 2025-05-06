@@ -20,8 +20,8 @@ export class LanguageService {
   }
   aot = {
     headline: {
-      en: 'Frontend Developer',
-      de: 'Frontend Entwickler',
+      en: 'Fullstack Developer',
+      de: 'Fullstack Entwickler',
     },
     btnLeft: {
       en: 'Check my work',
@@ -78,29 +78,57 @@ export class LanguageService {
 
   }
   skill = {
-    smallHeadline: {
-      en: 'Technologies',
-      de: 'Technologien',
+    frontend: {
+      smallHeadline: {
+        en: 'Technologies Frontend',
+        de: 'Technologien Frontend',
+      },
+      bigHeadline: {
+        en: 'Frontend',
+        de: 'Frontend',
+      },
+      content: {
+        en: 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.',
+        de: 'Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet und dabei eine Reihe von Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung an der Spitze zu bleiben.',
+      },
+      content2: {
+        en: 'You need ',
+        de: 'Sie benötigen eine ',
+      },
+      mark: {
+        en: 'another frontend skill?',
+        de: 'andere Frontend Fähigkeit?',
+      },
+      content3: {
+        en: 'Please reach out, I am excited to work together on the perfect solution for you.',
+        de: 'Nehmen Sie Kontakt mit mir auf, ich freue mich darauf, gemeinsam mit Ihnen eine passende Lösung zu finden.',
+      },
     },
-    bigHeadline: {
-      en: 'Skill Set',
-      de: 'Fähigkeiten',
-    },
-    content: {
-      en: 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.',
-      de: 'Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet und dabei eine Reihe von Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung an der Spitze zu bleiben.',
-    },
-    content2: {
-      en: 'You need ',
-      de: 'Sie benötigen eine ',
-    },
-    mark: {
-      en: 'another skill?',
-      de: 'andere Fähigkeit?',
-    },
-    content3: {
-      en: 'Feel free to contact me. I look forward to <br> expanding on my previous knowledge.',
-      de: 'Nehmen Sie gerne Kontakt mit mir auf. Ich freue mich darauf, meine bisherigen Kenntnisse zu erweitern.',
+    backend: {
+      smallHeadline: {
+        en: 'Technologies Backend',
+        de: 'Technologien Backend',
+      },
+      bigHeadline: {
+        en: 'Backend',
+        de: 'Backend',
+      },
+      content: {
+        en: 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.',
+        de: 'Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet und dabei eine Reihe von Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung an der Spitze zu bleiben.',
+      },
+      content2: {
+        en: 'You need ',
+        de: 'Sie benötigen eine ',
+      },
+      mark: {
+        en: 'another backend skill?',
+        de: 'andere Backend Fähigkeit?',
+      },
+      content3: {
+        en: 'Please reach out, I am excited to work together on the perfect solution for you.',
+        de: 'Nehmen Sie Kontakt mit mir auf, ich freue mich darauf, gemeinsam mit Ihnen eine passende Lösung zu finden.',
+      },
     },
     btn: {
       en: `Let's Talk`,

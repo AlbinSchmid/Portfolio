@@ -4,8 +4,30 @@
     width: 100%;
     background-size: 100% 100%;
     background-position: 0px 0px;
-    background-image: radial-gradient(24% 45% at 0% 50%, #08463B -11%, #1C1C1C 100%);
+    
     @include d-position();
+}
+
+.frontend {
+    background-image: radial-gradient(24% 45% at 0% 50%, #08463B -11%, #1C1C1C 100%);
+}
+
+.backend {
+    background-image: radial-gradient(24% 45% at 100% 50%, #08463B -11%, #1C1C1C 100%);
+}
+
+.ai-fe {
+    display: flex;
+    align-items: flex-end;
+}
+
+.fd-rr {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.pt-10 {
+    padding-top: 10px;
 }
 
 section {
@@ -41,6 +63,7 @@ section {
         gap: clamp(0.5rem, -0.3rem + 4vw, 4.5rem);
         flex-wrap: wrap;
         width: 50%;
+        justify-content: center;
 
         div {
             text-align: center;
@@ -188,6 +211,15 @@ section {
         h3 {
             width: 100%;
         }
+    }
+
+    .fd-cr {
+        display: flex;
+        flex-direction: column-reverse !important;
+    }
+
+    .pt-10 {
+        padding-top: 0 !important;
     }
 
     .text-div {

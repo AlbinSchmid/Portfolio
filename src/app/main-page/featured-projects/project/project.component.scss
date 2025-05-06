@@ -13,13 +13,16 @@ section {
     @include d-position($jc: space-between);
     overflow: unset;
     max-height: 114px;
+    min-height: 114px;
     gap: clamp(1.25rem, -3.1618rem + 7.8431vw, 6.25rem);
 }
 
 .info-div {
     @include d-position($jc: space-between);
     width: 100%;
-    padding: 40px 32px;
+    min-height: 114px;
+    max-height: 114px;
+    padding: 0 40px;
     border-bottom: 1px solid #3DCFB6;
     transition: 125ms ease-in-out;
     
@@ -91,18 +94,22 @@ section {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
     .projects-img-div {
         display: none;
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 780px) {
     .info-div {
         @include d-position($fd: column !important, $ai: flex-start !important, $jc: center !important);
         height: 150px;
         padding: 0 !important;
         height: 100px;
+
+        h2 {
+            margin-bottom: 4px;
+        }
 
         div {
             @include d-position($jc: normal !important);

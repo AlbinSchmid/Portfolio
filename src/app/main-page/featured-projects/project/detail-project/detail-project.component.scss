@@ -143,6 +143,8 @@ section {
     width: 100%;
 
     .close-btn {
+        background-color: transparent;
+        border: none;
         width: 30px;
         height: 30px;
         background-image: url(./../../../../../assets/icons/cross-white.png);
@@ -308,4 +310,36 @@ section {
         width: 100% !important;
         height: 80% !important;
     }
+}
+
+@media (max-height: 750px) {
+    .right-part {
+        height: 0 !important;
+    }
+
+    .left-part {
+        flex-direction: column !important;
+        gap: 12px;
+    }
+
+    .frame {
+        justify-content: flex-end !important;
+        height: auto !important;
+    }
+
+    .close-btn-div {
+        width: auto !important;
+    }
+
+    .headlines-div {
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+
+        .headlines {
+            h1 {
+                margin-bottom: 12px;
+            }
+        }
+    }
+    
 }

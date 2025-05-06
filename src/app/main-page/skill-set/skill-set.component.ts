@@ -15,7 +15,7 @@ import { WindowService } from '../../shared/service/window.service';
 export class SkillSetComponent {
   windowService = inject(WindowService);
   languageService = inject(LanguageService)
-  skillsIcons = [
+  skillsIconsFrontend = [
     {
       'name': 'HTML',
       'img': 'html',
@@ -56,6 +56,45 @@ export class SkillSetComponent {
       'name': 'Scrum',
       'img': 'scrum',
     },
+  ];
+  skillsIconsBackend = [
+    {
+      'name': 'Python',
+      'img': 'python',
+    },
+    {
+      'name': 'Django',
+      'img': 'django',
+    },
+    {
+      'name': 'Docker',
+      'img': 'docker',
+    },
+    {
+      'name': 'PostgreSQL',
+      'img': 'postgresql',
+    },
+    {
+      'name': 'SQLite',
+      'img': 'sqlite',
+    },
+    {
+      'name': 'Redis',
+      'img': 'redis',
+    },
+    {
+      'name': 'Google Cloud',
+      'img': 'google-cloud',
+    },
+    {
+      'name': 'Heroku',
+      'img': 'heroku',
+    },
+    {
+      'name': 'Linux',
+      'img': 'linux',
+    },
+
   ];
   hoveredOnGrowthImg = false;
 

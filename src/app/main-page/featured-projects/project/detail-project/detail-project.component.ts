@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { transition } from '@angular/animations';
 import { LanguageService } from '../../../../shared/service/language.service';
 import { FtProjectsService } from '../../../../shared/service/ft-projects.service';
+import { WindowService } from '../../../../shared/service/window.service';
 
 @Component({
   selector: 'app-detail-project',
@@ -23,6 +24,8 @@ export class DetailProjectComponent {
 
   changeProjectAnimation = false;
   clickedOnDetailAlready = false;
+
+  windowHeight = window.innerHeight;
 
 
   /**

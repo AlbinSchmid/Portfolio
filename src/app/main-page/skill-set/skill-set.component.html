@@ -1,20 +1,20 @@
-<div class="background">
+<div class="background frontend">
     <section>
         <div class="left-part">
-            <h3>{{ languageService.controllLang(languageService.skill.smallHeadline) }}</h3>
+            <h3>{{ languageService.controllLang(languageService.skill.frontend.smallHeadline) }}</h3>
             <div class="text-div" data-aos="fade-right" data-aos-duration="800" [attr.data-aos-offset]="windowService.windowWidth <= 870 ? 250 : 500">
-                <h1>{{ languageService.controllLang(languageService.skill.bigHeadline) }}</h1>
-                <p>{{ languageService.controllLang(languageService.skill.content) }}</p>
-                <h2>{{ languageService.controllLang(languageService.skill.content2) }}<mark class="blue">{{
-                        languageService.controllLang(languageService.skill.mark) }}</mark></h2>
-                <span>{{ languageService.controllLang(languageService.skill.content3) }}</span>
+                <h1>{{ languageService.controllLang(languageService.skill.frontend.bigHeadline) }}</h1>
+                <p>{{ languageService.controllLang(languageService.skill.frontend.content) }}</p>
+                <h2>{{ languageService.controllLang(languageService.skill.frontend.content2) }}<mark class="blue">{{
+                        languageService.controllLang(languageService.skill.frontend.mark) }}</mark></h2>
+                <span>{{ languageService.controllLang(languageService.skill.frontend.content3) }}</span>
                 <a class="animation-btn" href="#contact">
                     <span>{{ languageService.controllLang(languageService.skill.btn) }}</span>
                 </a>
             </div>
         </div>
         <div class="right-part">
-            @for (skill of skillsIcons; track $index) {
+            @for (skill of skillsIconsFrontend; track $index) {
             <div data-aos="flip-left" data-aos-duration="500" data-aos-easing="linear" [attr.data-aos-delay]="$index * 50" [attr.data-aos-offset]="checkOffset($index)">
                 <img class="hover-effekt"
                     src="./assets/icons/{{ skill.img }}.png" alt="">
@@ -26,6 +26,32 @@
                 <p>Growth mindset</p>
                 <img src="./assets/icons/interested-in.png" alt="react, vue js"
                     [ngStyle]="{'opacity': hoveredOnGrowthImg ? '1' : '0'}" class="hover-img">
+            </div>
+        </div>
+    </section>
+</div>
+<div class="background backend">
+    <section class="pt-10 fd-cr">
+        <div class="right-part">
+            @for (skill of skillsIconsBackend; track $index) {
+            <div data-aos="flip-right" data-aos-duration="500" data-aos-easing="linear" [attr.data-aos-delay]="$index * 50" [attr.data-aos-offset]="checkOffset($index)">
+                <img class="hover-effekt"
+                    src="./assets/icons/{{ skill.img }}.png" alt="">
+                <p>{{ skill.name }}</p>
+            </div>
+            }
+        </div>
+        <div class="left-part ai-fe">
+            <h3>{{ languageService.controllLang(languageService.skill.backend.smallHeadline) }}</h3>
+            <div class="text-div" data-aos="fade-left" data-aos-duration="800" [attr.data-aos-offset]="windowService.windowWidth <= 870 ? 250 : 500">
+                <h1>{{ languageService.controllLang(languageService.skill.backend.bigHeadline) }}</h1>
+                <p>{{ languageService.controllLang(languageService.skill.backend.content) }}</p>
+                <h2>{{ languageService.controllLang(languageService.skill.backend.content2) }}<mark class="blue">{{
+                        languageService.controllLang(languageService.skill.backend.mark) }}</mark></h2>
+                <span>{{ languageService.controllLang(languageService.skill.backend.content3) }}</span>
+                <a class="animation-btn" href="#contact">
+                    <span>{{ languageService.controllLang(languageService.skill.btn) }}</span>
+                </a>
             </div>
         </div>
     </section>

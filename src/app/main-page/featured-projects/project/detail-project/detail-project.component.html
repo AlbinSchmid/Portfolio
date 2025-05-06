@@ -2,9 +2,18 @@
     <div class="background" (click)="closeDetailView()"></div>
     <div class="frame" [ngClass]="{'change-project-animation': changeProjectAnimation, 'frame-animation': !clickedOnDetailAlready}" >
         <div class="left-part">
-            <div class="headlines-div">
+            <div class="headlines-div" *ngIf="windowHeight > 750">
                 <h1>{{ projectService.projects[projectIndex].id }}</h1>
                 <h2>{{ projectService.projects[projectIndex].name }}</h2>
+            </div>
+            <div class="headlines-div" *ngIf="windowHeight <= 750">
+                <div class="headlines">
+                    <h1>{{ projectService.projects[projectIndex].id }}</h1>
+                    <h2>{{ projectService.projects[projectIndex].name }}</h2>
+                </div>
+                <div class="close-btn-div" *ngIf="windowHeight <= 750">
+                    <button class="close-btn" (click)="closeDetailView()"></button>
+                </div>
             </div>
             <h3>{{ languageService.controllLang(languageService.projects.detailProject.headline) }}</h3>
             <p>{{ languageService.controllLang(languageService.projects.detailProject.description[projectIndex]) }}</p>
@@ -34,10 +43,10 @@
             </div>
         </div>
         <div class="right-part">
-            <div class="close-btn-div">
+            <div class="close-btn-div" *ngIf="windowHeight > 750">
                 <button class="close-btn" (click)="closeDetailView()"></button>
             </div>
-            <img src="./assets/img/{{ projectService.projects[projectIndex].img }}.png" alt="website logo" class="project-img">
+            <img *ngIf="windowHeight > 750" src="./assets/img/{{ projectService.projects[projectIndex].img }}.png" alt="website logo" class="project-img">
             <button class="next-project-btn hide-btn" (click)="nextProject()">
                 {{ languageService.controllLang(languageService.projects.detailProject.btn) }}
                 <div class="img-div"></div>
