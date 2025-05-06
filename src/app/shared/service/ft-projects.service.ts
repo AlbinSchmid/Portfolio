@@ -28,6 +28,14 @@ export class FtProjectsService {
           name: 'Python',
           img: 'python-blue',
         },
+        {
+          name: 'Redis',
+          img: 'redis-blue',
+        },
+        {
+          name: 'PostgreSQL',
+          img: 'postgresql-blue',
+        },
       ],
     },
     {
@@ -38,20 +46,20 @@ export class FtProjectsService {
       img: 'join',
       skills: [
         {
-          name: 'CSS',
-          img: 'css-blue',
+          name: 'Angular',
+          img: 'angular-blue',
         },
         {
-          name: 'HTML',
-          img: 'html-blue',
+          name: 'TypeScript',
+          img: 'typescript-blue',
         },
         {
-          name: 'Firebase',
-          img: 'firebase-blue',
+          name: 'Django',
+          img: 'django-blue',
         },
         {
-          name: 'JavaScript',
-          img: 'javascript-blue',
+          name: 'Python',
+          img: 'python-blue',
         },
       ],
     },
@@ -98,6 +106,14 @@ export class FtProjectsService {
         {
           name: 'TypeScript',
           img: 'typescript-blue',
+        },
+        {
+          name: 'Django',
+          img: 'django-blue',
+        },
+        {
+          name: 'Python',
+          img: 'python-blue',
         },
       ],
     },
