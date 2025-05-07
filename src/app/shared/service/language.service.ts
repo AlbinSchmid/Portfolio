@@ -37,8 +37,8 @@ export class LanguageService {
         de: 'Offen für neues',
       },
       content2: {
-        en: 'Frontend Developer',
-        de: 'Frontend Entwickler',
+        en: 'Fullstack Developer',
+        de: 'Fullstack Entwickler',
       },
       content3: {
         en: 'Based in Tirol',
@@ -60,20 +60,20 @@ export class LanguageService {
       de: 'Über mich',
     },
     content: {
-      en: 'Hi, I’m a german speaking Frontend Developer based in Tirol. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.',
-      de: 'Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Tirol. Motiviert von den grenzenlosen Möglichkeiten in der IT bin ich begeistert von der Gestaltung visuell ansprechender und intuitiver Websites und Anwendungen.',
+      en: 'Hi, I am a full-stack developer based in Tyrol, building well-structured, reliable web applications with a focus on clean architecture, clear user experience, and stable performance.',
+      de: 'Hi, ich bin ein Fullstack-Entwickler aus Tirol und entwickle durchdachte, zuverlässige Webanwendungen mit Fokus auf klare Nutzerführung, saubere Architektur und stabile Performance.',
     },
     loaction: {
       en: 'Flexible in terms of working environments, I can work effectively both on-site in Tirol and remotely.',
       de: 'Da ich hinsichtlich meiner Arbeitsumgebung flexibel bin, kann ich sowohl vor Ort in Tirol als auch remote effektiv arbeiten.',
     },
     mindset: {
-      en: 'I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.',
-      de: 'Ich bin aufgeschlossen und suche immer nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten ständig zu verbessern.',
+      en: 'Open-minded and motivated to take on new challenges in order to continuously expand both technical knowledge and practical abilities.',
+      de: 'Aufgeschlossen gegenüber neuen Herausforderungen und motiviert, Fachkenntnisse und praktische Fähigkeiten kontinuierlich auszubauen.',
     },
     strengthen: {
-      en: `In my profession, programming isn't just about writing code it's a creative form of problem-solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life.`,
-      de: 'In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu destillieren. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken.',
+      en: `For me, programming means translating complex requirements into clear, user-friendly solutions through creative and structured thinking. The goal is to make technical concepts accessible and move projects forward efficiently.`,
+      de: 'Programmieren bedeutet für mich, komplexe Anforderungen kreativ und strukturiert in klare, benutzerfreundliche Lösungen zu überführen. Mein Ziel ist es, technische Zusammenhänge verständlich zu gestalten und Projekte effizient voranzubringen.',
     },
 
   }
@@ -88,8 +88,8 @@ export class LanguageService {
         de: 'Frontend',
       },
       content: {
-        en: 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.',
-        de: 'Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet und dabei eine Reihe von Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung an der Spitze zu bleiben.',
+        en: 'In my projects, I work with modern frontend technologies such as HTML, CSS, JavaScript, TypeScript, and Angular. I place great importance on writing clean and maintainable code. My goal is always to develop solutions that not only look good but also perform well in real-world use.',
+        de: 'In meinen Projekten arbeite ich mit modernen Frontend-Technologien wie HTML, CSS, JavaScript, TypeScript und Angular. Dabei lege ich großen Wert auf sauberen und wartbaren Code. Mein Ziel ist es, Lösungen zu entwickeln, die nicht nur gut aussehen, sondern auch im praktischen Einsatz überzeugen.',
       },
       content2: {
         en: 'You need ',
@@ -114,8 +114,8 @@ export class LanguageService {
         de: 'Backend',
       },
       content: {
-        en: 'My journey has involved working on diverse projects, employing a range of frontend technologies and concepts. I am open to embracing new technologies and methodologies to Continously enhance my skills and stay ahead in the ever-evolving landscape of web development.',
-        de: 'Auf meinem Weg habe ich an verschiedenen Projekten gearbeitet und dabei eine Reihe von Frontend-Technologien und -Konzepten eingesetzt. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Landschaft der Webentwicklung an der Spitze zu bleiben.',
+        en: `In the backend, I rely on proven technologies like Python, Django, and Docker, along with databases such as PostgreSQL and SQLite. In my projects, I focus on clean architecture, secure and well-documented APIs. To me, it's important that backend systems are not only technically solid, but also maintainable and scalable in the long run, even as requirements grow.`,
+        de: 'Im Backend setze ich auf bewährte Technologien wie Python, Django und Docker sowie Datenbanken wie PostgreSQL und SQLite. In meinen Projekten achte ich besonders auf saubere Architektur, sichere und gut dokumentierte Schnittstellen. Mir ist wichtig, dass Backend-Systeme nicht nur technisch sauber aufgebaut sind, sondern auch langfristig wartbar und erweiterbar bleiben, selbst bei steigenden Anforderungen.',
       },
       content2: {
         en: 'You need ',
@@ -218,8 +218,8 @@ export class LanguageService {
       de: 'Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit meiner Arbeit zu Ihren Projekten beizutragen.',
     },
     content3: {
-      en: 'Need a Frontend developer?',
-      de: 'Brauchen Sie einen Frontend-Entwickler?',
+      en: 'Need a Fullstack developer?',
+      de: 'Brauchen Sie einen Fullstack-Entwickler?',
     },
     btn: {
       en: `Let's talk!`,
