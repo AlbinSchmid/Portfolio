@@ -100,14 +100,6 @@ export class FtProjectsService {
       img: 'coderr',
       skills: [
         {
-          name: 'Angular',
-          img: 'angular-blue',
-        },
-        {
-          name: 'TypeScript',
-          img: 'typescript-blue',
-        },
-        {
           name: 'Django',
           img: 'django-blue',
         },
