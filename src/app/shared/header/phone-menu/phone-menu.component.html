@@ -7,9 +7,9 @@
             <a href="#skills" (click)="windowService.scrollToSkills($event, currentUrl)">
                 {{ languageService.controllLang(languageService.header.linkMid) }}
             </a>
-            <a href="#projects" (click)="windowService.scrollToProjects($event, currentUrl)">
+            <!-- <a href="#projects" (click)="windowService.scrollToProjects($event, currentUrl)">
                 {{ languageService.controllLang(languageService.header.linkRight) }}
-            </a>
+            </a> -->
             <button (click)="changeLanguage()">
                 <div [ngClass]="{'div-DE': languageService.germanLanguage}">DE</div>
                 <span
